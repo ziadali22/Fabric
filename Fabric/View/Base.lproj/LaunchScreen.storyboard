@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 277" translatesAutoresizingMaskIntoConstraints="NO" id="wL8-Sw-4fW">
+                                <rect key="frame" x="133" y="382" width="162" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="fkt-Zd-L0E"/>
+                                    <constraint firstAttribute="height" constant="162" id="h0b-gY-2BY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 279" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-mI-B2v">
+                                <rect key="frame" x="160" y="562" width="341" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="400" id="o9g-1R-MzN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.0" green="0.6470588235294118" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gH6-mI-B2v" firstAttribute="top" secondItem="wL8-Sw-4fW" secondAttribute="bottom" constant="18" id="8kk-AN-Lr6"/>
+                            <constraint firstAttribute="bottom" secondItem="gH6-mI-B2v" secondAttribute="bottom" constant="-34" id="Cdm-zF-BzS"/>
+                            <constraint firstItem="wL8-Sw-4fW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g0F-AX-0Qx"/>
+                            <constraint firstItem="wL8-Sw-4fW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r0N-SK-ODx"/>
+                            <constraint firstAttribute="trailing" secondItem="gH6-mI-B2v" secondAttribute="trailing" constant="-73" id="uRe-Is-Gtm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 277" width="162" height="162"/>
+        <image name="Group 279" width="341.94198608398438" height="383.94400024414062"/>
+    </resources>
+</document>
