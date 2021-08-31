@@ -1,0 +1,35 @@
+//
+//  HomeViewController.swift
+//  Fabric
+//
+//  Created by ziad on 31/08/2021.
+//
+
+import UIKit
+
+class HomeViewController: UIViewController {
+
+    @IBOutlet weak var newstPostsCollectionView: UICollectionView!
+    @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+      //  newstPostsCollectionView.dataSource = self
+      //  newstPostsCollectionView.delegate = self
+    }
+    
+
+
+}
+/*extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+}
+*/

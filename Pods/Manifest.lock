@@ -1,16 +1,34 @@
 PODS:
+  - Alamofire (4.9.1)
+  - IQKeyboardManager (6.5.6)
+  - Kingfisher (6.3.1)
   - SkyFloatingLabelTextField (4.0.0)
+  - SwiftMessages (9.0.3):
+    - SwiftMessages/App (= 9.0.3)
+  - SwiftMessages/App (9.0.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
+  - IQKeyboardManager (~> 6.5.6)
+  - Kingfisher
   - SkyFloatingLabelTextField
+  - SwiftMessages (~> 9.0.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - IQKeyboardManager
+    - Kingfisher
     - SkyFloatingLabelTextField
+    - SwiftMessages
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
+  SwiftMessages: 077f19126c24033fe24042237ecc20261adb46e4
 
-PODFILE CHECKSUM: 5704be53c2faa69a7669906b2fe66c54fc101183
+PODFILE CHECKSUM: 3dae8042d19db4b739783a13988050c24ce6af95
 
 COCOAPODS: 1.10.2

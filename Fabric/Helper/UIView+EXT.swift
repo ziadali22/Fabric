@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension UIView {
-    func addDashBorder(color:UIColor? = .white, cornerRadius: CGFloat? = 3) {
+    /*func addDashBorder(color:UIColor? = .white, cornerRadius: CGFloat? = 3) {
         let sendedColor = color ?? .white
         let color = sendedColor.cgColor
 
@@ -30,5 +30,5 @@ extension UIView {
         self.layer.masksToBounds = false
 
         self.layer.addSublayer(shapeLayer)
-    }
+    }*/
 }
