@@ -14,6 +14,10 @@ enum ServerPaths : String {
     case forgetPassword = "auth/password/forget"
     case checkCode = "auth/password/check"
     case saveChanges = "auth/password/reset"
+    case register = "auth/register"
+    case getCatefory = "categories"
+    case follow_unfollow = "follow-unfollow-category"
+    case intro = "setting/contact"
    
     var value : String {
         return self.rawValue

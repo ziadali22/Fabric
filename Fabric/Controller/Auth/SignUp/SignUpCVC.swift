@@ -12,4 +12,10 @@ class SignUpCVC: UICollectionViewCell {
     
     @IBOutlet weak var labelButton: UILabel!
     
+    var deleteHandeler: ActionClouser?
+    
+    @IBAction func deleteAction(_ sender: Any) {
+        deleteHandeler?()
+    }
+    
 }

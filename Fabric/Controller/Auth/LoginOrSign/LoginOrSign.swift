@@ -23,7 +23,10 @@ class LoginOrSign: UIViewController {
        
     }
     override func viewWillLayoutSubviews() {
-        DotView.addDashBorder(color: .white, cornerRadius: 3)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.DotView.addDashBorder(color: .white, cornerRadius: 3)
+        }
+       
     }
     @IBAction func loginButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "login") as! SignInVC

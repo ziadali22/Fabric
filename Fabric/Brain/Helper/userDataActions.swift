@@ -44,6 +44,10 @@ struct UserDataActions {
         UserDefaults.standard.set(userDictionary, forKey: userKey)
         
     }
+    static func cashSettingModel(setting: Setting) -> Void {
+        let settingDictionary = try! setting.asDictionary()
+        UserDefaults.standard.set(settingDictionary, forKey: settingKey)
+    }
     
 
     
@@ -102,7 +106,25 @@ struct UserDataActions {
         return nil
     }
     
-
+    static func getSettingModel() -> Setting?
+    {
+        if  let cashedData = UserDefaults.standard.object(forKey: settingKey) as? [String : Any]
+        {
+            let data = try! JSONSerialization.data(withJSONObject: cashedData, options: .prettyPrinted)
+            
+            let decoder = JSONDecoder()
+            do {
+                let setting = try decoder.decode(Setting.self, from: data)
+                return setting
+            } catch {
+                return nil
+            }
+            
+        }
+        
+        return nil
+    }
+    
     
     
     static func sendQuery() -> URLEncoding {

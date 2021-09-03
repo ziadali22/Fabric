@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
       //  newstPostsCollectionView.dataSource = self
       //  newstPostsCollectionView.delegate = self
     }

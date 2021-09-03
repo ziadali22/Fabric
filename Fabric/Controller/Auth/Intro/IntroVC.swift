@@ -18,10 +18,18 @@ class IntroVC: UIViewController {
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         detailsTxt.isEditable = false
         
+        self.detailsTxt.text = UserDataActions.getSettingModel()?.screenOne
         
     }
     
-
-
+    ///UserDataActions.getSettingModel()?.screenTwo
+    
+    
+    @IBAction func next(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "Cell") as! introSecondVC
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
