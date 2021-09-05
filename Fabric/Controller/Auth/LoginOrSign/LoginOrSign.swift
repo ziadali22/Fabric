@@ -18,10 +18,7 @@ class LoginOrSign: UIViewController {
         useItToApplyChangesInButton(btn: loginButton)
         
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-       
-    }
+
     override func viewWillLayoutSubviews() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.DotView.addDashBorder(color: .white, cornerRadius: 3)

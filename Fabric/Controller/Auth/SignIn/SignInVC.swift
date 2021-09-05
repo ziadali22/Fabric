@@ -45,6 +45,8 @@ class SignInVC: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    
+    
     @IBAction func loginButton(_ sender: Any) {
         let err = validateFields()
         if err != nil {

@@ -19,7 +19,7 @@ class DepartmentsCVCell: UICollectionViewCell {
     
     
     func DotViewFunc()  {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
             self.dotView.addDashBorder(color: AppColor.gren, cornerRadius: 3)
     }
     }

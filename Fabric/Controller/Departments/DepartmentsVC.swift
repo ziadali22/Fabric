@@ -10,13 +10,13 @@ import UIKit
 class DepartmentsVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-   
+    @IBOutlet weak var gestureView: UIView!
+    
     @IBOutlet weak var underLineBtn: UIView!
 
     @IBOutlet weak var btn1: UIButton!
     
     @IBOutlet weak var btn2: UIButton!
-    @IBOutlet weak var followUnfollowBtn: UIButton!
     
     var categoryData: [CategoryModel]?
     var selectedCategory = [CategoryModel]()
@@ -28,8 +28,40 @@ class DepartmentsVC: UIViewController {
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         getCategoriesApi()
 
+        gestureView.isUserInteractionEnabled = true
         
-
+        let swipeRieght = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeRieght.direction = UISwipeGestureRecognizer.Direction.right
+        gestureView.addGestureRecognizer(swipeRieght)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        gestureView.addGestureRecognizer(swipeLeft)
+        
+    }
+//    override func viewWillLayoutSubviews() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+//            self.DotView.addDashBorder(color: .white, cornerRadius: 3)
+//        }
+    
+    @objc func swipeGesture(sender: UISwipeGestureRecognizer?){
+        if let swipeGesture = sender {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizer.Direction.right:
+                UIView.animate(withDuration: 0.7) {
+                    self.underLineBtn.center.x = self.btn2.center.x
+                    self.view.layoutIfNeeded()
+                }
+            case UISwipeGestureRecognizer.Direction.left:
+                UIView.animate(withDuration: 0.7) {
+                    self.underLineBtn.center.x = self.btn1.center.x
+                    self.view.layoutIfNeeded()
+                    
+                }
+            default:
+                break
+            }
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +106,7 @@ class DepartmentsVC: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    @IBAction func followUnfollowBtn(_ sender: Any) {
-        
-    }
+
     
 }
 extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout{
