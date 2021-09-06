@@ -10,25 +10,34 @@ import UIKit
 class ActivationCodeVC: UIViewController {
 
     @IBOutlet weak var activateBtn: UIButton!
+    
     @IBOutlet weak var FirstTextField: UITextField!
     @IBOutlet weak var SecondTextField: UITextField!
     @IBOutlet weak var ThirdTextField: UITextField!
     @IBOutlet weak var FourthTextField: UITextField!
+    
     @IBOutlet weak var DotView: UIView!
+    
     @IBOutlet weak var phoneLabel: UILabel!
     
-    
+    // variables
     var phone: String?
     var code: String?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
         phoneLabel.text = phone
         DotView.addDashBorder(color: .white, cornerRadius: 3)
+        // shaping the rectangle text field
         customizeTextFieldBorder(attr: FirstTextField)
         customizeTextFieldBorder(attr: SecondTextField)
         customizeTextFieldBorder(attr: ThirdTextField)
         customizeTextFieldBorder(attr: FourthTextField)
+        
+        // this function for one number will be in the text field and then the indicator will go to the another text field
         setUpTextFiled()
         
         
@@ -39,13 +48,16 @@ class ActivationCodeVC: UIViewController {
         attr.layer.cornerRadius = 3
         attr.layer.borderWidth = 1.5
     }
-    func validateFields() -> String? {
+    func validateFields()  {
         
-        // validate the fields
-        if FirstTextField.text!.isEmpty || SecondTextField.text!.isEmpty || ThirdTextField.text!.isEmpty || FourthTextField.text!.isEmpty{
-            return "Please fill in all fields".localized
-        }
-        return nil
+        guard let first = FirstTextField.text , !first.isEmpty else { return self.showMessage(sub: "check valid first digit".localized) }
+        guard let second = SecondTextField.text , !second.isEmpty else { return self.showMessage(sub: "check valid second digit".localized) }
+        guard let third = ThirdTextField.text , !third.isEmpty else { return self.showMessage(sub: "check valid third digit".localized) }
+        guard let fourth = FourthTextField.text , !fourth.isEmpty else { return self.showMessage(sub: "check valid fourth digit".localized) }
+        
+        // check validation for text fields and then make network request
+        activationCodeRequest()
+        
     }
 
     
@@ -54,15 +66,10 @@ class ActivationCodeVC: UIViewController {
     }
     
     @IBAction func ChangePassword(_ sender: Any) {
-        let err = validateFields()
-        if err != nil {
-            showMessage(sub: "Wrong Data".localized)
-        }else{
-            apiRequest()
-            
-        }
+        validateFields()
     }
     func succes() {
+        // when request network sucess then go to the change passsword screen
         let vc = storyboard?.instantiateViewController(identifier: "changePassword") as! changePasswordVC
         vc.modalPresentationStyle = .fullScreen
         vc.phone = phone

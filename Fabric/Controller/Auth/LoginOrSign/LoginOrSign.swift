@@ -20,11 +20,15 @@ class LoginOrSign: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        super.viewWillLayoutSubviews()
+        // solve the problem the dot view appear twice ( i put it in main thread)
+        DispatchQueue.main.async{
             self.DotView.addDashBorder(color: .white, cornerRadius: 3)
         }
        
     }
+    
+    //MARK: LOGIN
     @IBAction func loginButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "login") as! SignInVC
         vc.modalPresentationStyle = .fullScreen
@@ -32,7 +36,7 @@ class LoginOrSign: UIViewController {
         
         
     }
-    
+    //MARK: SIGNUP
     @IBAction func signupButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "signup") as! SignUpVC
         vc.modalPresentationStyle = .fullScreen

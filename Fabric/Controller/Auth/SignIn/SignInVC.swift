@@ -9,30 +9,31 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class SignInVC: UIViewController {
-    
+    // dotView
     @IBOutlet weak var DotView: UIView!
-    
+    // inputs Field
     @IBOutlet weak var phoneNumberTextField: SkyFloatingLabelTextField!
-    
     @IBOutlet weak var PasswordTextField: SkyFloatingLabelTextField!
+    // login button
     @IBOutlet weak var loginBtn: LoadingButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // adding the dot border for button
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         
         
 
     }
-    func validateFields() -> String? {
+    func validateFields(){
         
         // validate the fields
-        if phoneNumberTextField.text!.isEmpty ||
-            PasswordTextField.text!.isEmpty {
-            return "Please fill in all fields"
+        guard let phone = phoneNumberTextField.text , !phone.isEmpty else { return self.showMessage(sub: "check valid phone number".localized) }
+        guard let password = PasswordTextField.text , !password.isEmpty else { return self.showMessage(sub: "check valid password".localized) }
+        // if you check the phone number and password then make network request and send me to the home screen
+        signInRequest()
     }
-        return nil
-    }
+
     
     
 
@@ -48,12 +49,7 @@ class SignInVC: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        let err = validateFields()
-        if err != nil {
-            showMessage(sub: "Wrong Data".localized)
-        }else{
-            apiRequest()
-        }
+        validateFields()
     }
     
     func showError(_ message:String)  {

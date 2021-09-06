@@ -15,6 +15,8 @@ class introSecondVC: UIViewController {
         super.viewDidLoad()
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         DetailsText.isEditable = false
+        
+        // get cashed date for the second screen
         DetailsText.text =  UserDataActions.getSettingModel()?.screenTwo
     }
     

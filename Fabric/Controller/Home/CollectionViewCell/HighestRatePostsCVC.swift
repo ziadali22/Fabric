@@ -17,13 +17,13 @@ class HighestRatePostsCVC: UICollectionViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var rateTextView: UITextView!
-    func rateConfigure(_ title:String,_ image: String, _ comntCount: String,_ user: String, _ rateDate: String, txtView: String ){
-        rateDepartmentTitle.text = title
-        rateCellImage.image = UIImage(named: image)
-        rateCommentCount.text = comntCount
-        userName.text = user
-        date.text = rateDate
-        rateTextView.text = txtView
+    func rateConfigure(item: MostComment){
+        rateDepartmentTitle.text = item.title
+        rateCellImage.kf.setImage(with: URL(string: item.content ?? "") )
+        rateCommentCount.text = String(item.comments?.count ?? 0)
+        userName.text = item.user?.name
+        date.text = item.createdAt
+        rateTextView.text = item.mostCommentDescription
     }
     
 }

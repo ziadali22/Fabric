@@ -21,28 +21,19 @@ class changePasswordVC: UIViewController {
 
         DotView.addDashBorder(color: .white, cornerRadius: 3)
     }
-    func validateFields() -> String? {
+    func validateFields()  {
+        guard let password = passwordTextField.text , !password.isEmpty else { return self.showMessage(sub: "check valid password ".localized) }
         
-        // validate the fields
-        if passwordTextField.text!.isEmpty || confirmPasswordTextField.text!.isEmpty {
-            return "Please fill in all fields"
-    }
-        else if passwordTextField.text != confirmPasswordTextField.text {
-            return "please the passwords not correct "
+        guard let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty else { return self.showMessage(sub: "check valid confirm passwrod".localized) }
+        if password != confirmPassword {
+            return self.showMessage(sub: "password and confirm password don't match")
+        }else{
+        changePasswordRequest()
         }
-
-        return nil
     }
-    
 
     @IBAction func saveChangesButton(_ sender: Any) {
-        let err = validateFields()
-        if err != nil{
-            showMessage(sub: "Wrong Data".localized)
-        }
-        else{
-            apiRequest()
-        }
+        validateFields()
     }
     
     @IBAction func dismissButton(_ sender: Any) {

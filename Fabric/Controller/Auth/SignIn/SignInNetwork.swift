@@ -7,7 +7,7 @@
 
 import Foundation
 extension SignInVC{
-    func apiRequest(){
+    func signInRequest(){
         self.loginBtn.showLoader()
         // add parameters in login case
         AuthRequestRouter.login(phone: phoneNumberTextField.text ?? "", password: PasswordTextField.text ?? "", fcm: "124").send(BaseModel<User>.self, then: handleResponse)
@@ -22,7 +22,9 @@ extension SignInVC{
             case .success(let model):
                 if model.status{
                     guard let item = model.data else {return}
+                    // casching the user Data
                     UserDataActions.cashUserModel(user: item)
+                    // then send me to the home screen
                     self.successLogin()
                 }else{
                     guard let errorMsg = model.msg else{return}
@@ -33,6 +35,7 @@ extension SignInVC{
     }
     
     func successLogin(){
+        // codre for sending to home screen
         self.showMessage(sub: "success login")
         let vc = storyboard?.instantiateViewController(identifier: "tapBar")
         vc?.modalPresentationStyle = .fullScreen

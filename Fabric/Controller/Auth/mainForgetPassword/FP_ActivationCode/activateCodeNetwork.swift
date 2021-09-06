@@ -8,7 +8,7 @@
 import Foundation
 
 extension ActivationCodeVC {
-    func apiRequest(){
+    func activationCodeRequest(){
         self.activateBtn.showLoader()
         code = "\(FirstTextField.text ?? "")" + "\(SecondTextField.text ?? "")" + "\(ThirdTextField.text ?? "")" + "\(FourthTextField.text ?? "")"
         AuthRequestRouter.checkCode(code: code ?? "", phone: phone ?? "").send(BoolModel.self, then: handleResponse)

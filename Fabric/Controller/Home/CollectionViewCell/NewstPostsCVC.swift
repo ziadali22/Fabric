@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewstPostsCVC: UICollectionViewCell {
     @IBOutlet weak var departmentTitle: UILabel!
@@ -17,12 +18,12 @@ class NewstPostsCVC: UICollectionViewCell {
     @IBOutlet weak var datePost: UILabel!
     @IBOutlet weak var textView: UITextView!
     
-    func NewstPostConfigure(title: String, image: String, comntCount: String, user: String, date: String, txtView: String) {
-        departmentTitle.text = title
-        cellImage.image = UIImage(named: image)
-        commentCount.text = comntCount
-        UserName.text = user
-        textView.text = txtView
+    func NewstPostConfigure(item: MostComment) {
+        departmentTitle.text = item.title
+        cellImage.kf.setImage(with: URL(string: item.content ?? "") )
+        commentCount.text = String(item.comments?.count ?? 0)
+        UserName.text = item.user?.name
+        textView.text = item.mostCommentDescription
         
     }
 }

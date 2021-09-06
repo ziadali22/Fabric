@@ -19,6 +19,8 @@ enum AuthRequestRouter: URLRequestBuilder {
     case getCategories
     case follow_unfollow(id: Int)
     case intro
+    case myPosts
+    case home
     
     // MARK: - Path
     internal var path: String {
@@ -34,11 +36,15 @@ enum AuthRequestRouter: URLRequestBuilder {
         case .register:
             return ServerPaths.register.value
         case .getCategories:
-            return ServerPaths.getCatefory.value
+            return ServerPaths.getCategory.value
         case .follow_unfollow:
             return ServerPaths.follow_unfollow.value
         case .intro:
             return ServerPaths.intro.value
+        case .myPosts:
+            return ServerPaths.myPosts.value
+        case .home:
+            return ServerPaths.home.value
         }
     }
     // MARK: - Parameters
@@ -72,6 +78,7 @@ enum AuthRequestRouter: URLRequestBuilder {
         case .follow_unfollow(let id ):
             params["category_id"] = id
         
+        
         default:
             break
         }
@@ -81,7 +88,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro:
+        case .getCategories , .intro , .home, .myPosts:
             return .get
         default:
             return .post

@@ -9,27 +9,41 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: dumb data will replace with api data
     var departmentData = ["Math","Pyhsics","Science","History","Biology"]
     var imageArr = ["annie-spratt-ORDz1m1-q0I-unsplash","jeswin-thomas-guLAk5gqj-Y-unsplash","kuanish-reymbaev-o_lLsdVTxak-unsplash","sebastian-bednarek-x2Z0uNj-Quo-unsplash","sebastian-bednarek-x2Z0uNj-Quo-unsplash"]
     
     
+    
+    
+    // ---------------
+    // first collection view
     @IBOutlet weak var newstPostsCollectionView: UICollectionView!
+    // second collection view
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
+    var postsData : [MostComment]?
+    var mostRateData : [MostComment]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        // add logo
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
-        
+        // first collection view
         newstPostsCollectionView.delegate = self
         newstPostsCollectionView.dataSource = self
-        
+        // second collection view
         hieghtsRatesCollectionView.delegate = self
         hieghtsRatesCollectionView.dataSource = self
+        
+        // horizontal collection view direction
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-              // horizontal collection view direction
-          layout.scrollDirection = .horizontal
+        layout.scrollDirection = .horizontal
+        
         newstPostsCollectionView.collectionViewLayout = layout
         hieghtsRatesCollectionView.collectionViewLayout = layout
-
+        
+        // Networking:
+        Request()
+        
     }
     
 
@@ -41,27 +55,30 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.newstPostsCollectionView{
-            return departmentData.count
+            return postsData?.count ?? 0
+        }else{
+            return mostRateData?.count ?? 0
         }
-        return departmentData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView  == self.newstPostsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newstCell", for: indexPath) as! NewstPostsCVC
-            cell.NewstPostConfigure(title: departmentData[indexPath.row
-            ], image: imageArr[indexPath.row
-            ], comntCount: "16", user: "ziad ali", date: "22 march 2020", txtView: "this text view is generated from text view api for testign the code ")
             
+            guard let item = postsData?[indexPath.row] else { return cell }
+            cell.NewstPostConfigure(item: item)
+            
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath) as! HighestRatePostsCVC
+            guard let item = mostRateData?[indexPath.row] else { return cell}
+            cell.rateConfigure(item: item)
+            cell.rateCellImage.contentMode = .scaleAspectFill
             return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath) as! HighestRatePostsCVC
-        cell.rateConfigure(departmentData[indexPath.row
-        ], imageArr[indexPath.row
-        ], "16", "ziad ali", "22 march 2020", txtView: "this text view is generated from text view api for testign the code ")
-        cell.rateCellImage.contentMode = .scaleAspectFill
-        return cell
+
+       
         
         
     }

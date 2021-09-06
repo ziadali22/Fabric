@@ -12,21 +12,29 @@ class DepartmentsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var underLineBtn: UIView!
+    // all department
     @IBOutlet weak var btn1: UIButton!
+    // my department
     @IBOutlet weak var btn2: UIButton!
-    
+    // make variabel to store date back from api to use it in collection view
     var categoryData: [CategoryModel]?
     var selectedCategory = [CategoryModel]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // add logo
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
+
         collectionView.dataSource = self
         collectionView.delegate = self
+        // add  width 
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        getCategoriesApi()
-
-        collectionView.isUserInteractionEnabled = true
         
+        // network get categories from api
+        getCategoriesApi()
+        
+        // MARK: swipe gesture
+        collectionView.isUserInteractionEnabled = true
         let swipeRieght = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
         swipeRieght.direction = UISwipeGestureRecognizer.Direction.right
         collectionView.addGestureRecognizer(swipeRieght)
@@ -36,11 +44,9 @@ class DepartmentsVC: UIViewController {
         collectionView.addGestureRecognizer(swipeLeft)
         
     }
-//    override func viewWillLayoutSubviews() {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-//            self.DotView.addDashBorder(color: .white, cornerRadius: 3)
-//        }
+
     
+
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?){
         if let swipeGesture = sender {
             switch swipeGesture.direction {

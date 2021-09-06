@@ -77,7 +77,6 @@ class SignUpVC: UIViewController {
                 if let id = i.id{
                     categoryId.append(id)
                 }
-
             }
 
             apiRequest()

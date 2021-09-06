@@ -1,29 +1,28 @@
 //
-//  forgetPasswordNetwork.swift
+//  posts+Network.swift
 //  Fabric
 //
-//  Created by ziad on 31/08/2021.
+//  Created by ziad on 06/09/2021.
 //
 
 import Foundation
-extension ForgetPasswordVC {
-    func forgetPasswordRequest(){
-        self.sendCodeBtn.showLoader()
-        AuthRequestRouter.foregtPassword(phone: phoneNumberTextField.text ?? "" ).send(StringModel.self, then: handleResponse)
+extension postsVC{
+    func myPostsRequest(){
+        AuthRequestRouter.myPosts.send(BaseModel<MyPosts>.self, then: handleResponse)
     }
     
-    var handleResponse: HandleResponse<StringModel> {
+    var handleResponse: HandleResponse<BaseModel<MyPosts>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.sendCodeBtn.dismissLoader()
+            self.view.isUserInteractionEnabled = true
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
             case .success(let model):
                 if model.status{
                     guard let item = model.data else {return}
-                    self.successSendNumber(msg: item)
-                    self.success()
+                    self.myposts = item.items
+                    self.collectionview.reloadData()
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)
@@ -32,8 +31,6 @@ extension ForgetPasswordVC {
             }
         }
     }
-    func successSendNumber(msg: String){
-        self.showMessage(sub: "code sucessfully sent")
-    }
+    
     
 }

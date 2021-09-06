@@ -12,6 +12,9 @@ class ForgetPasswordVC: UIViewController {
     @IBOutlet weak var sendCodeBtn: UIButton!
     @IBOutlet weak var phoneNumberTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var DotView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,26 +25,18 @@ class ForgetPasswordVC: UIViewController {
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    func validateFields() -> String? {
-        
+    func validateFields() {
         // validate the fields
-        if phoneNumberTextField.text!.isEmpty{
-            return "Please fill in all fields"
-    }
-        return nil
+        guard let phone = phoneNumberTextField.text , !phone.isEmpty else { return self.showMessage(sub: "check valid phone number".localized) }
+        forgetPasswordRequest()
+
     }
     
     @IBAction func codeActivation(_ sender: Any) {
-        let err = validateFields()
-        if err != nil {
-            showMessage(sub: "Wrong Data".localized)
-        }else{
-            apiRequest()
-            
-        }
+        validateFields()
     }
     func success(){
-        
+        // after you put the number i will go to the (OTP) screen
         let vc = storyboard?.instantiateViewController(identifier: "codeActivate") as! ActivationCodeVC
         vc.phone = phoneNumberTextField.text
         vc.modalPresentationStyle = .fullScreen

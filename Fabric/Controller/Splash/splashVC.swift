@@ -11,10 +11,11 @@ class splashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Request()
+        //MARK: network request
+        splashRequest()
         
     }
-    func Request(){
+    func splashRequest(){
         AuthRequestRouter.intro.send(BaseModel<Setting>.self, then: handleResponse)
     }
     

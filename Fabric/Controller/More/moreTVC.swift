@@ -20,7 +20,8 @@ class moreTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        // this line for when click table cell it will not be highlited with gray color 
+        selectionStyle = .none
         
     }
     func configure(_ image: String, _ title: String){

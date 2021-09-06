@@ -19,11 +19,11 @@ class postsCVCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var date: UILabel!
     
-    func postsConfigure(_ cellimage: String,_ department : String, _ comontCount: String ,_ newDate: String){
-        cellImage.image = UIImage(named: cellimage)
-        DepartmentTitle.text = department
-        commentCount.text = comontCount
-        date.text = newDate
+    func postsCvonfigure(item: Item){
+        cellImage.kf.setImage(with: URL(string: item.content ?? "") )
+        DepartmentTitle.text = item.title
+        commentCount.text = String(item.comments?.count ?? 0)
+        date.text = item.createdAt
     }
     
 }
