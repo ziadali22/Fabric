@@ -94,7 +94,7 @@ extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SignUpCVC
         cell.contentView.layer.cornerRadius = 10
-        cell.labelButton.text = "name"
+        //cell.labelButton.text = "name"
         cell.labelButton.text = selectedCategory[indexPath.row].name
         cell.deleteHandeler = {
             self.selectedCategory.remove(at: indexPath.row)

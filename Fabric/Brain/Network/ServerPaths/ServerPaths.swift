@@ -19,7 +19,9 @@ enum ServerPaths : String {
     case follow_unfollow = "follow-unfollow-category"
     case intro = "setting/contact"
     case myPosts = "posts"
-   case home = "home"
+    case home = "home"
+    case contactUs = "post-contact"
+    case notifications = "notification"
     var value : String {
         return self.rawValue
     }

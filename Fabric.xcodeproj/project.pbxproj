@@ -129,6 +129,19 @@
 		998BB65926DE5F2900CDA3D0 /* forgetPasswordNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65826DE5F2900CDA3D0 /* forgetPasswordNetwork.swift */; };
 		998BB65B26DE670900CDA3D0 /* activateCodeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65A26DE670900CDA3D0 /* activateCodeNetwork.swift */; };
 		998BB65D26DE6FF300CDA3D0 /* changePasswordNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65C26DE6FF300CDA3D0 /* changePasswordNetwork.swift */; };
+		99D28D5026E6BDB80071ADA5 /* MoreStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D28D4F26E6BDB80071ADA5 /* MoreStoryBoard.storyboard */; };
+		99D28D5326E760DE0071ADA5 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */; };
+		99D28D5526E77F7B0071ADA5 /* more.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D28D5426E77F7B0071ADA5 /* more.storyboard */; };
+		99D28D5B26E782770071ADA5 /* contactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5A26E782770071ADA5 /* contactUsViewController.swift */; };
+		99D28D5D26E7853F0071ADA5 /* tableViewRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */; };
+		99D28D6026E7871E0071ADA5 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5F26E7871E0071ADA5 /* TermsViewController.swift */; };
+		99D28D6226E792B80071ADA5 /* ContactUs+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6126E792B80071ADA5 /* ContactUs+Network.swift */; };
+		99D28D6526E79B350071ADA5 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6426E79B350071ADA5 /* NotificationsViewController.swift */; };
+		99D28D6726E79C630071ADA5 /* Notifications+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6626E79C630071ADA5 /* Notifications+Network.swift */; };
+		99D28D6926E7AB2F0071ADA5 /* notificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6826E7AB2F0071ADA5 /* notificationTableViewCell.swift */; };
+		99D28D6B26E7B1AF0071ADA5 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */; };
+		99D28D6D26E7B4630071ADA5 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6C26E7B4630071ADA5 /* NotificationModel.swift */; };
+		99D28D6F26E7BD200071ADA5 /* PopUPChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */; };
 		99F0133C26E0F07400BFC9E4 /* followAndUnfollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0133B26E0F07400BFC9E4 /* followAndUnfollow.swift */; };
 		99F0134026E1002D00BFC9E4 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0133F26E1002D00BFC9E4 /* SettingModel.swift */; };
 		99F0134226E105D600BFC9E4 /* introSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0134126E105D600BFC9E4 /* introSecondVC.swift */; };
@@ -272,6 +285,19 @@
 		998BB65826DE5F2900CDA3D0 /* forgetPasswordNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordNetwork.swift; sourceTree = "<group>"; };
 		998BB65A26DE670900CDA3D0 /* activateCodeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activateCodeNetwork.swift; sourceTree = "<group>"; };
 		998BB65C26DE6FF300CDA3D0 /* changePasswordNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordNetwork.swift; sourceTree = "<group>"; };
+		99D28D4F26E6BDB80071ADA5 /* MoreStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreStoryBoard.storyboard; sourceTree = "<group>"; };
+		99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		99D28D5426E77F7B0071ADA5 /* more.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = more.storyboard; sourceTree = "<group>"; };
+		99D28D5A26E782770071ADA5 /* contactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsViewController.swift; sourceTree = "<group>"; };
+		99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewRowData.swift; sourceTree = "<group>"; };
+		99D28D5F26E7871E0071ADA5 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		99D28D6126E792B80071ADA5 /* ContactUs+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactUs+Network.swift"; sourceTree = "<group>"; };
+		99D28D6426E79B350071ADA5 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		99D28D6626E79C630071ADA5 /* Notifications+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Network.swift"; sourceTree = "<group>"; };
+		99D28D6826E7AB2F0071ADA5 /* notificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationTableViewCell.swift; sourceTree = "<group>"; };
+		99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		99D28D6C26E7B4630071ADA5 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUPChangePasswordVC.swift; sourceTree = "<group>"; };
 		99F0133B26E0F07400BFC9E4 /* followAndUnfollow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followAndUnfollow.swift; sourceTree = "<group>"; };
 		99F0133F26E1002D00BFC9E4 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		99F0134126E105D600BFC9E4 /* introSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introSecondVC.swift; sourceTree = "<group>"; };
@@ -341,6 +367,7 @@
 				99F0133F26E1002D00BFC9E4 /* SettingModel.swift */,
 				99F0135526E6326600BFC9E4 /* HomeModel.swift */,
 				99F0135B26E651E700BFC9E4 /* MyPosts.swift */,
+				99D28D6C26E7B4630071ADA5 /* NotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -787,6 +814,68 @@
 			path = RequestRouter;
 			sourceTree = "<group>";
 		};
+		99D28D5126E760CD0071ADA5 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */,
+				99D28D5426E77F7B0071ADA5 /* more.storyboard */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		99D28D5626E781D60071ADA5 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				99D28D5A26E782770071ADA5 /* contactUsViewController.swift */,
+				99D28D6126E792B80071ADA5 /* ContactUs+Network.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		99D28D5726E781E10071ADA5 /* My Account */ = {
+			isa = PBXGroup;
+			children = (
+				99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */,
+				99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */,
+			);
+			path = "My Account";
+			sourceTree = "<group>";
+		};
+		99D28D5826E781F40071ADA5 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		99D28D5926E7823F0071ADA5 /* Main More */ = {
+			isa = PBXGroup;
+			children = (
+				99F0134626E4B53700BFC9E4 /* MoreVc.swift */,
+				99F0134926E4B56B00BFC9E4 /* moreTVC.swift */,
+				99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */,
+			);
+			path = "Main More";
+			sourceTree = "<group>";
+		};
+		99D28D5E26E787080071ADA5 /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				99D28D5F26E7871E0071ADA5 /* TermsViewController.swift */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		99D28D6326E79B160071ADA5 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				99D28D6426E79B350071ADA5 /* NotificationsViewController.swift */,
+				99D28D6626E79C630071ADA5 /* Notifications+Network.swift */,
+				99D28D6826E7AB2F0071ADA5 /* notificationTableViewCell.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		99F0134326E10D0B00BFC9E4 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,8 +887,14 @@
 		99F0134826E4B54800BFC9E4 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				99F0134626E4B53700BFC9E4 /* MoreVc.swift */,
-				99F0134926E4B56B00BFC9E4 /* moreTVC.swift */,
+				99D28D6326E79B160071ADA5 /* Notifications */,
+				99D28D5E26E787080071ADA5 /* Terms */,
+				99D28D5926E7823F0071ADA5 /* Main More */,
+				99D28D5826E781F40071ADA5 /* Language */,
+				99D28D5726E781E10071ADA5 /* My Account */,
+				99D28D5626E781D60071ADA5 /* ContactUs */,
+				99D28D5126E760CD0071ADA5 /* AboutUs */,
+				99D28D4F26E6BDB80071ADA5 /* MoreStoryBoard.storyboard */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -905,6 +1000,7 @@
 				992DA21B26DB78E90063ACB7 /* LaunchScreen.storyboard in Resources */,
 				998BB62026DE50B100CDA3D0 /* Almarai-Bold.ttf in Resources */,
 				998BB60426DE50B100CDA3D0 /* Localizable.strings in Resources */,
+				99D28D5526E77F7B0071ADA5 /* more.storyboard in Resources */,
 				998BB62226DE50B100CDA3D0 /* Almarai-Regular.ttf in Resources */,
 				998BB62B26DE50B100CDA3D0 /* Cairo-Light.ttf in Resources */,
 				998BB62826DE50B100CDA3D0 /* Cairo-ExtraLight.ttf in Resources */,
@@ -919,6 +1015,7 @@
 				998BB62C26DE50B100CDA3D0 /* Cairo-Black.ttf in Resources */,
 				998BB60926DE50B100CDA3D0 /* ON@3x.png in Resources */,
 				998BB62A26DE50B100CDA3D0 /* Cairo-Regular.ttf in Resources */,
+				99D28D5026E6BDB80071ADA5 /* MoreStoryBoard.storyboard in Resources */,
 				998BB62326DE50B100CDA3D0 /* Almarai-Light.ttf in Resources */,
 				998BB60726DE50B100CDA3D0 /* selectedImageGallery@3x.png in Resources */,
 				998BB63026DE50B100CDA3D0 /* PNU-Light.ttf in Resources */,
@@ -1011,6 +1108,7 @@
 				998BB63826DE50B100CDA3D0 /* exUItxtField.swift in Sources */,
 				99F0135A26E64A4800BFC9E4 /* posts+Network.swift in Sources */,
 				998BB63F26DE50B100CDA3D0 /* exMapKit.swift in Sources */,
+				99D28D5B26E782770071ADA5 /* contactUsViewController.swift in Sources */,
 				998BB61D26DE50B100CDA3D0 /* VideoInfoView.swift in Sources */,
 				998BB61426DE50B100CDA3D0 /* ButtonPicker.swift in Sources */,
 				998BB58126DD911800CDA3D0 /* UICollectionView+EXT.swift in Sources */,
@@ -1019,16 +1117,21 @@
 				998BB65926DE5F2900CDA3D0 /* forgetPasswordNetwork.swift in Sources */,
 				998BB5FD26DE50B100CDA3D0 /* ServerPaths.swift in Sources */,
 				998BB61126DE50B100CDA3D0 /* TopView.swift in Sources */,
+				99D28D6F26E7BD200071ADA5 /* PopUPChangePasswordVC.swift in Sources */,
 				998BB62726DE50B100CDA3D0 /* FontEnum.swift in Sources */,
+				99D28D5D26E7853F0071ADA5 /* tableViewRowData.swift in Sources */,
 				99F0135626E6326600BFC9E4 /* HomeModel.swift in Sources */,
 				99F0134F26E4C8A400BFC9E4 /* postsCVCell.swift in Sources */,
+				99D28D6026E7871E0071ADA5 /* TermsViewController.swift in Sources */,
 				998BB5FF26DE50B100CDA3D0 /* AppImages.swift in Sources */,
 				998BB57826DD8E6B00CDA3D0 /* NewstPostsCVC.swift in Sources */,
+				99D28D6526E79B350071ADA5 /* NotificationsViewController.swift in Sources */,
 				998BB60126DE50B100CDA3D0 /* AppColor.swift in Sources */,
 				998BB65B26DE670900CDA3D0 /* activateCodeNetwork.swift in Sources */,
 				998BB63326DE50B100CDA3D0 /* UIScrollView.swift in Sources */,
 				998BB60526DE50B100CDA3D0 /* AppStrings.swift in Sources */,
 				998BB61B26DE50B100CDA3D0 /* ImageGalleryViewCell.swift in Sources */,
+				99D28D5326E760DE0071ADA5 /* AboutUsVC.swift in Sources */,
 				998BB5F726DE50B100CDA3D0 /* CodableInit.swift in Sources */,
 				998BB57426DD13DD00CDA3D0 /* changePasswordVC.swift in Sources */,
 				998BB63626DE50B100CDA3D0 /* exUIImage.swift in Sources */,
@@ -1042,6 +1145,7 @@
 				998BB63B26DE50B100CDA3D0 /* ToolBarPicker.swift in Sources */,
 				998BB64326DE50B100CDA3D0 /* StoryBoard.swift in Sources */,
 				998BB5FA26DE50B100CDA3D0 /* DefaultResponse.swift in Sources */,
+				99D28D6B26E7B1AF0071ADA5 /* MyAccountViewController.swift in Sources */,
 				99F0135426E630EF00BFC9E4 /* Home+Network.swift in Sources */,
 				998BB63E26DE50B100CDA3D0 /* exDate.swift in Sources */,
 				998BB63926DE50B100CDA3D0 /* exUIView.swift in Sources */,
@@ -1076,11 +1180,15 @@
 				998BB63C26DE50B100CDA3D0 /* imagePickerHelper.swift in Sources */,
 				9984474C26DF78B800BC285C /* registerNetwork.swift in Sources */,
 				998BB65D26DE6FF300CDA3D0 /* changePasswordNetwork.swift in Sources */,
+				99D28D6D26E7B4630071ADA5 /* NotificationModel.swift in Sources */,
 				998BB64926DE50B100CDA3D0 /* ActivityView.swift in Sources */,
+				99D28D6726E79C630071ADA5 /* Notifications+Network.swift in Sources */,
 				998BB61F26DE50B100CDA3D0 /* Configuration.swift in Sources */,
 				9984474E26DF809200BC285C /* RegisterPicker.swift in Sources */,
+				99D28D6226E792B80071ADA5 /* ContactUs+Network.swift in Sources */,
 				998BB57126DC7B8D00CDA3D0 /* ActivationCodeVC.swift in Sources */,
 				998BB5F626DE50B100CDA3D0 /* APIRequestHandler.swift in Sources */,
+				99D28D6926E7AB2F0071ADA5 /* notificationTableViewCell.swift in Sources */,
 				99F0134026E1002D00BFC9E4 /* SettingModel.swift in Sources */,
 				99F0134D26E4C82900BFC9E4 /* postsVC.swift in Sources */,
 				998BB5F826DE50B100CDA3D0 /* ResponseHandler.swift in Sources */,

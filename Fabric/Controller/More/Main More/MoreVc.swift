@@ -11,9 +11,11 @@ class MoreVc: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    var titleArr = ["first","Language","Rules and Metrices","About us","Contact Us","Log out"]
+    var titleArr = ["My Account","Language","Rules and Metrices","About us","Contact Us","Log out"]
     
     var imageArr = ["Group 193","Group 194","Group 195","Group 196","Group 197","Group 198"]
+
+    var rowArray = [RowData]()
     
     
     override func viewDidLoad() {
@@ -25,6 +27,13 @@ class MoreVc: UIViewController {
         tableView.dataSource = self
         
     }
+    
+    @IBAction func getNotifications(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "notifications") as! NotificationsViewController
+        self.show(vc, sender: nil)
+        
+        }
+    
 }
 
 extension MoreVc: UITableViewDelegate, UITableViewDataSource {
@@ -38,10 +47,23 @@ extension MoreVc: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-   /* func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }*/
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch  indexPath.row {
+        case 0 :
+            let vc = storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+
+        case  3 :
+        let vc = storyboard?.instantiateViewController(identifier: "aboutus") as! AboutUsVC
+            self.show(vc, sender: nil)
+        case  4 :
+        let vc = storyboard?.instantiateViewController(identifier: "contactus") as! contactUsViewController
+        vc.modalPresentationStyle = .fullScreen
+            self.show(vc, sender: nil)
+        default:
+            return
+        }
         if indexPath.row == 5{
             UserDataActions.removeUserModel()
             let vc = storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign

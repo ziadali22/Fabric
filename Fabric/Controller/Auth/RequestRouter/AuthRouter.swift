@@ -21,6 +21,9 @@ enum AuthRequestRouter: URLRequestBuilder {
     case intro
     case myPosts
     case home
+    case contactUs(name: String, phone: String, email: String, message: String)
+    
+    case notification
     
     // MARK: - Path
     internal var path: String {
@@ -45,6 +48,10 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.myPosts.value
         case .home:
             return ServerPaths.home.value
+        case .contactUs:
+            return ServerPaths.contactUs.value
+        case .notification:
+            return ServerPaths.notifications.value
         }
     }
     // MARK: - Parameters
@@ -77,7 +84,12 @@ enum AuthRequestRouter: URLRequestBuilder {
             //}
         case .follow_unfollow(let id ):
             params["category_id"] = id
-        
+        case .contactUs(let name,let phone, let email, let message):
+            params["name"] = name
+            params["phone"] = phone
+            params["email"] = email
+            params["message"] = message
+            
         
         default:
             break
@@ -88,7 +100,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro , .home, .myPosts:
+        case .getCategories , .intro , .home, .myPosts, .notification:
             return .get
         default:
             return .post
