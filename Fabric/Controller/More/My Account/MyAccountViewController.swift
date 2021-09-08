@@ -10,6 +10,7 @@ import SkyFloatingLabelTextField
 class MyAccountViewController: UIViewController {
 
 
+    @IBOutlet weak var dotView: UIView!
     @IBOutlet weak var nameField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneNumber: SkyFloatingLabelTextField!
 
@@ -20,7 +21,7 @@ class MyAccountViewController: UIViewController {
         self.phoneNumber.text = UserDataActions.getUserModel()?.phone
         self.emailField.text = UserDataActions.getUserModel()?.email
         
-        
+        dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     
     @IBAction func popUpChangePassword(_ sender: Any) {

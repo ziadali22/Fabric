@@ -46,7 +46,11 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionview.frame.width / 2 - 10, height: 200)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
+        vc.modalPresentationStyle = .fullScreen
+        show(vc, sender: nil)
+    }
     
     
 }

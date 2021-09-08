@@ -50,6 +50,7 @@ extension MoreVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch  indexPath.row {
         case 0 :
+            
             let vc = storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
             vc.modalPresentationStyle = .fullScreen
                 self.show(vc, sender: nil)
@@ -61,15 +62,15 @@ extension MoreVc: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(identifier: "contactus") as! contactUsViewController
         vc.modalPresentationStyle = .fullScreen
             self.show(vc, sender: nil)
-        default:
-            return
-        }
-        if indexPath.row == 5{
+        case 5:
             UserDataActions.removeUserModel()
             let vc = storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
+        default:
+            return
         }
+
     }
 
 }

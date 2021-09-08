@@ -9,15 +9,17 @@ import UIKit
 import SkyFloatingLabelTextField
 class PopUPChangePasswordVC: UIViewController {
 
-    @IBAction func password(_ sender: Any) {
-    }
+    @IBOutlet weak var dotView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     
-
+    @IBAction func dismissBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 
 }
