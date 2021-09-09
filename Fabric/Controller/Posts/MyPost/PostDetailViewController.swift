@@ -9,47 +9,73 @@ import UIKit
 
 class PostDetailViewController: UIViewController {
     
-    var titleArr = ["My Account","Language","Rules and Metrices"]
-    var commentcont = [12,12,24]
-    var imageArr = ["annie-spratt-ORDz1m1-q0I-unsplash","annie-spratt-ORDz1m1-q0I-unsplash","annie-spratt-ORDz1m1-q0I-unsplash"]
-    var date = ["22 maarch 2022","22 maarch 2022","22 maarch 2022"]
-    var user = [ "ahmed","ahmed","ahmed"]
-    var myComments = [ "the first comment","the second ","thie third"]
-    var item = [CellData]()
+
+    // MARK: - outlet
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var departmentText: UILabel!
+    @IBOutlet weak var dateText: UILabel!
+    @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    
+    // MARK: - variables
+    var post : Item?
+    var postId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        DispatchQueue.main.async {
+            self.postDetailRequest()
+        }
+  
     }
     
-
+    // MARK: - add comment pop up
 
     @IBAction func addCommentPopUP(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "addCommentPopUp") as! AddCommentPopUpViewController
         
         present(vc, animated: true, completion: nil)
     }
-    
+    // MARK: - report
     @IBAction func reportBtn(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "reportPopUp") as! ReportPopUpViewController
         present(vc, animated: true, completion: nil)
     }
+    // MARK: - user Profile
+    
+    @IBAction func userProfile(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "userProfile") as! UserProfileViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.postId = post?.id
+        present(vc, animated: true, completion: nil)
+    }
+    // MARK: - remove post
+    @IBAction func removePost(_ sender: Any) {
+    }
+    
+    // MARK: - Table View
+    
 }
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArr.count
+        return post?.comments?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
-        cell.cellConfigure(String(commentcont[indexPath.row]), user[indexPath.row], date[indexPath.row], myComments[indexPath.row], imageArr[indexPath.row])
+        guard let item = post else { return cell }
+        
+        cell.cellConfigure(item: item)
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150
+//    }
     
     
 }

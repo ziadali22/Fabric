@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
+    var myposts: [Item]?
     override func viewDidLoad() {
         super.viewDidLoad()
         // add logo
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController {
         hieghtsRatesCollectionView.collectionViewLayout = layout
         
         // Networking:
-        Request()
+        homePostsCategoriesRequest()
         
     }
     
@@ -82,7 +83,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc  = storyboard?.instantiateViewController(identifier: "homeDetail") as! HomeDetail
+        vc.modalPresentationStyle = .fullScreen
+        vc.homePostId = myposts?[indexPath.row].id
+        show(vc, sender: nil)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.newstPostsCollectionView {

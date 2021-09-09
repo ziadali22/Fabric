@@ -8,7 +8,7 @@
 import Foundation
 extension HomeViewController{
     
-    func Request(){
+    func homePostsCategoriesRequest(){
         AuthRequestRouter.home.send(BaseModel<Home>.self, then: handleResponse)
     }
 

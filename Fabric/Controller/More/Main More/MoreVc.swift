@@ -20,12 +20,44 @@ class MoreVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // add logo
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
+        setArrData()
+  
+    }
+    func setArrData(){
+        rowArray.append(RowData(title: "My Account", image: "Group 193", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
+        rowArray.append(RowData(title: "Language", image: "Group 194", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "Language") as! MyAccountViewController
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
+        rowArray.append(RowData(title: "My Account", image: "Group 193", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
+        rowArray.append(RowData(title: "About Us", image: "Group 196", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "aboutus") as! AboutUsVC
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
+        rowArray.append(RowData(title: "Contact Us", image: "Group 197", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "contactus") as! contactUsViewController
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
+        rowArray.append(RowData(title: "Log Out", image: "Group 198", action: {
+            UserDataActions.removeUserModel()
+            let vc = self.storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
+            vc.modalPresentationStyle = .fullScreen
+                self.show(vc, sender: nil)
+        }))
     }
     
     @IBAction func getNotifications(_ sender: Any) {
@@ -38,38 +70,18 @@ class MoreVc: UIViewController {
 
 extension MoreVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArr.count
+        return rowArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "more", for: indexPath) as! moreTVC
-        cell.configure(imageArr[indexPath.row], titleArr[indexPath.row])
+        cell.configure(rowArray[indexPath.row].image ?? "", rowArray[indexPath.row].title ?? "")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch  indexPath.row {
-        case 0 :
-            
-            let vc = storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
-            vc.modalPresentationStyle = .fullScreen
-                self.show(vc, sender: nil)
 
-        case  3 :
-        let vc = storyboard?.instantiateViewController(identifier: "aboutus") as! AboutUsVC
-            self.show(vc, sender: nil)
-        case  4 :
-        let vc = storyboard?.instantiateViewController(identifier: "contactus") as! contactUsViewController
-        vc.modalPresentationStyle = .fullScreen
-            self.show(vc, sender: nil)
-        case 5:
-            UserDataActions.removeUserModel()
-            let vc = storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
-        default:
-            return
-        }
+        rowArray[indexPath.row].action!()
 
     }
 

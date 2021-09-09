@@ -9,11 +9,12 @@ import UIKit
 
 class AddCommentPopUpViewController: UIViewController {
 
-    @IBOutlet weak var commentTextView: UITextView!
+    
+    @IBOutlet weak var comntText: UITextView!
     @IBOutlet weak var dotView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        commentTextView.addDashBorder(color: .green, cornerRadius: 4)
+        //comntText.addDashBorder(color: .green, cornerRadius: 4)
         dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     

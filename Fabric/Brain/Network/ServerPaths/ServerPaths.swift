@@ -8,6 +8,7 @@
 
 
 import Foundation
+
 enum ServerPaths : String {
     
     case login = "auth/login"
@@ -22,6 +23,7 @@ enum ServerPaths : String {
     case home = "home"
     case contactUs = "post-contact"
     case notifications = "notification"
+    case postDetail = "posts/"
     var value : String {
         return self.rawValue
     }

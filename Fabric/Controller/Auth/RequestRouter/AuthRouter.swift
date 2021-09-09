@@ -22,6 +22,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     case myPosts
     case home
     case contactUs(name: String, phone: String, email: String, message: String)
+    case postDetail(id:Int)
     
     case notification
     
@@ -52,6 +53,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.contactUs.value
         case .notification:
             return ServerPaths.notifications.value
+        case .postDetail(let id):
+            return ServerPaths.postDetail.value +  String(id)
         }
     }
     // MARK: - Parameters
@@ -90,7 +93,7 @@ enum AuthRequestRouter: URLRequestBuilder {
             params["email"] = email
             params["message"] = message
             
-        
+       
         default:
             break
         }
@@ -100,7 +103,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro , .home, .myPosts, .notification:
+        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail:
             return .get
         default:
             return .post
