@@ -87,9 +87,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let vc  = storyboard?.instantiateViewController(identifier: "homeDetail") as! HomeDetail
         vc.modalPresentationStyle = .fullScreen
         vc.homePostId = myposts?[indexPath.row].id
-        show(vc, sender: nil)
+        if vc.homePostId != UserDataActions.getUserModel()?.id
+        {
+            show(vc, sender: nil)
+        }
+        else{
+            let vc  = storyboard?.instantiateViewController(identifier: "comments") as! PostDetailViewController
+            show(vc, sender: nil)
+            
+        }
+        
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.newstPostsCollectionView {
             return CGSize(width: newstPostsCollectionView.frame.width / 1.70 - 8 ,height:  225)

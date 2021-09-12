@@ -3025,6 +3025,7 @@
                                                                             <state key="normal" image="report"/>
                                                                             <connections>
                                                                                 <action selector="reportPopUp:" destination="Ljj-Ng-tCH" eventType="touchUpInside" id="VUo-3J-Mff"/>
+                                                                                <action selector="reportPopUp:" destination="H5h-qc-ve8" eventType="touchUpInside" id="YIC-mV-lcX"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -3142,10 +3143,10 @@
                     <navigationItem key="navigationItem" id="M7Q-sC-Pxt"/>
                     <connections>
                         <outlet property="departmentTitle" destination="EgV-qw-xf2" id="cqv-MP-Jei"/>
+                        <outlet property="homeTableView" destination="xdO-Yu-2Gu" id="x99-91-xLK"/>
                         <outlet property="postDate" destination="hjL-gO-eTe" id="Jsz-IO-I8F"/>
                         <outlet property="postImage" destination="ZkS-sg-j9M" id="tbH-2C-lZc"/>
                         <outlet property="tableHeight" destination="4ql-tV-Hyt" id="c1Z-w7-B3l"/>
-                        <outlet property="tableView" destination="xdO-Yu-2Gu" id="x99-91-xLK"/>
                         <outlet property="userName" destination="eMK-HL-yya" id="pR1-cd-McV"/>
                     </connections>
                 </viewController>
@@ -3153,10 +3154,10 @@
             </objects>
             <point key="canvasLocation" x="1834" y="3180"/>
         </scene>
-        <!--Report Pop Up View Controller-->
+        <!--Report View Controller-->
         <scene sceneID="S4P-jF-U0O">
             <objects>
-                <viewController storyboardIdentifier="reportPopUp" id="tnq-By-emR" customClass="ReportPopUpViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeReport" id="tnq-By-emR" customClass="ReportViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gzl-XN-Ndx">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3210,10 +3211,10 @@
             </objects>
             <point key="canvasLocation" x="2525" y="3179"/>
         </scene>
-        <!--Add Comment Pop Up View Controller-->
+        <!--Add Comment View Controller-->
         <scene sceneID="Fx8-X4-SbN">
             <objects>
-                <viewController storyboardIdentifier="addCommentPopUp" id="3mK-YL-W75" customClass="AddCommentPopUpViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeAddComment" id="3mK-YL-W75" customClass="AddCommentViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z5Q-Gm-hMy">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3239,6 +3240,10 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="commentType:" destination="VWf-bl-4cl" eventType="touchUpInside" id="k70-bg-6jj"/>
+                                            <action selector="commentType:" destination="3mK-YL-W75" eventType="touchUpInside" id="qR4-nT-Kkj"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" text="type comment Her" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lj1-AP-vC2">
                                         <rect key="frame" x="16" y="212" width="364" height="100"/>
@@ -3261,6 +3266,9 @@
                                                         <state key="normal" title="Add">
                                                             <color key="titleColor" red="0.97420508969999997" green="1" blue="0.98756074329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addComment:" destination="3mK-YL-W75" eventType="touchUpInside" id="nC9-mm-rlz"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3321,10 +3329,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dotView" destination="Fz0-0q-STa" id="4zR-Eu-v6H"/>
+                        <outlet property="commentTV" destination="lj1-AP-vC2" id="HmU-5u-5Tx"/>
+                        <outlet property="dotView" destination="Fz0-0q-STa" id="HkB-Ya-b0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGh-Qi-BUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VWf-bl-4cl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2525" y="3837"/>
         </scene>

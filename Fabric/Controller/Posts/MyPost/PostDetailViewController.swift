@@ -69,13 +69,10 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
         guard let item = post else { return cell }
-        
         cell.cellConfigure(item: item)
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150
-//    }
+
     
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension HomeDetail{
-    func Request(){
+    func HomeDetailRequest(){
         AuthRequestRouter.postDetail(id: homePostId ?? 0).send(BaseModel<Item>.self, then: handleResponse)
     }
     
@@ -24,7 +24,7 @@ extension HomeDetail{
                     guard let item = model.data else {return}
                     self.homePost = item
                     self.dataBack(item: item)
-                    self.tableView.reloadData()
+                    self.homeTableView.reloadData()
                     
                 }else{
                     guard let errorMsg = model.msg else{return}

@@ -10,7 +10,7 @@ import UIKit
 class HomeDetail: UIViewController {
 
     // MARK: - outlet
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var userName: UIButton!
@@ -23,20 +23,28 @@ class HomeDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+        homeTableView.separatorStyle = .none
+        HomeDetailRequest()
         
     }
+    
+    // MARK: - add comment popUp
     @IBAction func addCommentBtn(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "addCommentPopUp") as! AddCommentPopUpViewController
+        let vc = storyboard?.instantiateViewController(identifier: "homeAddComment") as! AddCommentViewController
         
+        present(vc, animated: true, completion: nil)
+    }
+    // MARK: - report popUp
+    @IBAction func reportPopUp(_ sender: Any) {
+        let vc  = storyboard?.instantiateViewController(identifier: "homeReport") as! ReportViewController
         present(vc, animated: true, completion: nil)
     }
     
 
 }
+// MARK: -  home tableview
 extension HomeDetail: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homePost?.comments?.count ?? 0

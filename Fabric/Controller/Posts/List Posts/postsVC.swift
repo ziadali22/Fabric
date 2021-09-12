@@ -49,6 +49,7 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
         vc.postId = myposts?[indexPath.row].id
+        
         show(vc, sender: nil)
     }
     

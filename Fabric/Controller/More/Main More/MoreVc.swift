@@ -27,7 +27,7 @@ class MoreVc: UIViewController {
   
     }
     func setArrData(){
-        rowArray.append(RowData(title: "My Account", image: "Group 193", action: {
+        rowArray.append(RowData(title: "Profile", image: "Group 193", action: {
             let vc = self.storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
             vc.modalPresentationStyle = .fullScreen
                 self.show(vc, sender: nil)
@@ -37,8 +37,8 @@ class MoreVc: UIViewController {
             vc.modalPresentationStyle = .fullScreen
                 self.show(vc, sender: nil)
         }))
-        rowArray.append(RowData(title: "My Account", image: "Group 193", action: {
-            let vc = self.storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
+        rowArray.append(RowData(title: "Terms and conditions", image: "Group 193", action: {
+            let vc = self.storyboard?.instantiateViewController(identifier: "terms") as! TermsViewController
             vc.modalPresentationStyle = .fullScreen
                 self.show(vc, sender: nil)
         }))
