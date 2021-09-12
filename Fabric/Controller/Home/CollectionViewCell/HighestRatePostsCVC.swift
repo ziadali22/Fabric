@@ -18,7 +18,7 @@ class HighestRatePostsCVC: UICollectionViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var rateTextView: UITextView!
     func rateConfigure(item: MostComment){
-        rateDepartmentTitle.text = item.title
+        rateDepartmentTitle.text = item.category?.name
         rateCellImage.kf.setImage(with: URL(string: item.content ?? "") )
         rateCommentCount.text = String(item.comments?.count ?? 0)
         userName.text = item.user?.name

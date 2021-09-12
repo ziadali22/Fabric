@@ -293,7 +293,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-QJ-yBP">
-                                <rect key="frame" x="16" y="361" width="382" height="150"/>
+                                <rect key="frame" x="16" y="347" width="382" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH9-Df-yJ1" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -430,7 +430,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcw-k6-lZ1">
-                                <rect key="frame" x="16" y="541" width="141" height="33"/>
+                                <rect key="frame" x="16" y="527" width="141" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="Change Password">
                                     <color key="titleColor" name="green"/>
@@ -440,7 +440,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWf-9M-E7p">
-                                <rect key="frame" x="97" y="614" width="220" height="48"/>
+                                <rect key="frame" x="97" y="600" width="220" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huw-fa-Iuj">
                                         <rect key="frame" x="4" y="4" width="212" height="40"/>
@@ -478,17 +478,37 @@
                                     <constraint firstAttribute="height" constant="48" id="zyL-dV-BND"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-dv-bvE">
+                                <rect key="frame" x="16" y="289" width="382" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-g3-Zqx">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-na-2gO">
+                                        <rect key="frame" x="246" y="0.0" width="136" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="0.0" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title=" change image" image="square.and.arrow.up" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.56470588239999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TVO-rh-GkJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q4a-kp-mv1" firstAttribute="bottom" secondItem="TVO-rh-GkJ" secondAttribute="bottom" id="22M-dx-047"/>
+                            <constraint firstItem="dzr-dv-bvE" firstAttribute="leading" secondItem="TVO-rh-GkJ" secondAttribute="leading" constant="16" id="5R2-Fd-Uun"/>
                             <constraint firstItem="TVO-rh-GkJ" firstAttribute="trailing" secondItem="Xef-mo-h1N" secondAttribute="trailing" constant="16" id="9pU-Dp-rBi"/>
                             <constraint firstItem="fcw-k6-lZ1" firstAttribute="top" secondItem="MkG-QJ-yBP" secondAttribute="bottom" constant="30" id="Bil-Ot-eT4"/>
                             <constraint firstItem="YwN-LN-5MH" firstAttribute="top" secondItem="Xef-mo-h1N" secondAttribute="bottom" constant="40" id="CZK-DZ-rZh"/>
+                            <constraint firstItem="MkG-QJ-yBP" firstAttribute="top" secondItem="dzr-dv-bvE" secondAttribute="bottom" constant="8" id="RrR-41-I4D"/>
                             <constraint firstItem="TVO-rh-GkJ" firstAttribute="trailing" secondItem="MkG-QJ-yBP" secondAttribute="trailing" constant="16" id="UZx-wb-FyI"/>
-                            <constraint firstItem="MkG-QJ-yBP" firstAttribute="top" secondItem="YwN-LN-5MH" secondAttribute="bottom" constant="80" id="ZKR-Ma-UiG"/>
+                            <constraint firstItem="dzr-dv-bvE" firstAttribute="top" secondItem="YwN-LN-5MH" secondAttribute="bottom" constant="8" id="X78-2j-w8G"/>
                             <constraint firstItem="Xef-mo-h1N" firstAttribute="top" secondItem="TVO-rh-GkJ" secondAttribute="top" constant="24" id="dOj-Pg-Wqg"/>
+                            <constraint firstItem="TVO-rh-GkJ" firstAttribute="trailing" secondItem="dzr-dv-bvE" secondAttribute="trailing" constant="16" id="eeW-TS-47e"/>
                             <constraint firstItem="Q4a-kp-mv1" firstAttribute="leading" secondItem="TVO-rh-GkJ" secondAttribute="leading" id="hZX-1G-Z4U"/>
                             <constraint firstItem="MkG-QJ-yBP" firstAttribute="leading" secondItem="TVO-rh-GkJ" secondAttribute="leading" constant="16" id="hah-iv-BOK"/>
                             <constraint firstItem="VWf-9M-E7p" firstAttribute="top" secondItem="fcw-k6-lZ1" secondAttribute="bottom" constant="40" id="iGo-Xa-afB"/>
@@ -509,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKe-Tm-JO7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6792.0560747663549" y="3254.6436285097193"/>
+            <point key="canvasLocation" x="6791.3043478260879" y="3254.4642857142858"/>
         </scene>
         <!--Contact Us View Controller-->
         <scene sceneID="ZLJ-oA-v5g">
@@ -796,7 +816,7 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAU-03-7D4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                             <rect key="frame" x="0.0" y="54" width="334" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                     <color key="value" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -842,7 +862,7 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-7F-TrG" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                             <rect key="frame" x="0.0" y="108" width="334" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                     <color key="value" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -895,6 +915,9 @@
                                                                     <state key="normal" title="Save">
                                                                         <color key="titleColor" red="0.97420508969999997" green="1" blue="0.98756074329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="savePasswordChange:" destination="fBN-fv-CsH" eventType="touchUpInside" id="xl7-yw-Xhy"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -974,7 +997,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPassword" destination="a1h-7F-TrG" id="eub-mh-fMl"/>
                         <outlet property="dotView" destination="SUF-io-ESE" id="ulH-w0-2Au"/>
+                        <outlet property="password" destination="UAU-03-7D4" id="qlt-cF-zSX"/>
+                        <outlet property="saveBtn" destination="9pD-Lw-laH" id="rpU-jP-Ob6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asb-KC-xD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1114,6 +1140,7 @@
         <image name="jeswin-thomas-guLAk5gqj-Y-unsplash" width="5744" height="3907"/>
         <image name="menu" width="24.577999114990234" height="6.1449999809265137"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="undraw_authentication_fsn5" width="165.06300354003906" height="113.94699859619141"/>
         <image name="undraw_delivery_address_03n0" width="248.28500366210938" height="185"/>
         <namedColor name="AccentColor">

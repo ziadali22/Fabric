@@ -20,7 +20,10 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // adding the dot border for button
-        DotView.addDashBorder(color: .white, cornerRadius: 3)
+        DispatchQueue.main.async {
+            self.DotView.addDashBorder(color: .white, cornerRadius: 3)
+        }
+        
         
         
 
@@ -57,5 +60,10 @@ class SignInVC: UIViewController {
        
     }
     
-
+    @IBAction func havntAccount(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "signup") as! SignUpVC
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
 }

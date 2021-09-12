@@ -23,7 +23,10 @@ class postsVC: UIViewController {
         collectionview.dataSource = self
         collectionview.collectionViewLayout = UICollectionViewFlowLayout()
         // networking
-        myPostsRequest()
+        DispatchQueue.main.async {
+            self.myPostsRequest()
+        }
+        
         
         
     }

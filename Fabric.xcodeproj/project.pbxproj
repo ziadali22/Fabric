@@ -36,6 +36,11 @@
 		995ADE6626EA629600B6DDF9 /* HomeDetail+NET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE6526EA629600B6DDF9 /* HomeDetail+NET.swift */; };
 		995ADE6926EDF0BD00B6DDF9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE6826EDF0BD00B6DDF9 /* ReportViewController.swift */; };
 		995ADE6B26EDF0D200B6DDF9 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE6A26EDF0D200B6DDF9 /* AddCommentViewController.swift */; };
+		995ADE7026EE055600B6DDF9 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE6F26EE055600B6DDF9 /* NotificationTableViewCell.swift */; };
+		995ADE7226EE0E2600B6DDF9 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7126EE0E2600B6DDF9 /* NotificationViewController.swift */; };
+		995ADE7526EE216700B6DDF9 /* Notification+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7426EE216700B6DDF9 /* Notification+Network.swift */; };
+		995ADE7726EE2D2400B6DDF9 /* ChangePassword+NET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7626EE2D2400B6DDF9 /* ChangePassword+NET.swift */; };
+		995ADE7926EE378400B6DDF9 /* postDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7826EE378400B6DDF9 /* postDelete.swift */; };
 		9984474C26DF78B800BC285C /* registerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474B26DF78B800BC285C /* registerNetwork.swift */; };
 		9984474E26DF809200BC285C /* RegisterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474D26DF809200BC285C /* RegisterPicker.swift */; };
 		9984475026DF8A2E00BC285C /* categoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474F26DF8A2E00BC285C /* categoryModel.swift */; };
@@ -206,6 +211,11 @@
 		995ADE6526EA629600B6DDF9 /* HomeDetail+NET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDetail+NET.swift"; sourceTree = "<group>"; };
 		995ADE6826EDF0BD00B6DDF9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		995ADE6A26EDF0D200B6DDF9 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		995ADE6F26EE055600B6DDF9 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		995ADE7126EE0E2600B6DDF9 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		995ADE7426EE216700B6DDF9 /* Notification+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Network.swift"; sourceTree = "<group>"; };
+		995ADE7626EE2D2400B6DDF9 /* ChangePassword+NET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangePassword+NET.swift"; sourceTree = "<group>"; };
+		995ADE7826EE378400B6DDF9 /* postDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDelete.swift; sourceTree = "<group>"; };
 		9984474B26DF78B800BC285C /* registerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerNetwork.swift; sourceTree = "<group>"; };
 		9984474D26DF809200BC285C /* RegisterPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPicker.swift; sourceTree = "<group>"; };
 		9984474F26DF8A2E00BC285C /* categoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryModel.swift; sourceTree = "<group>"; };
@@ -512,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				995ADE5726E9FB3300B6DDF9 /* PostDetail+NET.swift */,
+				995ADE7826EE378400B6DDF9 /* postDelete.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -560,6 +571,24 @@
 				995ADE6A26EDF0D200B6DDF9 /* AddCommentViewController.swift */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		995ADE6C26EE04E700B6DDF9 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				995ADE7326EE215400B6DDF9 /* Network */,
+				995ADE6F26EE055600B6DDF9 /* NotificationTableViewCell.swift */,
+				995ADE7126EE0E2600B6DDF9 /* NotificationViewController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		995ADE7326EE215400B6DDF9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				995ADE7426EE216700B6DDF9 /* Notification+Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9984475326E062AE00BC285C /* Departments */ = {
@@ -613,6 +642,7 @@
 		998BB57626DD8D2400CDA3D0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				995ADE6C26EE04E700B6DDF9 /* Notification */,
 				995ADE5D26EA53A400B6DDF9 /* Home Detail */,
 				998BB57B26DD8E9C00CDA3D0 /* CollectionViewCell */,
 				998BB57E26DD8FE800CDA3D0 /* HomeViewController.swift */,
@@ -953,6 +983,7 @@
 			children = (
 				99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */,
 				99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */,
+				995ADE7626EE2D2400B6DDF9 /* ChangePassword+NET.swift */,
 			);
 			path = "My Account";
 			sourceTree = "<group>";
@@ -1216,6 +1247,7 @@
 				992DA23626DB91DE0063ACB7 /* CustomizeTextField.swift in Sources */,
 				998BB65726DE556B00CDA3D0 /* SignInNetwork.swift in Sources */,
 				998BB56B26DBC1B100CDA3D0 /* SignUpCVC.swift in Sources */,
+				995ADE7526EE216700B6DDF9 /* Notification+Network.swift in Sources */,
 				9984475526E0630D00BC285C /* DepartmentsCVCell.swift in Sources */,
 				998BB5FB26DE50B100CDA3D0 /* URLRequestBuilder.swift in Sources */,
 				998BB64F26DE520100CDA3D0 /* UserModel.swift in Sources */,
@@ -1226,6 +1258,7 @@
 				998BB61026DE50B100CDA3D0 /* ImagePickerController.swift in Sources */,
 				9984475026DF8A2E00BC285C /* categoryModel.swift in Sources */,
 				998BB63826DE50B100CDA3D0 /* exUItxtField.swift in Sources */,
+				995ADE7226EE0E2600B6DDF9 /* NotificationViewController.swift in Sources */,
 				99F0135A26E64A4800BFC9E4 /* posts+Network.swift in Sources */,
 				998BB63F26DE50B100CDA3D0 /* exMapKit.swift in Sources */,
 				99D28D5B26E782770071ADA5 /* contactUsViewController.swift in Sources */,
@@ -1258,6 +1291,7 @@
 				99D28D5326E760DE0071ADA5 /* AboutUsVC.swift in Sources */,
 				995ADE4526E9521800B6DDF9 /* ReportPopUpViewController.swift in Sources */,
 				998BB5F726DE50B100CDA3D0 /* CodableInit.swift in Sources */,
+				995ADE7026EE055600B6DDF9 /* NotificationTableViewCell.swift in Sources */,
 				998BB57426DD13DD00CDA3D0 /* changePasswordVC.swift in Sources */,
 				998BB63626DE50B100CDA3D0 /* exUIImage.swift in Sources */,
 				998BB61326DE50B100CDA3D0 /* StackView.swift in Sources */,
@@ -1268,6 +1302,7 @@
 				998BB61626DE50B100CDA3D0 /* BottomContainerView.swift in Sources */,
 				998BB64126DE50B100CDA3D0 /* exUIButton.swift in Sources */,
 				998BB64D26DE50B100CDA3D0 /* exTableView.swift in Sources */,
+				995ADE7926EE378400B6DDF9 /* postDelete.swift in Sources */,
 				998BB63B26DE50B100CDA3D0 /* ToolBarPicker.swift in Sources */,
 				998BB64326DE50B100CDA3D0 /* StoryBoard.swift in Sources */,
 				998BB5FA26DE50B100CDA3D0 /* DefaultResponse.swift in Sources */,
@@ -1286,6 +1321,7 @@
 				995ADE5326E971F900B6DDF9 /* PostsCollectionViewCell.swift in Sources */,
 				992DA22F26DB8AF20063ACB7 /* SignUpVC.swift in Sources */,
 				99F0134A26E4B56B00BFC9E4 /* moreTVC.swift in Sources */,
+				995ADE7726EE2D2400B6DDF9 /* ChangePassword+NET.swift in Sources */,
 				998BB64526DE50B100CDA3D0 /* userDataActions.swift in Sources */,
 				998BB63526DE50B100CDA3D0 /* exCollection.swift in Sources */,
 				998BB61E26DE50B100CDA3D0 /* LocationManager.swift in Sources */,

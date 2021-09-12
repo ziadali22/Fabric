@@ -37,7 +37,7 @@
         <!--PostsVC-->
         <scene sceneID="5IS-m4-YgM">
             <objects>
-                <viewController id="G90-Km-UuT" customClass="postsVC" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listOfPosts" id="G90-Km-UuT" customClass="postsVC" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9e9-Yp-Meq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

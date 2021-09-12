@@ -1,0 +1,49 @@
+//
+//  NotificationViewController.swift
+//  Fabric
+//
+//  Created by ziad on 12/09/2021.
+//
+
+import UIKit
+
+class NotificationViewController: UIViewController {
+    
+    var notificationData: [NotificationModel]?
+    var titleArr = ["My Account","Language","Rules and Metrices","About us","Contact Us","Log out"]
+    @IBOutlet weak var notificationTableView: UITableView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        notificationTableView.delegate = self
+        notificationTableView.dataSource = self
+        notificationTableView.separatorStyle = .none
+        
+        NotificationRequest()
+    }
+    
+
+}
+extension NotificationViewController : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notificationData?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notification", for: indexPath) as! NotificationTableViewCell
+        guard let item = notificationData?[indexPath.row
+        ] else { return cell }
+        cell.configureCell(item: item)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+
+    
+}
+

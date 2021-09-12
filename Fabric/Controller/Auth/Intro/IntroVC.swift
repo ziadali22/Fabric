@@ -13,7 +13,7 @@ class IntroVC: UIViewController {
     @IBOutlet weak var DotView: UIView!
     @IBOutlet weak var detailsTxt: UITextView!
     
-    
+    fileprivate let isOnBoarding = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +30,12 @@ class IntroVC: UIViewController {
     
     @IBAction func next(_ sender: Any) {
         // send me to the second screen
+        if isOnBoarding{
+            // show the main app
+        }
+        else{
+            // show the onBoarding
+        }
         let vc = storyboard?.instantiateViewController(identifier: "Cell") as! introSecondVC
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)

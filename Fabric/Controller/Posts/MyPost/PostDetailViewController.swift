@@ -55,6 +55,7 @@ class PostDetailViewController: UIViewController {
     }
     // MARK: - remove post
     @IBAction func removePost(_ sender: Any) {
+        deleteRequest()
     }
     
     // MARK: - Table View

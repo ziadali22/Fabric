@@ -28,7 +28,7 @@ struct NotificationModel: Codable, CodableInit {
 }
 
 // MARK: - DataClass
-struct NotificationDataClass: Codable {
+struct NotificationDataClass: Codable,CodableInit {
     let title, enTitle, body: String?
 
     enum CodingKeys: String, CodingKey {

@@ -15,7 +15,6 @@ extension HomeDetail{
     var handleResponse: HandleResponse<BaseModel<Item>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
@@ -23,7 +22,7 @@ extension HomeDetail{
                 if model.status{
                     guard let item = model.data else {return}
                     self.homePost = item
-                    self.dataBack(item: item)
+                    self.userPostData(item: item)
                     self.homeTableView.reloadData()
                     
                 }else{
@@ -34,7 +33,7 @@ extension HomeDetail{
             }
         }
     }
-    func dataBack(item: Item){
+    func userPostData(item: Item){
         postImage.kf.setImage(with: URL(string: item.content ?? ""))
         departmentTitle.text = item.title
         userName.setTitle(item.user?.name, for: .normal)

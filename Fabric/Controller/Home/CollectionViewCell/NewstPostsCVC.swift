@@ -19,7 +19,7 @@ class NewstPostsCVC: UICollectionViewCell {
     @IBOutlet weak var textView: UITextView!
     
     func NewstPostConfigure(item: MostComment) {
-        departmentTitle.text = item.title
+        departmentTitle.text = item.category?.name
         cellImage.kf.setImage(with: URL(string: item.content ?? "") )
         commentCount.text = String(item.comments?.count ?? 0)
         UserName.text = item.user?.name

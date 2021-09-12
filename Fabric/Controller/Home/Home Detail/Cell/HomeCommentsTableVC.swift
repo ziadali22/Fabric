@@ -27,8 +27,6 @@ class HomeCommentsTableVC: UITableViewCell {
         
     }
 
-    @IBAction func reportPopUp(_ sender: Any) {
-    }
     
     func homeCellConfigure(item: Item){
         commentsNumber.text = String(item.comments?.count ?? 0)

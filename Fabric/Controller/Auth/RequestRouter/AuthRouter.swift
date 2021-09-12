@@ -23,8 +23,10 @@ enum AuthRequestRouter: URLRequestBuilder {
     case home
     case contactUs(name: String, phone: String, email: String, message: String)
     case postDetail(id:Int)
-    
+    case deletePost(id:Int)
     case notification
+    
+    case changePassword(password: String, confirm: String)
     
     // MARK: - Path
     internal var path: String {
@@ -55,6 +57,10 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.notifications.value
         case .postDetail(let id):
             return ServerPaths.postDetail.value +  String(id)
+        case .deletePost(let id):
+            return ServerPaths.postDetail.value + String(id)
+        case .changePassword:
+            return ServerPaths.changePassword.value
         }
     }
     // MARK: - Parameters
@@ -92,7 +98,9 @@ enum AuthRequestRouter: URLRequestBuilder {
             params["phone"] = phone
             params["email"] = email
             params["message"] = message
-            
+        case .changePassword(let password, let confirm):
+            params["password"] = password
+            params["password_confirmation"] = confirm
        
         default:
             break
@@ -105,6 +113,10 @@ enum AuthRequestRouter: URLRequestBuilder {
         switch self {
         case .getCategories , .intro , .home, .myPosts, .notification, .postDetail:
             return .get
+        case .changePassword:
+            return .put
+        case .deletePost:
+            return .delete
         default:
             return .post
         }

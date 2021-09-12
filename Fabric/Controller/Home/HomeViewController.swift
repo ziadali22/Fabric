@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
     var myposts: [Item]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // add logo
@@ -45,6 +46,10 @@ class HomeViewController: UIViewController {
         // Networking:
         homePostsCategoriesRequest()
         
+    }
+    @IBAction func notificationScreen(_ sender: Any) {
+        let vc  = storyboard?.instantiateViewController(identifier: "notificationHome") as! NotificationViewController
+        show(vc, sender: nil)
     }
     
 
