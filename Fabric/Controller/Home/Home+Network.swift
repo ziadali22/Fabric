@@ -9,13 +9,14 @@ import Foundation
 extension HomeViewController{
     
     func homePostsCategoriesRequest(){
+        self.view.showLoader()
         AuthRequestRouter.home.send(BaseModel<Home>.self, then: handleResponse)
     }
 
     var handleResponse: HandleResponse<BaseModel<Home>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
+            self.view.dismissLoader()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)

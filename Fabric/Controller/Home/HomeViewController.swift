@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
-    var myposts: [Item]?
+    var myposts : [Item]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,8 @@ class HomeViewController: UIViewController {
         
         // Networking:
         homePostsCategoriesRequest()
+        
+        
         
     }
     @IBAction func notificationScreen(_ sender: Any) {
@@ -89,18 +91,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc  = storyboard?.instantiateViewController(identifier: "homeDetail") as! HomeDetail
-        vc.modalPresentationStyle = .fullScreen
-        vc.homePostId = myposts?[indexPath.row].id
-        if vc.homePostId != UserDataActions.getUserModel()?.id
-        {
-            show(vc, sender: nil)
+ 
+        let storyBoard = UIStoryboard.init(name: "Posts", bundle: Bundle.main)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
+        if collectionView == self.newstPostsCollectionView{
+            guard let postId = postsData?[indexPath.row].id else { return  }
+            vc.postId = postId
+        }else{
+            guard let postId = mostRateData?[indexPath.row].id else { return  }
+            vc.postId = postId
         }
-        else{
-            let vc  = storyboard?.instantiateViewController(identifier: "comments") as! PostDetailViewController
-            show(vc, sender: nil)
-            
-        }
+        show(vc, sender: nil)
         
     }
 

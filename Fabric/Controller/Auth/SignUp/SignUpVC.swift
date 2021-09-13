@@ -61,8 +61,7 @@ class SignUpVC: UIViewController {
 
         
     }
-    //   guard let phone = phoneTxt.text, !phone.isEmpty  else {return
-  //  self.showMessage(sub: "check valid phone".localized)}
+
     func validatation(){
         guard let name = nameTextField.text , !name.isEmpty else { return self.showMessage(sub: "check valid name".localized) }
         guard let phone = phoneNumberTextField.text , !phone.isEmpty else { return self.showMessage(sub: "check valid phone".localized) }

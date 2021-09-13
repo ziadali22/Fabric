@@ -17,6 +17,7 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     // MARK: - variables
     var post : Item?
@@ -30,7 +31,7 @@ class PostDetailViewController: UIViewController {
         DispatchQueue.main.async {
             self.postDetailRequest()
         }
-  
+ 
     }
     
     // MARK: - add comment pop up
@@ -73,7 +74,9 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         cell.cellConfigure(item: item)
         return cell
     }
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
     
 }

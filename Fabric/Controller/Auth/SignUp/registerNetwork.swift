@@ -60,9 +60,6 @@ extension SignUpVC {
             }
         }
     }
-    func apiResponse(){
-        
-    }
     
 }
 

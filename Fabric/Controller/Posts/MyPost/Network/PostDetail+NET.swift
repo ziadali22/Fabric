@@ -8,14 +8,16 @@
 import Foundation
 import  UIKit
 extension PostDetailViewController{
-    func postDetailRequest(){
+    
+    public func postDetailRequest(){
+        self.view.showLoader()
         AuthRequestRouter.postDetail(id: postId ?? 0).send(BaseModel<Item>.self, then: handleResponse)
     }
     
     var handleResponse: HandleResponse<BaseModel<Item>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
+            self.view.dismissLoader()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
@@ -39,8 +41,16 @@ extension PostDetailViewController{
         departmentText.text = item.title
         userName.setTitle(item.user?.name, for: .normal)
         dateText.text = item.createdAt
-        tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 150
-        
+        tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
+        //   //  //
+        if item.user?.id != UserDataActions.getUserModel()?.id
+        {
+            self.deleteBtn.isHidden = true
+        }
+        else{
+            
+        }
+        // check for the post id 
         
     }
     
