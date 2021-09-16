@@ -37,6 +37,7 @@
 		995ADE7526EE216700B6DDF9 /* Notification+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7426EE216700B6DDF9 /* Notification+Network.swift */; };
 		995ADE7726EE2D2400B6DDF9 /* ChangePassword+NET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7626EE2D2400B6DDF9 /* ChangePassword+NET.swift */; };
 		995ADE7926EE378400B6DDF9 /* postDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995ADE7826EE378400B6DDF9 /* postDelete.swift */; };
+		997DCE8D26F0A7FE004581C3 /* AddPosts+NET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DCE8C26F0A7FE004581C3 /* AddPosts+NET.swift */; };
 		9984474C26DF78B800BC285C /* registerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474B26DF78B800BC285C /* registerNetwork.swift */; };
 		9984474E26DF809200BC285C /* RegisterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474D26DF809200BC285C /* RegisterPicker.swift */; };
 		9984475026DF8A2E00BC285C /* categoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984474F26DF8A2E00BC285C /* categoryModel.swift */; };
@@ -208,6 +209,7 @@
 		995ADE7426EE216700B6DDF9 /* Notification+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Network.swift"; sourceTree = "<group>"; };
 		995ADE7626EE2D2400B6DDF9 /* ChangePassword+NET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangePassword+NET.swift"; sourceTree = "<group>"; };
 		995ADE7826EE378400B6DDF9 /* postDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDelete.swift; sourceTree = "<group>"; };
+		997DCE8C26F0A7FE004581C3 /* AddPosts+NET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPosts+NET.swift"; sourceTree = "<group>"; };
 		9984474B26DF78B800BC285C /* registerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerNetwork.swift; sourceTree = "<group>"; };
 		9984474D26DF809200BC285C /* RegisterPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPicker.swift; sourceTree = "<group>"; };
 		9984474F26DF8A2E00BC285C /* categoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryModel.swift; sourceTree = "<group>"; };
@@ -551,6 +553,14 @@
 			isa = PBXGroup;
 			children = (
 				995ADE7426EE216700B6DDF9 /* Notification+Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		997DCE8B26F0A7ED004581C3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				997DCE8C26F0A7FE004581C3 /* AddPosts+NET.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1025,6 +1035,7 @@
 			isa = PBXGroup;
 			children = (
 				99F0135126E60E4800BFC9E4 /* AddPosts.swift */,
+				997DCE8B26F0A7ED004581C3 /* Network */,
 			);
 			path = AddPosts;
 			sourceTree = "<group>";
@@ -1209,6 +1220,7 @@
 				998BB64A26DE50B100CDA3D0 /* LocationHelper.swift in Sources */,
 				992DA23626DB91DE0063ACB7 /* CustomizeTextField.swift in Sources */,
 				998BB65726DE556B00CDA3D0 /* SignInNetwork.swift in Sources */,
+				997DCE8D26F0A7FE004581C3 /* AddPosts+NET.swift in Sources */,
 				998BB56B26DBC1B100CDA3D0 /* SignUpCVC.swift in Sources */,
 				995ADE7526EE216700B6DDF9 /* Notification+Network.swift in Sources */,
 				9984475526E0630D00BC285C /* DepartmentsCVCell.swift in Sources */,

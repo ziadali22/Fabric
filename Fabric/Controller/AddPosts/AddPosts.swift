@@ -14,16 +14,18 @@ class AddPosts: UIViewController{
     
     @IBOutlet weak var commentText: UITextView!
     @IBOutlet weak var dotView: UIView!
+    @IBOutlet weak var addPostBtn: UIButton!
     
     @IBOutlet weak var categoryField: SkyFloatingLabelTextField!
     // MARK: - variables
-    
+    var imagePicker : UIImage?
+    var videoUrl: URL?
+    var pdfUrl: URL?
     let pickerView = UIPickerView()
     var categories = [CategoryModel]()
-    var videoURL: NSURL?
-    
-    
-
+    var categoryId: [Int]?
+    var imagePickerController = UIImagePickerController()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - add dashBorder
@@ -35,7 +37,35 @@ class AddPosts: UIViewController{
         
         getCategoriesApi()
         setUpPicker()
+        
+        
     }
+    private func openImgPicker() {
+        imagePickerController.sourceType = .savedPhotosAlbum
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.movie"]
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    // MARK: - validation for add posts
+    func validation(){
+        guard let commentTF = commentText.text , !commentTF.isEmpty else { return self.showMessage(sub: "check valid content ".localized)}
+        guard let categoryTF = categoryField.text, !categoryTF.isEmpty else { return self.showMessage(sub: "check valid category field".localized) }
+        
+        
+        for i in categories{
+            if let id = i.id{
+                categoryId?.append(id)
+            }
+        }
+        uploadAddPostRequest(video: videoUrl, pdf:pdfUrl , image: imagePicker)
+        
+    }
+    
+    @IBAction func addPost(_ sender: Any) {
+        validation()
+    }
+    
+
     // MARK: - pickerView
     func setUpPicker(){
         self.categoryField.inputView = self.pickerView
@@ -48,17 +78,9 @@ class AddPosts: UIViewController{
         //self.pickerView.toolbarDelegate = self
         
         self.pickerView.reloadAllComponents()
-
+        
     }
     
-    var imagePicker : UIImage?{
-        didSet{
-            //the image that will be uploaded
-            // MARK: - image url
-            guard let _ = imagePicker else { return }
-        }
-    }
-
 
     // MARK: - Netowrk
     func getCategoriesApi(){
@@ -92,21 +114,12 @@ class AddPosts: UIViewController{
         let alert = UIAlertController(title: "choose data type", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { action in
             // get video url
-            print("alert 1")
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .savedPhotosAlbum
-            picker.mediaTypes = ["public.movie"]
-            picker.allowsEditing = false
-            self.present(picker, animated: true, completion: nil)
-            
+            self.openImgPicker()
             
             
         }))
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
             // pick image
-            
-            print("alert 1")
             let picker = UIImagePickerController()
             picker.allowsEditing = true
             picker.sourceType = .photoLibrary
@@ -119,7 +132,7 @@ class AddPosts: UIViewController{
             // get PDF url
             let types = [kUTTypePDF, kUTTypeText, kUTTypeRTF, kUTTypeSpreadsheet]
             let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: .import)
-//            let importMenue = UIDocumentPickerViewController(forOpeningContentTypes: [kUTTypePDF], in: .import)
+//            let importMenu = UIDocumentPickerViewController(forOpeningContentTypes: [kUTTypePDF], in: .import)
 
             importMenu.delegate = self
             importMenu.modalPresentationStyle = .formSheet
@@ -130,7 +143,7 @@ class AddPosts: UIViewController{
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
 
 }
 
@@ -150,7 +163,11 @@ extension AddPosts:UIImagePickerControllerDelegate & UINavigationControllerDeleg
         }
         picker.dismiss(animated: true, completion: nil)
     }
-
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        videoUrl = info[UIImagePickerController.InfoKey.mediaURL.rawValue] as? URL
+        print("videoURL:\(String(describing: videoUrl))")
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 
@@ -158,17 +175,10 @@ extension AddPosts: UIDocumentPickerDelegate{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         //viewModel.attachDocuments(at: urls)
         // MARK: - PDF url
-        guard let _ = urls.first else {return}
-
+        pdfUrl = urls.first
      func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-          videoURL = info["UIImagePickerControllerReferenceURL"] as? NSURL
-            print(videoURL ?? "")
-//          imagePickerController.dismissViewControllerAnimated(true, completion: nil)
-        }
-
 }
     
 
@@ -192,4 +202,7 @@ extension AddPosts: UIPickerViewDataSource, UIPickerViewDelegate  {
         categoryField.text = categories[row].name
         categoryField.resignFirstResponder()
     }
+   
+
+
 }

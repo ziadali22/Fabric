@@ -72,6 +72,7 @@ class SignUpVC: UIViewController {
         if password != confirm {
             return self.showMessage(sub: "password and confirm password don't match")
         }else{
+            
             for  i in selectedCategory {
                 if let id = i.id{
                     categoryId.append(id)

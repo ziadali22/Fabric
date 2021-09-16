@@ -13,6 +13,7 @@ class postsVC: UIViewController {
     
     // networking variables  :
     var myposts: [Item]?
+    var myComments : [Comment]?
     // -----------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,8 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
         vc.postId = myposts?[indexPath.row].id
+        vc.comntId = myComments?[indexPath.row].id
+        
         
         show(vc, sender: nil)
     }

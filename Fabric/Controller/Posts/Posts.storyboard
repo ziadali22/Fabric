@@ -294,13 +294,13 @@
                                 <rect key="frame" x="16" y="293" width="382" height="310"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_delivery_address_03n0" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-Rc-1ks">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="170"/>
+                                        <rect key="frame" x="0.0" y="4" width="382" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="vud-An-39K"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the report sent to the manager and it will be review soon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
-                                        <rect key="frame" x="60" y="210" width="262" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the report sent to the manager and it will be review soon!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
+                                        <rect key="frame" x="60" y="214" width="262" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="262" id="kcM-DN-ZuD"/>
                                         </constraints>
@@ -313,7 +313,7 @@
                                 <constraints>
                                     <constraint firstItem="Fea-Rc-1ks" firstAttribute="leading" secondItem="Yxh-cm-HUA" secondAttribute="leading" id="22h-VK-rGL"/>
                                     <constraint firstAttribute="trailing" secondItem="Fea-Rc-1ks" secondAttribute="trailing" id="4lz-Fx-QX7"/>
-                                    <constraint firstItem="Fea-Rc-1ks" firstAttribute="top" secondItem="Yxh-cm-HUA" secondAttribute="top" id="GYZ-g1-f2P"/>
+                                    <constraint firstItem="Fea-Rc-1ks" firstAttribute="top" secondItem="Yxh-cm-HUA" secondAttribute="top" constant="4" id="GYZ-g1-f2P"/>
                                     <constraint firstItem="IAi-sv-XeF" firstAttribute="top" secondItem="Fea-Rc-1ks" secondAttribute="bottom" constant="40" id="Q0A-pK-Abw"/>
                                     <constraint firstAttribute="height" constant="310" id="lvE-VW-jGT"/>
                                     <constraint firstItem="IAi-sv-XeF" firstAttribute="centerX" secondItem="Yxh-cm-HUA" secondAttribute="centerX" id="vgJ-Ne-nMw"/>
@@ -342,7 +342,7 @@
         <!--Post Detail View Controller-->
         <scene sceneID="uMO-7l-nD6">
             <objects>
-                <viewController storyboardIdentifier="comments" id="FSN-u5-MBV" customClass="PostDetailViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="comments" automaticallyAdjustsScrollViewInsets="NO" id="FSN-u5-MBV" customClass="PostDetailViewController" customModule="Fabric" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vdF-Wb-NuP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,11 +415,11 @@
                                                     <constraint firstAttribute="height" constant="312.5" id="lnn-QH-BQM"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="commentsCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentsCell" rowHeight="204" id="UjB-aj-l9o" customClass="CommentsTableViewCell" customModule="Fabric" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="204"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="commentsCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentsCell" rowHeight="161" id="UjB-aj-l9o" customClass="CommentsTableViewCell" customModule="Fabric" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="161"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UjB-aj-l9o" id="WKz-wj-cON">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="204"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="161"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NWp-YD-nXo">
@@ -482,6 +482,7 @@
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="200" id="Ea0-0l-RXW"/>
+                                                                                <constraint firstAttribute="height" constant="59" id="u5I-yv-KaA"/>
                                                                             </constraints>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -491,12 +492,11 @@
                                                                             <rect key="frame" x="212" y="0.0" width="19.5" height="59"/>
                                                                             <color key="tintColor" systemColor="systemGreenColor"/>
                                                                             <state key="normal" image="trash.fill" catalog="system"/>
+                                                                            <connections>
+                                                                                <action selector="deleteComment:" destination="FSN-u5-MBV" eventType="touchUpInside" id="Tae-Cn-kMC"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstItem="DND-NE-4xr" firstAttribute="leading" secondItem="C5M-TT-euo" secondAttribute="leading" id="3oH-pM-CAd"/>
-                                                                        <constraint firstItem="DND-NE-4xr" firstAttribute="top" secondItem="C5M-TT-euo" secondAttribute="top" id="PlE-xc-IR0"/>
-                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
@@ -510,8 +510,8 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="commentView" destination="DND-NE-4xr" id="joi-kr-Ip3"/>
-                                                            <outlet property="commentsCount" destination="LmN-5m-Lqh" id="s3d-nx-Csi"/>
                                                             <outlet property="date" destination="DqA-z7-aIo" id="SeK-SA-2ll"/>
+                                                            <outlet property="deleteComment" destination="T6S-N7-rPN" id="KKg-cT-xKm"/>
                                                             <outlet property="userImage" destination="haj-9c-hxv" id="kdD-QK-7wH"/>
                                                             <outlet property="userNameComment" destination="bmz-c5-Igq" id="wCw-4g-P5x"/>
                                                         </connections>
@@ -612,6 +612,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="PUq-iY-ait"/>
                     <connections>
+                        <outlet property="commentCount" destination="LmN-5m-Lqh" id="Oo5-RG-2EH"/>
                         <outlet property="dateText" destination="bxu-EU-ibT" id="Dhs-bK-ijY"/>
                         <outlet property="deleteBtn" destination="OLY-d9-Vdo" id="31l-Jw-BBl"/>
                         <outlet property="departmentText" destination="ojW-YS-Sf8" id="EnY-Mq-f2n"/>
@@ -797,17 +798,17 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-5k-9Xb">
                                                                             <rect key="frame" x="0.0" y="0.0" width="209.5" height="20"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-N2-B95">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-N2-B95">
                                                                                     <rect key="frame" x="0.0" y="1.5" width="18" height="17"/>
                                                                                     <color key="tintColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nour ashraf yassin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvT-bS-oMB">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nour ashraf yassin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvT-bS-oMB">
                                                                                     <rect key="frame" x="25" y="0.0" width="90.5" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                                                     <color key="textColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 February 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPs-2z-i04">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="22 February 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPs-2z-i04">
                                                                                     <rect key="frame" x="122.5" y="0.0" width="87" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                                                     <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1099,7 +1100,7 @@
                                             <action selector="commentType:" destination="D7G-sh-Mqr" eventType="touchUpInside" id="cea-vp-ZuC"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" text="type comment Her" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LL0-nS-EAb">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" text="type comment Her" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LL0-nS-EAb">
                                         <rect key="frame" x="16" y="212" width="350" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>

@@ -14,7 +14,7 @@ class AddCommentPopUpViewController: UIViewController {
     @IBOutlet weak var dotView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //comntText.addDashBorder(color: .green, cornerRadius: 4)
+        comntText.addDashBorder(color: .green, cornerRadius: 4)
         dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     

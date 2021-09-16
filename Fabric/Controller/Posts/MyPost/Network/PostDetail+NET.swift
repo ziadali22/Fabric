@@ -37,7 +37,9 @@ extension PostDetailViewController{
         }
     }
     func dataBack(item: Item){
+        postImage.kf.indicatorType = .activity
         postImage.kf.setImage(with: URL(string: item.content ?? ""))
+        commentCount.text = String(item.comments?.count ?? 0)
         departmentText.text = item.title
         userName.setTitle(item.user?.name, for: .normal)
         dateText.text = item.createdAt
@@ -46,6 +48,7 @@ extension PostDetailViewController{
         if item.user?.id != UserDataActions.getUserModel()?.id
         {
             self.deleteBtn.isHidden = true
+            
         }
         else{
             

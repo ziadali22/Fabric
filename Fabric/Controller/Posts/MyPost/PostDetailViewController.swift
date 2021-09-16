@@ -11,6 +11,7 @@ class PostDetailViewController: UIViewController {
     
 
     // MARK: - outlet
+    @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var departmentText: UILabel!
     @IBOutlet weak var dateText: UILabel!
@@ -19,21 +20,28 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var deleteBtn: UIButton!
     
+    
+
     // MARK: - variables
     var post : Item?
     var postId: Int?
-    
+    var comntId: Int?
+    var commentData : Comment?
+    var postsData : MostComment?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.separatorInset = .zero
+        tableView.sectionHeaderHeight = 0.0;
         DispatchQueue.main.async {
             self.postDetailRequest()
         }
+
  
     }
-    
+
     // MARK: - add comment pop up
 
     @IBAction func addCommentPopUP(_ sender: Any) {
@@ -52,6 +60,8 @@ class PostDetailViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "userProfile") as! UserProfileViewController
         vc.modalPresentationStyle = .fullScreen
         vc.postId = post?.id
+        
+
         present(vc, animated: true, completion: nil)
     }
     // MARK: - remove post
@@ -59,6 +69,11 @@ class PostDetailViewController: UIViewController {
         deleteRequest()
     }
     
+    @IBAction func deleteComment(_ sender: Any) {
+        deleteCommentRequest()
+        
+        
+    }
     // MARK: - Table View
     
 }
@@ -74,9 +89,12 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         cell.cellConfigure(item: item)
         return cell
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return CGFloat(tableView.frame.height / 2.1 )
+        
+        
     }
-    
+
     
 }
