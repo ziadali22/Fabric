@@ -9,6 +9,7 @@ import UIKit
 
 class AddCommentPopUpViewController: UIViewController {
 
+    // MARK: - variables
     
     @IBOutlet weak var comntText: UITextView!
     @IBOutlet weak var dotView: UIView!
@@ -17,12 +18,18 @@ class AddCommentPopUpViewController: UIViewController {
         comntText.addDashBorder(color: .green, cornerRadius: 4)
         dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
+    @IBAction func cloasePopUp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func commentType(_ sender: Any) {
+        
     }
     
 
     @IBAction func addComment(_ sender: Any) {
     }
     
+    
+
 }

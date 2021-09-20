@@ -8,7 +8,6 @@
 import Foundation
 extension PostDetailViewController {
     func deleteRequest(){
-        
         AuthRequestRouter.deletePost(id: postId ?? 0).send(StringModel.self, then: deleteHandleResponse)
     }
     

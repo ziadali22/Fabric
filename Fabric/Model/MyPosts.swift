@@ -15,7 +15,7 @@ struct MyPosts: Codable, CodableInit {
 struct Item: Codable, CodableInit {
     let id: Int?
     let itemDescription, title: String?
-    let isReported: Bool?
+    var isReported: Bool?
     let user: User?
     let category: Category?
     let createdAt: String?

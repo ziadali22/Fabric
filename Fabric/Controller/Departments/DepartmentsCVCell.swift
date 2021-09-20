@@ -27,17 +27,12 @@ class DepartmentsCVCell: UICollectionViewCell {
     }
     @IBAction func followclick(_ sender: Any) {
         followHandeler?()
-    }
-    
-    
-    func configureCell(item: CategoryModel){
-        DepartmentTxt.text = item.name
         
-        if item.isFollowed == true{
-            followBtn.setTitle("un follow", for: .normal)
-        }else{
-            followBtn.setTitle("follow", for: .normal)
-        }
-       
     }
+    func configureCellForDepartment(item:CategoryModel){
+        DepartmentTxt.text = item.name
+    }
+    
+    
+
 }

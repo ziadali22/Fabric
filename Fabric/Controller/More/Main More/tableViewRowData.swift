@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 struct RowData {
     let title: String?
     let image: String?

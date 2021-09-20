@@ -13,13 +13,13 @@ class DepartmentsVC: UIViewController {
 
     @IBOutlet weak var underLineBtn: UIView!
     // all department
-    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var allDepartmentBtn: UIButton!
     // my department
-    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var myDepartmentBtn: UIButton!
     // make variabel to store date back from api to use it in collection view
     var categoryData: [CategoryModel]?
     var selectedCategory = [CategoryModel]()
-
+    let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         // add logo
@@ -31,7 +31,7 @@ class DepartmentsVC: UIViewController {
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
         // network get categories from api
-        getCategoriesApi()
+        //getCategoriesApi()
         
         // MARK: swipe gesture
         collectionView.isUserInteractionEnabled = true
@@ -43,21 +43,29 @@ class DepartmentsVC: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         collectionView.addGestureRecognizer(swipeLeft)
         
+        
+        //refresh controller
+        refreshControl.addTarget(self, action: #selector(self.network), for: UIControl.Event.valueChanged)
+        collectionView.refreshControl = refreshControl
     }
 
-    
+    @objc func network(){
+        
+        getCategoriesApi()
+        collectionView.refreshControl?.endRefreshing()
+    }
 
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?){
         if let swipeGesture = sender {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizer.Direction.left:
                 UIView.animate(withDuration: 0.7) {
-                    self.underLineBtn.center.x = self.btn2.center.x
+                    self.underLineBtn.center.x = self.myDepartmentBtn.center.x
                     self.view.layoutIfNeeded()
                 }
             case UISwipeGestureRecognizer.Direction.right:
                 UIView.animate(withDuration: 0.7) {
-                    self.underLineBtn.center.x = self.btn1.center.x
+                    self.underLineBtn.center.x = self.allDepartmentBtn.center.x
                     self.view.layoutIfNeeded()
                     
                 }
@@ -98,18 +106,23 @@ class DepartmentsVC: UIViewController {
 
     @IBAction func allClick(_ sender: Any) {
         UIView.animate(withDuration: 0.7) {
-            self.underLineBtn.center.x = self.btn1.center.x
+            self.underLineBtn.center.x = self.allDepartmentBtn.center.x
             self.view.layoutIfNeeded()
         }
     }
     
     @IBAction func myClick(_ sender: Any) {
         UIView.animate(withDuration: 0.7) {
-            self.underLineBtn.center.x = self.btn2.center.x
+            self.underLineBtn.center.x = self.myDepartmentBtn.center.x
             self.view.layoutIfNeeded()
         }
     }
 
+    @IBAction func getNotifications(_ sender: Any) {
+        let vc  = storyboard?.instantiateViewController(identifier: "notificationHome") as! NotificationViewController
+        show(vc, sender: nil)
+    
+    }
     
 }
 extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout{
@@ -121,14 +134,16 @@ extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! DepartmentsCVCell
         cell.contentView.layer.cornerRadius = 10
         guard var item = categoryData?[indexPath.row] else { return cell }
-        cell.configureCell(item: item)
+        cell.configureCellForDepartment(item: item)
         cell.followHandeler = {
             if item.isFollowed == true{
                 cell.followBtn.setTitle("unFollow", for: .normal)
                 item.isFollowed = false
+                self.collectionView.reloadData()
             }else{
                 cell.followBtn.setTitle("Follow", for: .normal)
                 item.isFollowed = true
+                self.collectionView.reloadData()
             }
             self.Request(id: item.id)
             self.collectionView.reloadData()

@@ -26,6 +26,8 @@ enum ServerPaths : String {
     case postDetail = "posts/"
     case changePassword = "auth/change-password"
     case deleteComment = "comments/"
+    case updateProfile = "auth/profile"
+    case reportComment = "report-comment/"
     var value : String {
         return self.rawValue
     }

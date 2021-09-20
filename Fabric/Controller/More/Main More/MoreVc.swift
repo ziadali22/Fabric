@@ -11,9 +11,8 @@ class MoreVc: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    var titleArr = ["My Account","Language","Rules and Metrices","About us","Contact Us","Log out"]
     
-    var imageArr = ["Group 193","Group 194","Group 195","Group 196","Group 197","Group 198"]
+
 
     var rowArray = [RowData]()
     
@@ -23,10 +22,11 @@ class MoreVc: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         tableView.delegate = self
         tableView.dataSource = self
+        
         setArrData()
   
     }
-    func setArrData(){
+     func setArrData(){
         rowArray.append(RowData(title: "Profile", image: "Group 193", action: {
             let vc = self.storyboard?.instantiateViewController(identifier: "myaccount") as! MyAccountViewController
             vc.modalPresentationStyle = .fullScreen
@@ -58,6 +58,7 @@ class MoreVc: UIViewController {
             vc.modalPresentationStyle = .fullScreen
                 self.show(vc, sender: nil)
         }))
+        
     }
     
     @IBAction func getNotifications(_ sender: Any) {

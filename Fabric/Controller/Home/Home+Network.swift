@@ -8,7 +8,7 @@
 import Foundation
 extension HomeViewController{
     
-    func homePostsCategoriesRequest(){
+    @objc func homePostsCategoriesRequest(){
         self.view.showLoader()
         AuthRequestRouter.home.send(BaseModel<Home>.self, then: handleResponse)
     }
@@ -17,6 +17,7 @@ extension HomeViewController{
         return { [weak self] (response) in
             guard let self = self else {return}
             self.view.dismissLoader()
+            self.refreshControl.endRefreshing()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)

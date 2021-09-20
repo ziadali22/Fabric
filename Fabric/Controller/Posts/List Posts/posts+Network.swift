@@ -7,21 +7,23 @@
 
 import Foundation
 extension postsVC{
-    func myPostsRequest(){
+    @objc func myPostsRequest(){
+        self.view.showLoader()
         AuthRequestRouter.myPosts.send(BaseModel<MyPosts>.self, then: handleResponse)
     }
     
     var handleResponse: HandleResponse<BaseModel<MyPosts>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
+            self.view.dismissLoader()
+            self.refreshControl.endRefreshing()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
             case .success(let model):
                 if model.status{
                     guard let item = model.data else {return}
-                    self.myposts = item.items
+                    self.myposts = item.items!
                     self.collectionview.reloadData()
                 }else{
                     guard let errorMsg = model.msg else{return}

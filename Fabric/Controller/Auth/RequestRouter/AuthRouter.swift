@@ -26,9 +26,11 @@ enum AuthRequestRouter: URLRequestBuilder {
     case deletePost(id:Int)
     case deleteComment(id:Int)
     case notification
-    case createPost(contentType : Any,content: Any, description: String, categoryId: Int)
-    
+    case createPost(contentType : Any, description: String, categoryId: Int)
     case changePassword(password: String, confirm: String)
+    case UpdateProfile(name: String, phone: String, email: String)
+    
+    case reportComment(id:Int)
     
     // MARK: - Path
     internal var path: String {
@@ -67,7 +69,10 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.myPosts.value
         case .deleteComment(let id):
             return ServerPaths.deleteComment.value + String(id)
-        
+        case .UpdateProfile:
+            return ServerPaths.updateProfile.value
+        case .reportComment(let id):
+            return ServerPaths.reportComment.value + String(id)
         }
     }
     // MARK: - Parameters
@@ -109,12 +114,14 @@ enum AuthRequestRouter: URLRequestBuilder {
             params["password"] = password
             params["password_confirmation"] = confirm
         
-        case .createPost(let contentType, let content, let description, let categoryId):
+        case .createPost(let contentType, let description, let categoryId):
             params["content_type"] = contentType
-            params["content"] = content
             params["description"] = description
             params["category_id"] = categoryId
-       
+        case .UpdateProfile(let name, let phone, let email):
+            params["name"] = name
+            params["phone"] = phone
+            params["email"] = email
         default:
             break
         }

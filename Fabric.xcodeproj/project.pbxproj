@@ -148,6 +148,9 @@
 		998BB65926DE5F2900CDA3D0 /* forgetPasswordNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65826DE5F2900CDA3D0 /* forgetPasswordNetwork.swift */; };
 		998BB65B26DE670900CDA3D0 /* activateCodeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65A26DE670900CDA3D0 /* activateCodeNetwork.swift */; };
 		998BB65D26DE6FF300CDA3D0 /* changePasswordNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB65C26DE6FF300CDA3D0 /* changePasswordNetwork.swift */; };
+		99B045FC26F748A500034882 /* AlamofireMultiPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B045FB26F748A500034882 /* AlamofireMultiPart.swift */; };
+		99B045FE26F757BA00034882 /* AlamofreUploadUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B045FD26F757BA00034882 /* AlamofreUploadUrl.swift */; };
+		99B0460026F7CE5400034882 /* UploadMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B045FF26F7CE5400034882 /* UploadMethods.swift */; };
 		99D28D5326E760DE0071ADA5 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */; };
 		99D28D5B26E782770071ADA5 /* contactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5A26E782770071ADA5 /* contactUsViewController.swift */; };
 		99D28D5D26E7853F0071ADA5 /* tableViewRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */; };
@@ -321,6 +324,9 @@
 		998BB65826DE5F2900CDA3D0 /* forgetPasswordNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordNetwork.swift; sourceTree = "<group>"; };
 		998BB65A26DE670900CDA3D0 /* activateCodeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activateCodeNetwork.swift; sourceTree = "<group>"; };
 		998BB65C26DE6FF300CDA3D0 /* changePasswordNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordNetwork.swift; sourceTree = "<group>"; };
+		99B045FB26F748A500034882 /* AlamofireMultiPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireMultiPart.swift; sourceTree = "<group>"; };
+		99B045FD26F757BA00034882 /* AlamofreUploadUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofreUploadUrl.swift; sourceTree = "<group>"; };
+		99B045FF26F7CE5400034882 /* UploadMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMethods.swift; sourceTree = "<group>"; };
 		99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		99D28D5A26E782770071ADA5 /* contactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsViewController.swift; sourceTree = "<group>"; };
 		99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewRowData.swift; sourceTree = "<group>"; };
@@ -910,6 +916,8 @@
 				998BB5F326DE50B000CDA3D0 /* CustomPresentingUpTransition.swift */,
 				998BB5F426DE50B000CDA3D0 /* popupExtention.swift */,
 				998BB5F526DE50B000CDA3D0 /* exTableView.swift */,
+				99B045FB26F748A500034882 /* AlamofireMultiPart.swift */,
+				99B045FD26F757BA00034882 /* AlamofreUploadUrl.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1035,6 +1043,7 @@
 			isa = PBXGroup;
 			children = (
 				99F0135126E60E4800BFC9E4 /* AddPosts.swift */,
+				99B045FF26F7CE5400034882 /* UploadMethods.swift */,
 				997DCE8B26F0A7ED004581C3 /* Network */,
 			);
 			path = AddPosts;
@@ -1208,6 +1217,7 @@
 				998BB63A26DE50B100CDA3D0 /* exColor.swift in Sources */,
 				998BB61A26DE50B100CDA3D0 /* ImageGalleryLayout.swift in Sources */,
 				998BB64426DE50B100CDA3D0 /* exString.swift in Sources */,
+				99B045FE26F757BA00034882 /* AlamofreUploadUrl.swift in Sources */,
 				998BB65326DE52AE00CDA3D0 /* AuthRouter.swift in Sources */,
 				998BB63426DE50B100CDA3D0 /* StringsForEx.swift in Sources */,
 				998BB5F926DE50B100CDA3D0 /* AlamofireResponse.swift in Sources */,
@@ -1308,6 +1318,7 @@
 				992DA21126DB78E80063ACB7 /* SceneDelegate.swift in Sources */,
 				99F0134726E4B53700BFC9E4 /* MoreVc.swift in Sources */,
 				998BB57A26DD8E9000CDA3D0 /* HighestRatePostsCVC.swift in Sources */,
+				99B045FC26F748A500034882 /* AlamofireMultiPart.swift in Sources */,
 				998BB60226DE50B100CDA3D0 /* StyleUIView.swift in Sources */,
 				992DA23426DB8BA60063ACB7 /* LoginOrSign.swift in Sources */,
 				995ADE3D26E9175300B6DDF9 /* CommentsTableViewCell.swift in Sources */,
@@ -1318,6 +1329,7 @@
 				998BB61926DE50B100CDA3D0 /* ImageGalleryViewDataSource.swift in Sources */,
 				998BB63C26DE50B100CDA3D0 /* imagePickerHelper.swift in Sources */,
 				9984474C26DF78B800BC285C /* registerNetwork.swift in Sources */,
+				99B0460026F7CE5400034882 /* UploadMethods.swift in Sources */,
 				998BB65D26DE6FF300CDA3D0 /* changePasswordNetwork.swift in Sources */,
 				99D28D6D26E7B4630071ADA5 /* NotificationModel.swift in Sources */,
 				998BB64926DE50B100CDA3D0 /* ActivityView.swift in Sources */,

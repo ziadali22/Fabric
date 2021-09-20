@@ -24,7 +24,7 @@ class NotificationTableViewCell: UITableViewCell {
     }
     
     func configureCell(item: NotificationModel){
-        labelText.text = item.data?.enTitle
+        labelText.text = item.data?.title
     }
 
 }

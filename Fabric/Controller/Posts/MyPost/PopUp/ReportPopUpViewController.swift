@@ -9,6 +9,8 @@ import UIKit
 
 class ReportPopUpViewController: UIViewController {
 
+    // MARK: - variables
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

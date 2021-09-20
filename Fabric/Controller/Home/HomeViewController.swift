@@ -9,21 +9,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: dumb data will replace with api data
-    var departmentData = ["Math","Pyhsics","Science","History","Biology"]
-    var imageArr = ["annie-spratt-ORDz1m1-q0I-unsplash","jeswin-thomas-guLAk5gqj-Y-unsplash","kuanish-reymbaev-o_lLsdVTxak-unsplash","sebastian-bednarek-x2Z0uNj-Quo-unsplash","sebastian-bednarek-x2Z0uNj-Quo-unsplash"]
     
-    
-    
-    
-    // ---------------
+    @IBOutlet weak var scrollView: UIScrollView!
     // first collection view
     @IBOutlet weak var newstPostsCollectionView: UICollectionView!
     // second collection view
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
+    
+    // MARK: - Variables
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
+    var commentData : [Comment]?
     var myposts : [Item]?
+    
+    // refresh Controll
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         // first collection view
         newstPostsCollectionView.delegate = self
         newstPostsCollectionView.dataSource = self
+        
         // second collection view
         hieghtsRatesCollectionView.delegate = self
         hieghtsRatesCollectionView.dataSource = self
@@ -46,8 +47,21 @@ class HomeViewController: UIViewController {
         // Networking:
         homePostsCategoriesRequest()
         
+        //refresh controller
+        refreshControl.addTarget(self, action: #selector(self.networkHomePosts), for: UIControl.Event.valueChanged)
+        scrollView.refreshControl = refreshControl
+        
+ 
         
         
+    }
+    
+
+    @objc func networkHomePosts(){
+        homePostsCategoriesRequest()
+        newstPostsCollectionView.reloadData()
+        hieghtsRatesCollectionView.reloadData()
+        scrollView.refreshControl?.endRefreshing()
     }
     @IBAction func notificationScreen(_ sender: Any) {
         let vc  = storyboard?.instantiateViewController(identifier: "notificationHome") as! NotificationViewController
