@@ -7,9 +7,14 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController {
+class PostDetailViewController: UIViewController , RefreshViewProtcol {
     
-
+    
+    func reloadData() {
+        postDetailRequest()
+        tableView.reloadData()
+    }
+    
     // MARK: - outlet
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
@@ -27,9 +32,12 @@ class PostDetailViewController: UIViewController {
     var post : Item?
     var newPost = [Item]()
     var postId: Int?
-    var comntId: Int?
-    var commentData : Comment?
+    var commentData : [Comment]?
     var postsData : MostComment?
+    
+    var imageCommentContent : String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -50,58 +58,8 @@ class PostDetailViewController: UIViewController {
 
     @IBAction func addCommentPopUP(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "addCommentPopUp") as! AddCommentPopUpViewController
-        
+        vc.postId = post?.id
         present(vc, animated: true, completion: nil)
-    }
-    // MARK: - report
-    @IBAction func reportBtn(_ sender: Any) {
-        reportRequest()
-        let vc = storyboard?.instantiateViewController(identifier: "reportPopUp") as! ReportPopUpViewController
-        
-        if post?.isReported == true{
-            post?.isReported = false
-        }
-        else{
-            post?.isReported = true
-        }
-        
-        present(vc, animated: true, completion: nil)
-    }
-    
-    func reportRequest(){
-        AuthRequestRouter.reportComment(id: comntId ?? 0).send(StringModel.self, then: reportHandleResponse)
-    }
-    
-    var reportHandleResponse: HandleResponse<StringModel> {
-        return { [weak self] (response) in
-            guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
-            switch response {
-            case .failure(let error):
-                self.showMessage(sub: error.localizedDescription)
-            case .success(let model):
-                if model.status{
-                    guard let item = model.data else {return}
-                    self.sucessReporting(msg: item)
-                    if self.post?.isReported == true{
-                        
-                        self.post?.isReported = false
-                    }
-                    else{
-                        self.post?.isReported = true
-                    }
-                }else{
-                    guard let errorMsg = model.msg else{return}
-                    self.showMessage(sub: errorMsg)
-                }
-                
-            }
-        }
-    }
-
-    func sucessReporting(msg: String){
-        self.showMessage(sub: "comment reported successfully ")
-        
     }
     // MARK: - user Profile
     
@@ -119,12 +77,7 @@ class PostDetailViewController: UIViewController {
         
     }
     
-    @IBAction func deleteComment(_ sender: Any) {
-        deleteCommentRequest()
-        tableView.reloadData()
-        
-        
-    }
+
     // MARK: - Table View
     
 }
@@ -136,15 +89,24 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
-        guard let item = post else { return cell }
+        guard let item = post?.comments?[indexPath.row] else { return cell }
         cell.cellConfigure(item: item)
-        comntId = post?.comments?[indexPath.row].id
+        cell.deleteHandelr = {
+            let id = item.id
+            self.deleteCommentRequest(id: id)
+        }
+        cell.reportHandler = {
+            let id = item.id
+            self.reportRequest(id: id)
+            
+        }
+
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(tableView.frame.height / 2.1 )
+        return 200
         
         
     }

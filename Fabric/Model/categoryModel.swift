@@ -18,3 +18,13 @@ struct CategoryModel: Codable, CodableInit {
     }
 }
 
+struct myCategory: Codable, CodableInit {
+    let allCategories, userCategories: [CategoryModel]?
+
+    enum CodingKeys: String, CodingKey {
+        case allCategories = "all_categories"
+        case userCategories = "user_categories"
+    }
+}
+
+

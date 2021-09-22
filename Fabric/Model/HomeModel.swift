@@ -50,7 +50,7 @@ struct Comment: Codable {
     let id: Int?
     let type, comment: String?
     let pinned: Int?
-    let isReported: Bool?
+    var isReported: Bool?
     let createdAt: String?
     let user: User?
 

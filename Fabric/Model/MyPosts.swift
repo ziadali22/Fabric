@@ -22,7 +22,7 @@ struct Item: Codable, CodableInit {
     let content: String?
     let contentType: String?
     let commentsCount: Int?
-    let comments: [Comment]?
+    var comments: [Comment]?
 
     enum CodingKeys: String, CodingKey {
         case id

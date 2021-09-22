@@ -11,36 +11,15 @@ import MobileCoreServices
 extension AddPosts{
     func uploadAddPostRequest(text: String?){
         self.addPostBtn.showLoader()
-        // url
-        let url = URL(string: "http://fabric.panorama-q.com/api/posts" )
-        print(url!)
-        
         //Header - > token
         guard let apiToken = UserDataActions.getUserModel()?.token else{return }
-        //let commmentTV = self.commentText.text.data(using: .utf8)!
-        
-        
-        //paramter
-        //let contentType = [video ?? "",pdf ?? "",image ?? "", text ?? ""] as [Any]
-        //let parameters = ["content_type":contentType,"description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-        
-        
-        // image - video - pdf
         Alamofire.upload(multipartFormData: { (form: MultipartFormData) in
             
             if let UploadText = text{
                 form.append("text".data(using: String.Encoding.utf8)!, withName: "content_type")
                 form.append(UploadText.data(using: .utf8)!, withName: "description")
             }
-            
-//            if let uploadedImage = self.imagePicker{
-//                form.append("image/".data(using: String.Encoding.utf8)!, withName: "content_type")
-//                let imageData = uploadedImage.jpegData(compressionQuality: 0.5)
-//                form.append(imageData!, withName: "content")
-//
-//
-//            }
-            
+
             form.append("\(self.categoryId ?? 0)".data(using: .utf8)!, withName: "category_id")
             print("DATA: \(form)")
             

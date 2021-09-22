@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Yy-wA-U80">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Yy-wA-U80">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1164,7 +1165,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-et-b81">
-                                <rect key="frame" x="104" y="549" width="220" height="83"/>
+                                <rect key="frame" x="104" y="564.66666666666663" width="220" height="83"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgR-Ka-kzt">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
@@ -1221,7 +1222,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-5d-qlw">
-                                <rect key="frame" x="292" y="495" width="120" height="30"/>
+                                <rect key="frame" x="292" y="510.66666666666674" width="120" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezl-wP-SPy">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
@@ -1236,16 +1237,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="2FF-Io-hcA">
-                                <rect key="frame" x="16" y="321" width="404" height="166"/>
+                                <rect key="frame" x="16" y="321" width="404" height="181.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik7-tN-Epc">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="39.333333333333336"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8i-gO-ubu" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="66" width="404" height="34"/>
+                                        <rect key="frame" x="0.0" y="71.333333333333314" width="404" height="39"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
@@ -1292,7 +1293,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1N-kn-1Sf" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="132" width="404" height="34"/>
+                                        <rect key="frame" x="0.0" y="142.33333333333331" width="404" height="39.333333333333343"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1955,7 +1956,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VbN-Es-dVy">
-                                <rect key="frame" x="16" y="277" width="396" height="70.333333333333314"/>
+                                <rect key="frame" x="16" y="277" width="396" height="75.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H02-Xl-bEw">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="20.333333333333332"/>
@@ -1964,7 +1965,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqS-Nf-0gy" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="36.333333333333314" width="396" height="34"/>
+                                        <rect key="frame" x="0.0" y="36.333333333333314" width="396" height="39.333333333333343"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
@@ -2010,7 +2011,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qfa-gS-3Mz">
-                                <rect key="frame" x="100" y="525.33333333333337" width="228" height="48"/>
+                                <rect key="frame" x="100" y="530.66666666666663" width="228" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-VP-c85">
                                         <rect key="frame" x="4" y="4" width="220" height="40"/>
@@ -2924,7 +2925,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notification" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notification" rowHeight="71" id="bfI-aD-cgZ" customClass="NotificationTableViewCell" customModule="Fabric" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="396" height="71"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="396" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfI-aD-cgZ" id="I7h-ia-JwV">
                                             <rect key="frame" x="0.0" y="0.0" width="396" height="71"/>
@@ -3005,40 +3006,40 @@
     </scenes>
     <designables>
         <designable name="0as-rf-Elf">
-            <size key="intrinsicContentSize" width="90.333333333333329" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="3l2-qX-KOe">
-            <size key="intrinsicContentSize" width="105.33333333333333" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="3xu-Wg-JUZ">
-            <size key="intrinsicContentSize" width="146" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="D8i-gO-ubu">
-            <size key="intrinsicContentSize" width="122.33333333333333" height="34"/>
+            <size key="intrinsicContentSize" width="404" height="39.220703125"/>
         </designable>
         <designable name="D9w-wO-yHG">
-            <size key="intrinsicContentSize" width="66" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="GIa-4u-B1j">
-            <size key="intrinsicContentSize" width="124.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="Sr3-xq-2LK">
-            <size key="intrinsicContentSize" width="211" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="dqS-Nf-0gy">
-            <size key="intrinsicContentSize" width="124.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="hv1-w8-hxY">
-            <size key="intrinsicContentSize" width="62.666666666666664" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="toI-hc-coD">
-            <size key="intrinsicContentSize" width="90.333333333333329" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="veq-92-Ff6">
-            <size key="intrinsicContentSize" width="146" height="34"/>
+            <size key="intrinsicContentSize" width="396" height="39.220703125"/>
         </designable>
         <designable name="y1N-kn-1Sf">
-            <size key="intrinsicContentSize" width="90.333333333333329" height="34"/>
+            <size key="intrinsicContentSize" width="404" height="39.220703125"/>
         </designable>
     </designables>
     <resources>

@@ -36,8 +36,8 @@ extension PostDetailViewController {
         show(vc, sender: nil)
     }
     
-    func deleteCommentRequest(){
-    AuthRequestRouter.deleteComment(id: comntId ?? 0).send(StringModel.self, then: handleDeleteResponse)
+    func deleteCommentRequest(id: Int?){
+    AuthRequestRouter.deleteComment(id: id ?? 0).send(StringModel.self, then: handleDeleteResponse)
     }
     
     var handleDeleteResponse: HandleResponse<StringModel>  {

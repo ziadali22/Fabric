@@ -12,7 +12,7 @@ extension SwiftMessages.Config {
     var windowLevel: UIWindow.Level? {
         switch presentationContext {
         case .window(let level): return level
-        case .windowScene(_, let level): return level
+        //case .windowScene(_, let level): return level
         default: return nil
         }
     }

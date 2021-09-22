@@ -34,6 +34,7 @@ class AddPosts: UIViewController{
     var uploadText: UploadData?
     
     
+    
     var uVideo: UploadData?
     var uPdf: UploadData?
     var uText: UploadData?
@@ -73,98 +74,11 @@ class AddPosts: UIViewController{
         guard let commentTF = commentText.text , !commentTF.isEmpty else { return self.showMessage(sub: "check valid content ".localized)}
         guard let categoryTF = categoryField.text, !categoryTF.isEmpty else { return self.showMessage(sub: "check valid category field".localized) }
 
-        
-        
-    }
-    // MARK: - First Method for uploading
-    enum UploadCases {
-        
-        case image
-        case video
-        case pdf
-        case text
-    }
-    func uploadMethod(cases: UploadCases)  {
-        switch cases {
-        
-        case .image:
-            guard let image = uploadedImage else { return uploadMethod(cases: .text)}
-            guard let video = uVideo else { return uploadMethod(cases: .text) }
-            guard let pdf = uPdf else { return  uploadMethod(cases: .text)}
-            guard let text = uText else { return print("nothind chosed") }
-            
-            let imagesArr = [image,video, pdf, text]
-            let parameters = ["content_type": "image","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-            let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-            // IMAGE
-            self.addPostBtn.showLoader()
-            AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
-                                                  url: "http://fabric.panorama-q.com/api/posts",
-                                                  Images: imagesArr,
-                                                  header: header,
-                                                  parameters: parameters,
-                                                  completion: handleResponse)
-        case .video:
-            guard let image = uploadedImage else { return uploadMethod(cases: .text)}
-            guard let video = uVideo else { return uploadMethod(cases: .text) }
-            guard let pdf = uPdf else { return  uploadMethod(cases: .text)}
-            guard let text = uText else { return print("nothind chosed") }
-            let imagesArr = [image,video, pdf, text]
-            let parameters = ["content_type": "video","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-            let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-            // IMAGE
-            self.addPostBtn.showLoader()
-            AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
-                                                  url: "http://fabric.panorama-q.com/api/posts",
-                                                  Images: imagesArr,
-                                                  header: header,
-                                                  parameters: parameters,
-                                                  completion: handleResponse)
-        case .pdf:
-            let parameters = ["content_type": "pdf","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-            guard let image = uploadedImage else { return uploadMethod(cases: .text)}
-            guard let video = uVideo else { return uploadMethod(cases: .text) }
-            guard let pdf = uPdf else { return  uploadMethod(cases: .text)}
-            guard let text = uText else { return print("nothind chosed") }
-            let imagesArr = [image,video, pdf, text]
-            
-            let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-            // IMAGE
-            self.addPostBtn.showLoader()
-            AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
-                                                  url: "http://fabric.panorama-q.com/api/posts",
-                                                  Images: imagesArr,
-                                                  header: header,
-                                                  parameters: parameters,
-                                                  completion: handleResponse)
-        case .text:
-            
-            let parameters = ["content_type": "text","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-            guard let image = uploadedImage else { return uploadMethod(cases: .text)}
-            guard let video = uVideo else { return uploadMethod(cases: .text) }
-            guard let pdf = uPdf else { return  uploadMethod(cases: .text)}
-            guard let text = uText else { return print("nothind chosed") }
-            let imagesArr = [image,video, pdf, text]
-            let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-            // IMAGE
-            self.addPostBtn.showLoader()
-            AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
-                                                  url: "http://fabric.panorama-q.com/api/posts",
-                                                  Images: imagesArr,
-                                                  header: header,
-                                                  parameters: parameters,
-                                                  completion: handleResponse)
-
         }
-        
-    }
-    
-  
-    
 
-    
+  // MARK : - Add Post
     @IBAction func addPost(_ sender: Any) {
-        // MARK: - Second Method
+        
         let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
         if uploadedImage != nil{
             self.addPostBtn.showLoader()
@@ -172,7 +86,7 @@ class AddPosts: UIViewController{
             let parameters = ["content_type": "image","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
             //uploadM(SendParmaeters: parameters)
             if let image = uploadedImage {
-                let imageArr = [image ]
+                let imageArr = [image]
                 AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
                                                       url: "http://fabric.panorama-q.com/api/posts",
                                                       Images: imageArr, header: header, parameters: parameters, completion: handleResponse)
@@ -202,8 +116,7 @@ class AddPosts: UIViewController{
             }
         }
         else{
-//            let parameters = ["content_type": "text","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-//            uploadM(SendParmaeters: parameters)
+
             self.addPostBtn.showLoader()
             uploadAddPostRequest(text: commentText.text)
         }
@@ -228,56 +141,6 @@ class AddPosts: UIViewController{
                                                   parameters: parameters,
                                                   completion: handleResponse)
         }
-        
-//        //validation()
-//        guard let image = uploadedImage else { return }
-//        guard let video = uVideo else { return  }
-//        guard let pdf = uPdf else { return  }
-//        guard let text = uText else { return  }
-        
-//        let imagesArr = [image,video, pdf, text]
-//
-//        let parameters = ["content_type": "image","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-//        let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-//        // IMAGE
-//        self.addPostBtn.showLoader()
-//        AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self,
-//                                              url: "http://fabric.panorama-q.com/api/posts",
-//                                              Images: imagesArr,
-//                                              header: header,
-//                                              parameters: parameters,
-//                                              completion: handleResponse)
-//        // VIDEO
-//        guard let video = uploadVideo else { return  }
-//        let videoArr = [video]
-//        let parametersForVideo = ["content_type": "url","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-//        AlamofireMultiPartUrl.PostMultiWithModel(model: ValueModel.self,
-//                                                 url: url,
-//                                                 URL: videoArr,
-//                                                 header: header,
-//                                                 parameters: parametersForVideo,
-//                                                 completion: hanldeResponseForUrl)
-//        // PDF
-//
-//        guard let pdf = uploadPdf else { return  }
-//        let pdfArr = [pdf]
-//        let parameterForPdf = ["content_type": "url","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-//        AlamofireMultiPartUrl.PostMultiWithModel(model: ValueModel.self, url: url, URL: pdfArr, header: header, parameters: parameterForPdf, completion: hanldeResponseForUrl)
-//
-//
-//
-//        //TEXT
-////        guard let text = uploadText else {return}
-////        let textArr = [text]
-//        let parameterForText = ["content_type": "text","description":commentText.text!,"category_id": categoryId ?? 0] as [String : Any]
-//        AlamofireMultiPart.PostMultiWithModel(model: ValueModel.self, url: url, Images: nil, header: header, parameters: parameterForText, completion: handleResponse)
-//
-
-        
-        
-
-
-        
     }
     func successRegister(msg: String){
         self.showMessage(sub: "Register successfully")

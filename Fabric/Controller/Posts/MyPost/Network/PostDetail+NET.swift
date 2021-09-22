@@ -8,6 +8,8 @@
 import Foundation
 import  UIKit
 extension PostDetailViewController{
+
+    
     
     public func postDetailRequest(){
         self.view.showLoader()
@@ -27,7 +29,7 @@ extension PostDetailViewController{
                     self.post = item
                     self.dataBack(item: item)
                     self.tableView.reloadData()
-                    
+
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)

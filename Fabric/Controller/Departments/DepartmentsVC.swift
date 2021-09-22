@@ -17,9 +17,16 @@ class DepartmentsVC: UIViewController {
     // my department
     @IBOutlet weak var myDepartmentBtn: UIButton!
     // make variabel to store date back from api to use it in collection view
-    var categoryData: [CategoryModel]?
+    var categoryData: myCategory?
     var selectedCategory = [CategoryModel]()
+    
+    // used to show the all or my categories
+    
+    var allCategories: Bool = true
+    
+    
     let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // add logo
@@ -59,11 +66,17 @@ class DepartmentsVC: UIViewController {
         if let swipeGesture = sender {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizer.Direction.left:
+                ///
+                allCategories = false
+                self.collectionView.reloadData()
                 UIView.animate(withDuration: 0.7) {
                     self.underLineBtn.center.x = self.myDepartmentBtn.center.x
                     self.view.layoutIfNeeded()
                 }
             case UISwipeGestureRecognizer.Direction.right:
+                ///
+                allCategories = true
+                self.collectionView.reloadData()
                 UIView.animate(withDuration: 0.7) {
                     self.underLineBtn.center.x = self.allDepartmentBtn.center.x
                     self.view.layoutIfNeeded()
@@ -81,9 +94,9 @@ class DepartmentsVC: UIViewController {
     
     func getCategoriesApi(){
         self.view.showLoader()
-        AuthRequestRouter.getCategories.send(BaseModelArray<CategoryModel>.self, then: handleGetResponse)
+        AuthRequestRouter.myCategories.send(BaseModel<myCategory>.self, then: handleGetResponse)
     }
-    var handleGetResponse: HandleResponse<BaseModelArray<CategoryModel>> {
+    var handleGetResponse: HandleResponse<BaseModel<myCategory>> {
         return { [weak self] (response) in
             guard let self = self else {return}
             self.view.dismissLoader()
@@ -105,6 +118,9 @@ class DepartmentsVC: UIViewController {
     }
 
     @IBAction func allClick(_ sender: Any) {
+        ///
+        allCategories = true
+        self.collectionView.reloadData()
         UIView.animate(withDuration: 0.7) {
             self.underLineBtn.center.x = self.allDepartmentBtn.center.x
             self.view.layoutIfNeeded()
@@ -112,6 +128,9 @@ class DepartmentsVC: UIViewController {
     }
     
     @IBAction func myClick(_ sender: Any) {
+        ///
+        allCategories = false
+        self.collectionView.reloadData()
         UIView.animate(withDuration: 0.7) {
             self.underLineBtn.center.x = self.myDepartmentBtn.center.x
             self.view.layoutIfNeeded()
@@ -127,28 +146,32 @@ class DepartmentsVC: UIViewController {
 }
 extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryData?.count ?? 0
+        ///
+        if allCategories == true {
+            return categoryData?.allCategories?.count ?? 0
+        } else {
+            return categoryData?.userCategories?.count ?? 0
+        }
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! DepartmentsCVCell
         cell.contentView.layer.cornerRadius = 10
-        guard var item = categoryData?[indexPath.row] else { return cell }
-        cell.configureCellForDepartment(item: item)
-        cell.followHandeler = {
-            if item.isFollowed == true{
-                cell.followBtn.setTitle("unFollow", for: .normal)
-                item.isFollowed = false
-                self.collectionView.reloadData()
-            }else{
-                cell.followBtn.setTitle("Follow", for: .normal)
-                item.isFollowed = true
-                self.collectionView.reloadData()
+        if allCategories == true {
+              guard let item = categoryData?.allCategories?[indexPath.row] else { return cell }
+              cell.configureCellForDepartment(item: item)
+              cell.followHandeler = {
+                  self.Request(id: item.id)
+                 
+              }
+          }else{
+            guard let item = categoryData?.userCategories?[indexPath.row] else {return cell}
+            cell.configureCellForDepartment(item: item)
+            cell.followHandeler = {
+                self.Request(id: item.id)
             }
-            self.Request(id: item.id)
-            self.collectionView.reloadData()
         }
-        
         cell.DotViewFunc()
         return cell
     }

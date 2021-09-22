@@ -10,7 +10,7 @@ import SkyFloatingLabelTextField
 class MyAccountViewController: UIViewController {
     
     // MARK: - variables
-    lazy var imageInstance = imagePickerHelper(viewController: self)
+    
     var profileImage = [UploadData]()
     
     // MARK: - outlet
@@ -39,13 +39,7 @@ class MyAccountViewController: UIViewController {
     
     
     @IBAction func changeUserImage(_ sender: Any) {
-        imageInstance.imageSelected = {[weak self] selectedImage in
-            guard let self = self else {return}
-            if let image = selectedImage.jpegData(compressionQuality: 0.1) {
-                self.profileImage.append(UploadData(data: image, name: "image", type: "image"))
-            }
-            self.userImage.image = selectedImage
-        }
+
 
     }
     @IBAction func sendChanges(_ sender: Any) {

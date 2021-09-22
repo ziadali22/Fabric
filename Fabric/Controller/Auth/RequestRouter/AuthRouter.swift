@@ -29,7 +29,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     case createPost(contentType : Any, description: String, categoryId: Int)
     case changePassword(password: String, confirm: String)
     case UpdateProfile(name: String, phone: String, email: String)
-    
+    case myCategories
     case reportComment(id:Int)
     
     // MARK: - Path
@@ -73,6 +73,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.updateProfile.value
         case .reportComment(let id):
             return ServerPaths.reportComment.value + String(id)
+        case .myCategories:
+            return ServerPaths.myCategory.value
         }
     }
     // MARK: - Parameters
@@ -131,7 +133,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail:
+        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail, .myCategories:
             return .get
         case .changePassword:
             return .put
