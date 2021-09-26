@@ -54,9 +54,10 @@ class MoreVc: UIViewController {
         }))
         rowArray.append(RowData(title: "Log Out", image: "Group 198", action: {
             UserDataActions.removeUserModel()
-            let vc = self.storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let vc = storyBoard.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
             vc.modalPresentationStyle = .fullScreen
-                self.show(vc, sender: nil)
+            self.present(vc, animated: true, completion: nil)
         }))
         
     }

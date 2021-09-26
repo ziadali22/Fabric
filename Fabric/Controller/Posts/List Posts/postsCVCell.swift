@@ -9,7 +9,7 @@ import UIKit
 
 class postsCVCell: UICollectionViewCell {
     
-    
+    var deletePostClosure: ActionClouser?
     
     
     @IBOutlet weak var DepartmentTitle: UILabel!
@@ -17,6 +17,13 @@ class postsCVCell: UICollectionViewCell {
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var deletePostOutlet: UIButton!
+    
+    
+    @IBAction func deletePost(_ sender: Any) {
+        
+        deletePostClosure?()
+    }
     
     func postsCvonfigure(item: Item){
         cellImage.kf.setImage(with: URL(string: item.content ?? "") )

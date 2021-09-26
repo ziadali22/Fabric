@@ -11,25 +11,22 @@ class SignUpVC: UIViewController {
     
     
     @IBOutlet weak var collectionViwe: UICollectionView!
-    
     @IBOutlet weak var DotView: UIView!
     @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneNumberTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
-    
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var categoryTxt: SkyFloatingLabelTextField!
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
-    
-    
-    let images = ["Group 509","Group 509","Group 509"]
-    let label = ["physics", "science", "math"]
+
     var categoryData: [CategoryModel]?
     let pickerView = ToolbarPickerView()
     var selectedCategory = [CategoryModel]()
     var categoryId = [Int]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getCategoriesApi()

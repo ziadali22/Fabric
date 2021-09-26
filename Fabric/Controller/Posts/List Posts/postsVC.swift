@@ -8,19 +8,22 @@ import Foundation
 import UIKit
 import Kingfisher
 class postsVC: UIViewController {
-
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionview: UICollectionView!
+    @IBOutlet weak var postVcSearchBar: UISearchBar!
     
     // networking variables  :
     var myposts = [Item]()
     var myComments : [Comment]?
     var deletId : Item?
     var postId: Int?
+    var searchText: String?
     var deletedPost : Bool = false
     
     // refresh Controll
-    let refreshControl = UIRefreshControl()
+    let refreshControlTwo = UIRefreshControl()
     
     // -----------------------------
     override func viewDidLoad() {
@@ -37,24 +40,31 @@ class postsVC: UIViewController {
         }
         
         //refresh controller
-        refreshControl.addTarget(self, action: #selector(self.networkPostRequest), for: UIControl.Event.valueChanged)
-        collectionview.refreshControl = refreshControl
+        refreshControlTwo.addTarget(self, action: #selector(self.networkPostRequest), for: UIControl.Event.valueChanged)
+        scrollView.refreshControl = refreshControlTwo
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myPostsRequest()
+        collectionview.reloadData()
+    }
+    
     @objc func networkPostRequest(){
         DispatchQueue.main.async {
             self.myPostsRequest()
         }
         collectionview.refreshControl?.endRefreshing()
     }
-
-
-    @IBAction func deletePostAction(_ sender: Any) {
-        deleteRequest(item: postId)
-    }
     
     
-
+    
+    
+    //deleteRequest(item: postId)
+    
+    
+    
+    
 }
 extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,7 +76,13 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         //guard let item = myposts[indexPath.row] else { return cell }
         let item = myposts[indexPath.row]
         cell.postsCvonfigure(item: item)
+        cell.deletePostOutlet.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         postId = myposts[indexPath.row].id
+        cell.deletePostClosure = {
+            let id = item.id
+            self.deleteRequest(item: id)
+            
+        }
         
         return cell
     }
@@ -77,6 +93,11 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         let vc = storyboard?.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
         vc.postId = myposts[indexPath.row].id
         show(vc, sender: nil)
+    }
+    
+    @objc func buttonPressed(){
+        myPostsRequest()
+        collectionview.reloadData()
     }
     
     // MARK: - delete post
@@ -93,6 +114,7 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
             case .success(let model):
+                self.collectionview.reloadData()
                 if model.status{
                     guard let item = model.data else {return}
                     self.sucess(item: item)

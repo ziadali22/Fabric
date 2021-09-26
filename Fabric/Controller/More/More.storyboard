@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Qm-4u-2c2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Qm-4u-2c2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -85,7 +86,7 @@
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="more" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="more" rowHeight="100" id="Sm8-qe-zpm" customClass="moreTVC" customModule="Fabric" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="100"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sm8-qe-zpm" id="jjM-3f-M5t">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
@@ -166,7 +167,9 @@
                             <constraint firstItem="qae-iO-CwS" firstAttribute="centerX" secondItem="k9i-8s-8P4" secondAttribute="centerX" id="us8-t7-MAe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qFN-RN-xJ4"/>
+                    <navigationItem key="navigationItem" id="qFN-RN-xJ4">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Zzt-RG-Fln"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Xx5-iy-K9G" id="xku-Ie-LnG"/>
                         <segue destination="oNB-fR-ONk" kind="show" id="9ec-nt-4Zn"/>
@@ -196,30 +199,30 @@
                                 <rect key="frame" x="16" y="103" width="382" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notificationCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" rowHeight="66" id="f6M-Sn-zd5" customClass="notificationTableViewCell" customModule="Fabric" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="382" height="66"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="notificationCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" rowHeight="113" id="f6M-Sn-zd5" customClass="notificationTableViewCell" customModule="Fabric" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f6M-Sn-zd5" id="xEZ-D8-yYz">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTp-bJ-Z8d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="66"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="113"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-76-AR9">
-                                                            <rect key="frame" x="4" y="4" width="374" height="58"/>
+                                                            <rect key="frame" x="4" y="4" width="374" height="105"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="Dno-ld-SJv">
-                                                                    <rect key="frame" x="0.0" y="16.5" width="25" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="40" width="25" height="25"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="DcX-eR-7Jx"/>
                                                                         <constraint firstAttribute="height" constant="25" id="bGI-QX-Cmt"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post added to the math department" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5NZ-xX-2Wf">
-                                                                    <rect key="frame" x="29" y="19" width="345" height="20.5"/>
+                                                                    <rect key="frame" x="29" y="42.5" width="345" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" name="green"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -261,11 +264,16 @@
                             <constraint firstItem="lro-EJ-6UZ" firstAttribute="top" secondItem="mrt-xC-wEn" secondAttribute="top" constant="16" id="umq-jY-Art"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dS1-Lm-7Dt"/>
+                    <navigationItem key="navigationItem" id="dS1-Lm-7Dt">
+                        <barButtonItem key="backBarButtonItem" title=" " id="mla-8j-eEy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notificationTableView" destination="OnN-Oy-EJa" id="7Pw-H7-0HI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV7-j1-rwd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6037.8504672897188" y="2464.7948164146869"/>
+            <point key="canvasLocation" x="6037.68115942029" y="2464.2857142857142"/>
         </scene>
         <!--My Account View Controller-->
         <scene sceneID="bIU-rn-NxC">
@@ -512,11 +520,11 @@
                                                 <rect key="frame" x="16" y="237" width="382" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdP-g3-Zqx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-na-2gO">
-                                                        <rect key="frame" x="246" y="0.0" width="136" height="50"/>
+                                                        <rect key="frame" x="262" y="0.0" width="120" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="tintColor" red="0.0" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title=" change image" image="square.and.arrow.up" catalog="system">
@@ -575,13 +583,16 @@
                             <constraint firstItem="6Ii-QP-n45" firstAttribute="leading" secondItem="qOC-KV-aHz" secondAttribute="leading" id="s9e-bP-kTo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="d9R-DY-6ar"/>
+                    <navigationItem key="navigationItem" id="d9R-DY-6ar">
+                        <barButtonItem key="backBarButtonItem" title=" " id="opA-cp-stB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dotView" destination="huw-fa-Iuj" id="OeB-AM-7W9"/>
                         <outlet property="emailField" destination="UTm-CX-FLn" id="DAT-WR-HRw"/>
                         <outlet property="imageDotView" destination="ol3-VX-inZ" id="5tc-ml-RJa"/>
                         <outlet property="nameField" destination="jH9-Df-yJ1" id="nor-F7-RCy"/>
                         <outlet property="phoneNumber" destination="sEs-Bn-6Yb" id="xOS-gH-cLg"/>
+                        <outlet property="sendBtnOutlet" destination="fCx-4M-7j4" id="Pc0-VS-G6X"/>
                         <outlet property="userImage" destination="amm-bC-tFQ" id="R5K-zB-nnm"/>
                     </connections>
                 </viewController>
@@ -611,7 +622,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-VF-aLe">
-                                                <rect key="frame" x="16" y="8" width="97.5" height="23"/>
+                                                <rect key="frame" x="16" y="8" width="97" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                 <color key="textColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -623,7 +634,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-EK-5tP">
-                                                <rect key="frame" x="16" y="281" width="382" height="302"/>
+                                                <rect key="frame" x="16" y="281" width="382" height="343.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ET-sD-qKK" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -672,7 +683,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNS-vz-05J" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="55" width="382" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="55" width="382" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
@@ -715,7 +726,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-ov-72p" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="88.5" width="382" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="109" width="382" height="39.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
@@ -758,7 +769,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-84-xVF" userLabel="txtView">
-                                                        <rect key="frame" x="0.0" y="122" width="382" height="180"/>
+                                                        <rect key="frame" x="0.0" y="163.5" width="382" height="180"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M8c-Y6-Guk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="180"/>
@@ -780,7 +791,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnh-sd-EBB">
-                                                <rect key="frame" x="97" y="607" width="220" height="48"/>
+                                                <rect key="frame" x="97" y="648.5" width="220" height="48"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWZ-8Z-Phe">
                                                         <rect key="frame" x="4" y="4" width="212" height="40"/>
@@ -855,7 +866,9 @@
                             <constraint firstItem="VXt-6t-lfE" firstAttribute="top" secondItem="7YQ-IT-2MV" secondAttribute="top" id="z7B-xk-HAU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Au-Cn-0Zw"/>
+                    <navigationItem key="navigationItem" id="5Au-Cn-0Zw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="N3S-qO-9B8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dotView" destination="RWZ-8Z-Phe" id="f8N-6r-iZa"/>
                         <outlet property="emailText" destination="Qv9-ov-72p" id="8pS-64-a9u"/>
@@ -1133,7 +1146,9 @@
                             <constraint firstItem="xas-IU-Pzh" firstAttribute="trailing" secondItem="VKd-9P-GC9" secondAttribute="trailing" id="xwk-z2-oTu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wbe-sM-N8S"/>
+                    <navigationItem key="navigationItem" id="Wbe-sM-N8S">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ALq-Jj-fkK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="termsTextView" destination="HEV-kT-Yu1" id="9EI-bQ-Y5x"/>
                     </connections>
@@ -1182,7 +1197,9 @@
                             <constraint firstItem="05N-7G-hn5" firstAttribute="top" secondItem="6Gu-cS-HXX" secondAttribute="top" constant="24" id="V0I-sO-SKw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WfJ-1D-rGU"/>
+                    <navigationItem key="navigationItem" id="WfJ-1D-rGU">
+                        <barButtonItem key="backBarButtonItem" title=" " id="KLs-FS-hOg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="aboutUsTextView" destination="hv2-gc-Fi2" id="WcH-HV-qC0"/>
                     </connections>
@@ -1194,10 +1211,10 @@
     </scenes>
     <designables>
         <designable name="8ET-sD-qKK">
-            <size key="intrinsicContentSize" width="38" height="18.5"/>
+            <size key="intrinsicContentSize" width="382" height="39.220703125"/>
         </designable>
         <designable name="Qv9-ov-72p">
-            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="382" height="39.220703125"/>
         </designable>
         <designable name="UAU-03-7D4">
             <size key="intrinsicContentSize" width="123" height="34"/>
@@ -1212,7 +1229,7 @@
             <size key="intrinsicContentSize" width="38" height="18.5"/>
         </designable>
         <designable name="qNS-vz-05J">
-            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="382" height="39.220703125"/>
         </designable>
         <designable name="sEs-Bn-6Yb">
             <size key="intrinsicContentSize" width="96.5" height="18.5"/>

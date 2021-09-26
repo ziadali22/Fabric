@@ -12,7 +12,7 @@ import Alamofire
 
 
 
-class AddCommentPopUpViewController: UIViewController  {
+class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
     
     // MARK: - variables
     var imagePickerControllerForAddComments = UIImagePickerController()
@@ -35,6 +35,9 @@ class AddCommentPopUpViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         comntText.addDashBorder(color: .green, cornerRadius: 4)
+        comntText.delegate = self
+        comntText.text = "place holder"
+        comntText.textColor = UIColor.lightGray
         dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     
@@ -49,13 +52,9 @@ class AddCommentPopUpViewController: UIViewController  {
     
     // MARK: - show alert
     func showAlertView(){
-        // text
+        
         let alert = UIAlertController(title: "choose data type", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "text", style: .default, handler: { action in
-            
-            self.comntText.isHidden = false
-            
-        }))
+        
         // image
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
             // pick image
@@ -139,9 +138,10 @@ class AddCommentPopUpViewController: UIViewController  {
             self.showMessage(sub: error?.localizedDescription)
         case .success(let model):
             if model.status{
-                self.showMessage(sub: "Post Added Succefully !".localized)
+                self.showMessage(sub: "Comment Added Succefully !".localized)
                 self.dismiss(animated: true, completion: nil)
-                delegate?.reloadData()
+                self.delegate?.reloadData()
+
             }else{
                 guard let errorMsg = model.msg else{return}
                 self.showMessage(sub: errorMsg)

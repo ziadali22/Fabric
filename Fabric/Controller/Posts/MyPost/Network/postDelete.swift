@@ -32,8 +32,8 @@ extension PostDetailViewController {
     }
     func sucess(item: String){
         self.showMessage(sub: "Post Deleted")
-        let vc = storyboard?.instantiateViewController(withIdentifier: "listOfPosts") as! postsVC
-        show(vc, sender: nil)
+        //let vc = storyboard?.instantiateViewController(withIdentifier: "listOfPosts") as! postsVC
+        //show(vc, sender: nil)
     }
     
     func deleteCommentRequest(id: Int?){

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990B073F26FE592300399658 /* EditableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B073D26FE592300399658 /* EditableTextView.swift */; };
+		990B074026FE592300399658 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B073E26FE592300399658 /* InputField.swift */; };
+		990B074226FE59BC00399658 /* LayoutTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B074126FE59BC00399658 /* LayoutTools.swift */; };
+		990B074426FE649000399658 /* PlaceholderForTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B074326FE649000399658 /* PlaceholderForTextView.swift */; };
 		992DA20F26DB78E80063ACB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA20E26DB78E80063ACB7 /* AppDelegate.swift */; };
 		992DA21126DB78E80063ACB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA21026DB78E80063ACB7 /* SceneDelegate.swift */; };
 		992DA21326DB78E80063ACB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA21226DB78E80063ACB7 /* ViewController.swift */; };
@@ -153,6 +157,9 @@
 		99B045FE26F757BA00034882 /* AlamofreUploadUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B045FD26F757BA00034882 /* AlamofreUploadUrl.swift */; };
 		99B0460026F7CE5400034882 /* UploadMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B045FF26F7CE5400034882 /* UploadMethods.swift */; };
 		99B0460226FA30BD00034882 /* reportComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0460126FA30BD00034882 /* reportComment.swift */; };
+		99B8396326FB7689009E4EEA /* HomeDepartmentPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8396226FB7689009E4EEA /* HomeDepartmentPopUp.swift */; };
+		99C834E826FB79AF0009DCBF /* HomeDepartmentPopUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C834E726FB79AF0009DCBF /* HomeDepartmentPopUpCell.swift */; };
+		99C834EA26FB7A8E0009DCBF /* HomeDepartment+NET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C834E926FB7A8E0009DCBF /* HomeDepartment+NET.swift */; };
 		99D28D5326E760DE0071ADA5 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */; };
 		99D28D5B26E782770071ADA5 /* contactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5A26E782770071ADA5 /* contactUsViewController.swift */; };
 		99D28D5D26E7853F0071ADA5 /* tableViewRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */; };
@@ -182,6 +189,10 @@
 
 /* Begin PBXFileReference section */
 		901C29B4DDE2D9D0186DFDEE /* Pods-Fabric.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabric.release.xcconfig"; path = "Target Support Files/Pods-Fabric/Pods-Fabric.release.xcconfig"; sourceTree = "<group>"; };
+		990B073D26FE592300399658 /* EditableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableTextView.swift; sourceTree = "<group>"; };
+		990B073E26FE592300399658 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		990B074126FE59BC00399658 /* LayoutTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTools.swift; sourceTree = "<group>"; };
+		990B074326FE649000399658 /* PlaceholderForTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderForTextView.swift; sourceTree = "<group>"; };
 		992DA20B26DB78E80063ACB7 /* Fabric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fabric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		992DA20E26DB78E80063ACB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		992DA21026DB78E80063ACB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +342,9 @@
 		99B045FD26F757BA00034882 /* AlamofreUploadUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofreUploadUrl.swift; sourceTree = "<group>"; };
 		99B045FF26F7CE5400034882 /* UploadMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMethods.swift; sourceTree = "<group>"; };
 		99B0460126FA30BD00034882 /* reportComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportComment.swift; sourceTree = "<group>"; };
+		99B8396226FB7689009E4EEA /* HomeDepartmentPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDepartmentPopUp.swift; sourceTree = "<group>"; };
+		99C834E726FB79AF0009DCBF /* HomeDepartmentPopUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDepartmentPopUpCell.swift; sourceTree = "<group>"; };
+		99C834E926FB7A8E0009DCBF /* HomeDepartment+NET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDepartment+NET.swift"; sourceTree = "<group>"; };
 		99D28D5226E760DE0071ADA5 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		99D28D5A26E782770071ADA5 /* contactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsViewController.swift; sourceTree = "<group>"; };
 		99D28D5C26E7853F0071ADA5 /* tableViewRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewRowData.swift; sourceTree = "<group>"; };
@@ -446,10 +460,14 @@
 		992DA22726DB832F0063ACB7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				990B073D26FE592300399658 /* EditableTextView.swift */,
+				990B074126FE59BC00399658 /* LayoutTools.swift */,
+				990B073E26FE592300399658 /* InputField.swift */,
 				992DA22826DB83460063ACB7 /* UIView+EXT.swift */,
 				992DA23526DB91DE0063ACB7 /* CustomizeTextField.swift */,
 				998BB58026DD911800CDA3D0 /* UICollectionView+EXT.swift */,
 				998BB58226DE3FAF00CDA3D0 /* ValidationVC.swift */,
+				990B074326FE649000399658 /* PlaceholderForTextView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -634,6 +652,9 @@
 				998BB57E26DD8FE800CDA3D0 /* HomeViewController.swift */,
 				99F0135326E630EF00BFC9E4 /* Home+Network.swift */,
 				995ADE5B26EA534300B6DDF9 /* Home.storyboard */,
+				99B8396226FB7689009E4EEA /* HomeDepartmentPopUp.swift */,
+				99C834E726FB79AF0009DCBF /* HomeDepartmentPopUpCell.swift */,
+				99C834E926FB7A8E0009DCBF /* HomeDepartment+NET.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1222,6 +1243,7 @@
 				998BB61C26DE50B100CDA3D0 /* ImageGalleryView.swift in Sources */,
 				998BB63A26DE50B100CDA3D0 /* exColor.swift in Sources */,
 				998BB61A26DE50B100CDA3D0 /* ImageGalleryLayout.swift in Sources */,
+				99C834EA26FB7A8E0009DCBF /* HomeDepartment+NET.swift in Sources */,
 				998BB64426DE50B100CDA3D0 /* exString.swift in Sources */,
 				99B045FE26F757BA00034882 /* AlamofreUploadUrl.swift in Sources */,
 				998BB65326DE52AE00CDA3D0 /* AuthRouter.swift in Sources */,
@@ -1232,6 +1254,7 @@
 				998BB63D26DE50B100CDA3D0 /* exTextView.swift in Sources */,
 				998BB64726DE50B100CDA3D0 /* LoadingButton.swift in Sources */,
 				9984475226E062A700BC285C /* DepartmentsVC.swift in Sources */,
+				99B8396326FB7689009E4EEA /* HomeDepartmentPopUp.swift in Sources */,
 				998BB56E26DC70F000CDA3D0 /* ForgetPasswordVC.swift in Sources */,
 				998BB64A26DE50B100CDA3D0 /* LocationHelper.swift in Sources */,
 				992DA23626DB91DE0063ACB7 /* CustomizeTextField.swift in Sources */,
@@ -1241,6 +1264,7 @@
 				995ADE7526EE216700B6DDF9 /* Notification+Network.swift in Sources */,
 				9984475526E0630D00BC285C /* DepartmentsCVCell.swift in Sources */,
 				998BB5FB26DE50B100CDA3D0 /* URLRequestBuilder.swift in Sources */,
+				990B074226FE59BC00399658 /* LayoutTools.swift in Sources */,
 				998BB64F26DE520100CDA3D0 /* UserModel.swift in Sources */,
 				99F0134526E10D2100BFC9E4 /* splashVC.swift in Sources */,
 				998BB64826DE50B100CDA3D0 /* exViewController.swift in Sources */,
@@ -1267,6 +1291,7 @@
 				99D28D5D26E7853F0071ADA5 /* tableViewRowData.swift in Sources */,
 				99F0135626E6326600BFC9E4 /* HomeModel.swift in Sources */,
 				99F0134F26E4C8A400BFC9E4 /* postsCVCell.swift in Sources */,
+				990B073F26FE592300399658 /* EditableTextView.swift in Sources */,
 				99D28D6026E7871E0071ADA5 /* TermsViewController.swift in Sources */,
 				998BB5FF26DE50B100CDA3D0 /* AppImages.swift in Sources */,
 				995ADE4326E9485C00B6DDF9 /* AddCommentPopUpViewController.swift in Sources */,
@@ -1289,9 +1314,11 @@
 				998BB61326DE50B100CDA3D0 /* StackView.swift in Sources */,
 				992DA22626DB80710063ACB7 /* IntroVC.swift in Sources */,
 				999318C826FB27AD0049D3AD /* PopUp+Protcol.swift in Sources */,
+				990B074426FE649000399658 /* PlaceholderForTextView.swift in Sources */,
 				992DA20F26DB78E80063ACB7 /* AppDelegate.swift in Sources */,
 				998BB60026DE50B100CDA3D0 /* StyleTextField.swift in Sources */,
 				998BB61626DE50B100CDA3D0 /* BottomContainerView.swift in Sources */,
+				99C834E826FB79AF0009DCBF /* HomeDepartmentPopUpCell.swift in Sources */,
 				998BB64126DE50B100CDA3D0 /* exUIButton.swift in Sources */,
 				998BB64D26DE50B100CDA3D0 /* exTableView.swift in Sources */,
 				995ADE7926EE378400B6DDF9 /* postDelete.swift in Sources */,
@@ -1323,6 +1350,7 @@
 				998BB61726DE50B100CDA3D0 /* AssetManager.swift in Sources */,
 				998BB58326DE3FAF00CDA3D0 /* ValidationVC.swift in Sources */,
 				998BB61526DE50B100CDA3D0 /* ImageStack.swift in Sources */,
+				990B074026FE592300399658 /* InputField.swift in Sources */,
 				992DA21126DB78E80063ACB7 /* SceneDelegate.swift in Sources */,
 				99F0134726E4B53700BFC9E4 /* MoreVc.swift in Sources */,
 				998BB57A26DD8E9000CDA3D0 /* HighestRatePostsCVC.swift in Sources */,

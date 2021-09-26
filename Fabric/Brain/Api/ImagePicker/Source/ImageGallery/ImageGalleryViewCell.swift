@@ -34,7 +34,7 @@ class ImageGalleryViewCell: UICollectionViewCell {
     isAccessibilityElement = true
     accessibilityLabel = "Photo"
 
-    setupConstraints()
+//    setupConstraints()
   }
 
   required init?(coder aDecoder: NSCoder) {

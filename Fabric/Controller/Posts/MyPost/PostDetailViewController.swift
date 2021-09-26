@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class PostDetailViewController: UIViewController , RefreshViewProtcol {
     
-    
     func reloadData() {
         postDetailRequest()
-        tableView.reloadData()
+
     }
     
     // MARK: - outlet
@@ -24,11 +25,12 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var deleteBtn: UIButton!
-    
-    
+    @IBOutlet weak var scrollViewPost: UIScrollView!
+    @IBOutlet weak var videoPlayBtn: UIButton!
     
 
-    // MARK: - variables
+   // MARK: - variables
+
     var post : Item?
     var newPost = [Item]()
     var postId: Int?
@@ -36,6 +38,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     var postsData : MostComment?
     
     var imageCommentContent : String?
+    
     
     
     override func viewDidLoad() {
@@ -53,12 +56,14 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
 
  
     }
+    
 
     // MARK: - add comment pop up
 
     @IBAction func addCommentPopUP(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "addCommentPopUp") as! AddCommentPopUpViewController
         vc.postId = post?.id
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     // MARK: - user Profile
@@ -73,11 +78,20 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     }
     // MARK: - remove post
     @IBAction func removePost(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        tableView.reloadData()
         deleteRequest()
-        
     }
     
-
+    @IBAction func videoPlayButton(_ sender: Any) {
+        videoPlayBtn.isHidden = false
+        let url = URL(string: post?.content ?? "")
+        let player = AVPlayer(url: url!)
+        let vc = AVPlayerViewController()
+        vc.player = player
+        self.present(vc, animated: true) { vc.player?.play() }
+    }
+    
     // MARK: - Table View
     
 }
@@ -91,17 +105,17 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
         guard let item = post?.comments?[indexPath.row] else { return cell }
         cell.cellConfigure(item: item)
+        
         cell.deleteHandelr = {
             let id = item.id
             self.deleteCommentRequest(id: id)
+
         }
         cell.reportHandler = {
             let id = item.id
             self.reportRequest(id: id)
             
         }
-
-        
         return cell
     }
 
@@ -110,6 +124,9 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         
         
     }
-
+    @objc func buttonPressed(pressedId: Int){
+        deleteCommentRequest(id: pressedId)
+        tableView.reloadData()
+    }
     
 }

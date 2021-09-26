@@ -81,7 +81,7 @@ open class TopView: UIView {
 
     flashButton.isHidden = configuration.flashButtonAlwaysHidden
 
-    setupConstraints()
+    //setupConstraints()
   }
 
   // MARK: - Action methods

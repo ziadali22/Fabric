@@ -29,34 +29,24 @@ class AddPosts: UIViewController{
     
     //var uploadedData: [MultipartFormData]?
     var uploadedImage: UploadData?
-    var uploadVideo: UploadDataURL?
-    var uploadPdf: UploadDataURL?
+    var uploadVideo: UploadData?
+    var uploadPdf: UploadData?
     var uploadText: UploadData?
-    
-    
-    
     var uVideo: UploadData?
     var uPdf: UploadData?
     var uText: UploadData?
     var con: String?
     
-    
-    
-
-        
-        
     override func viewDidLoad() {
         super.viewDidLoad()
+        // add logo
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         // MARK: - add dashBorder
         DispatchQueue.main.async {
             self.commentText.addDashBorder(color: .green, cornerRadius: 3)
             self.dotView.addDashBorder(color: .white, cornerRadius: 3)
         }
-        
-        // add logo
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
-        
-        getCategoriesApi()
+       getCategoriesApi()
         setUpPicker()
         
         
@@ -142,9 +132,7 @@ class AddPosts: UIViewController{
                                                   completion: handleResponse)
         }
     }
-    func successRegister(msg: String){
-        self.showMessage(sub: "Register successfully")
-    }
+
     
     func handleResponse(result: ServerResponse<ValueModel>){
         self.addPostBtn.dismissLoader()
@@ -162,20 +150,6 @@ class AddPosts: UIViewController{
         }
     }
     
-    func hanldeResponseForUrl(result: ServerEsponse<ValueModel>){
-        switch result {
-        case .failure(let error):
-            self.showMessage(sub: error?.localizedDescription)
-        case .success(let model):
-            if model.status{
-                self.showMessage(sub: "Post Added Succefully !".localized)
-            }else{
-                guard let errorMsg = model.msg else{return}
-                self.showMessage(sub: errorMsg)
-            }
-            
-        }
-    }
     
     
     @IBAction func getNotfications(_ sender: Any) {
@@ -266,7 +240,7 @@ class AddPosts: UIViewController{
     
     
 }
-
+// MARK: - IMAGE , VIDEO
 extension AddPosts:UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
     
@@ -280,30 +254,27 @@ extension AddPosts:UIImagePickerControllerDelegate & UINavigationControllerDeleg
             uploadedImage = UploadData(data: editedImage.jpegData(compressionQuality: 0.1)!, name: "content", videoURL: nil, type: "image")
             self.imagePicker = editedImage
         }else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            /// uploadedData?.append(originalImage, withName: "content")
-            /// uploadedData?.append(originalImage, withName: "content", fileName: "myImage.png", mimeType: "image/png")
-            //  imageData!, withName: "content", fileName: "myImage.png", mimeType: "image/png"
-            uploadedImage = UploadData(data: originalImage.jpegData(compressionQuality: 0.1)!, name: "image", videoURL: nil, type: "image")
+            uploadedImage = UploadData(data: originalImage.jpegData(compressionQuality: 0.1)!, name: "content", videoURL: nil, type: "image")
             self.imagePicker = originalImage
         }
         picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         videoUrl = info[UIImagePickerController.InfoKey.mediaURL.rawValue] as? URL
-        uploadVideo = UploadDataURL(data: videoUrl!, name: "content")
+        uploadVideo = UploadData(data: nil, name: "content", videoURL: videoUrl, type: "video")
         print("videoURL:\(String(describing: videoUrl))")
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-
+// MARK: - PDF
 extension AddPosts: UIDocumentPickerDelegate{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         //viewModel.attachDocuments(at: urls)
-        // MARK: - PDF url
+        
         pdfUrl = urls.first
         guard let pdfURL = pdfUrl else { return}
-        uploadPdf = UploadDataURL(data: pdfURL, name: "content")
+        uploadPdf = UploadData(data: nil, name: "content", videoURL: pdfURL , type: "pdf")
         func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
             controller.dismiss(animated: true, completion: nil)
         }
@@ -311,6 +282,7 @@ extension AddPosts: UIDocumentPickerDelegate{
     
     
 }
+// MARK: - Categories Department
 extension AddPosts: UIPickerViewDataSource, UIPickerViewDelegate  {
     
     

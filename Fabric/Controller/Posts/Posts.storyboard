@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sPg-Nl-rHf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sPg-Nl-rHf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -168,7 +169,7 @@
                                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <state key="normal" image="trash.fill" catalog="system"/>
                                                                                     <connections>
-                                                                                        <action selector="deletePostAction:" destination="G90-Km-UuT" eventType="touchUpInside" id="nBh-Gp-oVg"/>
+                                                                                        <action selector="deletePost:" destination="6oE-gI-xZR" eventType="touchUpInside" id="t0z-cZ-ubq"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
@@ -245,6 +246,7 @@
                                                             <outlet property="commentBtn" destination="jTX-Bl-Jr0" id="8l6-34-slz"/>
                                                             <outlet property="commentCount" destination="nzF-hk-fJ6" id="NGR-aZ-ZLe"/>
                                                             <outlet property="date" destination="RE1-VH-Mgb" id="2Lh-uA-xHa"/>
+                                                            <outlet property="deletePostOutlet" destination="ifR-d1-sIu" id="9T0-gT-AN4"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -289,10 +291,13 @@
                             <constraint firstItem="zVG-4M-66L" firstAttribute="top" secondItem="9e9-Yp-Meq" secondAttribute="top" id="rmB-59-Dk4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZF2-lK-fYB"/>
+                    <navigationItem key="navigationItem" id="ZF2-lK-fYB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Pbs-ue-EKg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionview" destination="KUB-xY-Ogy" id="BQj-oz-C8v"/>
-                        <outlet property="scrollView" destination="zVG-4M-66L" id="k0R-Yh-f4d"/>
+                        <outlet property="postVcSearchBar" destination="Ttu-i4-Rg4" id="CHi-Oc-SNo"/>
+                        <outlet property="scrollView" destination="zVG-4M-66L" id="1LZ-jn-m5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CuP-iV-yzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -434,7 +439,7 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="commentsCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentsCell" rowHeight="264" id="UjB-aj-l9o" customClass="CommentsTableViewCell" customModule="Fabric" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="264"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="264"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UjB-aj-l9o" id="WKz-wj-cON">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="264"/>
@@ -597,6 +602,15 @@
                                                 <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-rw-gk0">
+                                                <rect key="frame" x="187.5" y="153.5" width="39" height="31"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="videoPlayButton:" destination="FSN-u5-MBV" eventType="touchUpInside" id="mPr-7d-aZZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -611,11 +625,13 @@
                                             <constraint firstAttribute="trailing" secondItem="vd9-al-fTb" secondAttribute="trailing" constant="16" id="U0d-EI-iY7"/>
                                             <constraint firstItem="H0n-nS-EXl" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="Vdg-oY-VXl"/>
                                             <constraint firstItem="vd9-al-fTb" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="352" id="YA7-S6-gil"/>
+                                            <constraint firstItem="rBh-rw-gk0" firstAttribute="centerX" secondItem="WHx-dl-nay" secondAttribute="centerX" id="Yfi-wk-MK7"/>
                                             <constraint firstAttribute="trailing" secondItem="6mI-3U-akF" secondAttribute="trailing" constant="16" id="ahS-V2-Rs8"/>
                                             <constraint firstItem="1Hp-PJ-KXj" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="fan-JM-HZT"/>
                                             <constraint firstAttribute="trailing" secondItem="bxu-EU-ibT" secondAttribute="trailing" constant="16" id="gbp-WM-xO8"/>
                                             <constraint firstItem="6mI-3U-akF" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="16" id="j93-Ub-fSw"/>
                                             <constraint firstItem="6mI-3U-akF" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="k1b-A8-ca1"/>
+                                            <constraint firstItem="rBh-rw-gk0" firstAttribute="centerY" secondItem="1Hp-PJ-KXj" secondAttribute="centerY" id="m1j-T1-x1V"/>
                                             <constraint firstItem="edq-i4-rhG" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="352" id="qEF-rD-pdF"/>
                                             <constraint firstItem="nwJ-vg-haa" firstAttribute="top" secondItem="1Hp-PJ-KXj" secondAttribute="bottom" constant="20" id="qHs-yN-2sA"/>
                                             <constraint firstItem="edq-i4-rhG" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="18" id="t8q-9h-gt6"/>
@@ -642,16 +658,20 @@
                             <constraint firstItem="EH6-9z-esO" firstAttribute="leading" secondItem="9Es-ky-TAV" secondAttribute="leading" id="uQb-qn-qxu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PUq-iY-ait"/>
+                    <navigationItem key="navigationItem" id="PUq-iY-ait">
+                        <barButtonItem key="backBarButtonItem" title=" " id="g8K-hk-7Yh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentCount" destination="LmN-5m-Lqh" id="Oo5-RG-2EH"/>
                         <outlet property="dateText" destination="bxu-EU-ibT" id="Dhs-bK-ijY"/>
                         <outlet property="deleteBtn" destination="OLY-d9-Vdo" id="31l-Jw-BBl"/>
                         <outlet property="departmentText" destination="ojW-YS-Sf8" id="EnY-Mq-f2n"/>
                         <outlet property="postImage" destination="1Hp-PJ-KXj" id="3dh-M2-EoD"/>
+                        <outlet property="scrollViewPost" destination="EH6-9z-esO" id="AQa-Hd-hAg"/>
                         <outlet property="tableHeight" destination="lnn-QH-BQM" id="znw-5n-fIA"/>
                         <outlet property="tableView" destination="H0n-nS-EXl" id="xDK-xr-VgH"/>
                         <outlet property="userName" destination="YM8-nK-RmT" id="VyT-dV-fLU"/>
+                        <outlet property="videoPlayBtn" destination="rBh-rw-gk0" id="LRS-nP-9Co"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RF-yW-cLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1156,7 +1176,7 @@
                                         <rect key="frame" x="16" y="216" width="350" height="22"/>
                                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.068137254899999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" name="green"/>
-                                        <state key="normal" title="Comment Type ( text , PDF, image )" image="arrow.down" catalog="system">
+                                        <state key="normal" title="Comment Type ( PDF, image )" image="arrow.down" catalog="system">
                                             <color key="titleColor" name="green"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1286,6 +1306,7 @@
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pi-mathematical-constant-symbol" width="28.885000228881836" height="27.333000183105469"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="report" width="18.978000640869141" height="19.017000198364258"/>
         <image name="sticky-notes" width="18.732000350952148" height="18.732000350952148"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>

@@ -29,6 +29,7 @@ extension AddPosts{
             
             switch response{
             case .success(request: let upload, _, _):
+                self.addPostBtn.dismissLoader()
                 upload.uploadProgress { (progress:Progress) in
                     self.showMessage(sub: "post added sucessfully")
                     print(progress)

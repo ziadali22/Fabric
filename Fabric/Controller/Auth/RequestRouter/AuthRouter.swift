@@ -31,6 +31,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     case UpdateProfile(name: String, phone: String, email: String)
     case myCategories
     case reportComment(id:Int)
+    case search(text:String)
     
     // MARK: - Path
     internal var path: String {
@@ -75,6 +76,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.reportComment.value + String(id)
         case .myCategories:
             return ServerPaths.myCategory.value
+        case .search:
+            return ServerPaths.search.value
         }
     }
     // MARK: - Parameters
@@ -124,6 +127,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             params["name"] = name
             params["phone"] = phone
             params["email"] = email
+        case .search(let text):
+            params["text"] = text
         default:
             break
         }
@@ -133,7 +138,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail, .myCategories:
+        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail, .myCategories, .search:
             return .get
         case .changePassword:
             return .put

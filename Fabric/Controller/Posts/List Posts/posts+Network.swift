@@ -16,7 +16,7 @@ extension postsVC{
         return { [weak self] (response) in
             guard let self = self else {return}
             self.view.dismissLoader()
-            self.refreshControl.endRefreshing()
+            self.refreshControlTwo.endRefreshing()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)

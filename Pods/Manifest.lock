@@ -6,6 +6,7 @@ PODS:
   - SwiftMessages (9.0.3):
     - SwiftMessages/App (= 9.0.3)
   - SwiftMessages/App (9.0.3)
+  - TTGTagCollectionView (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Kingfisher
   - SkyFloatingLabelTextField
   - SwiftMessages (~> 9.0.0)
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - Kingfisher
     - SkyFloatingLabelTextField
     - SwiftMessages
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SwiftMessages: 077f19126c24033fe24042237ecc20261adb46e4
+  TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
 
-PODFILE CHECKSUM: 3dae8042d19db4b739783a13988050c24ce6af95
+PODFILE CHECKSUM: ab8371a32341fd4ee949dcbbf40d607df1662963
 
 COCOAPODS: 1.10.2

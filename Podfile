@@ -11,5 +11,6 @@ target 'Fabric' do
   pod 'IQKeyboardManager' , '~> 6.5.6'
   pod 'SwiftMessages' , '~> 9.0.0'
   pod 'Kingfisher'
-  
+  pod "TTGTagCollectionView"
+
 end

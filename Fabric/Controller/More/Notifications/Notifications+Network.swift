@@ -22,6 +22,7 @@ extension NotificationsViewController{
                 if model.status{
                     guard let item = model.data else {return}
                     self.notificationData = item
+                    self.notificationTableView.reloadData()
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)

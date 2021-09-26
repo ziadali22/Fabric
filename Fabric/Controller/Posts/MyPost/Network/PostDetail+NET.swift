@@ -39,23 +39,31 @@ extension PostDetailViewController{
         }
     }
     func dataBack(item: Item){
-        postImage.kf.indicatorType = .activity
-        postImage.kf.setImage(with: URL(string: item.content ?? ""))
-        self.navigationItem.title = item.itemDescription
-        commentCount.text = String(item.comments?.count ?? 0)
-        departmentText.text = item.category?.name
-        userName.setTitle(item.user?.name, for: .normal)
-        dateText.text = item.createdAt
-        tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
-        //   //  //
-        if item.user?.id != UserDataActions.getUserModel()?.id
-        {
-            self.deleteBtn.isHidden = true
+        if item.contentType == "video"{
+            videoPlayBtn.isHidden = false
+  
             
+        }else{
+            videoPlayBtn.isHidden = true
+            postImage.kf.indicatorType = .activity
+            postImage.kf.setImage(with: URL(string: item.content ?? ""))
+            self.navigationItem.title = item.itemDescription
+            commentCount.text = String(item.comments?.count ?? 0)
+            departmentText.text = item.category?.name
+            userName.setTitle(item.user?.name, for: .normal)
+            dateText.text = item.createdAt
+            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
+            //   //  //
+            if item.user?.id != UserDataActions.getUserModel()?.id
+            {
+                self.deleteBtn.isHidden = true
+                
+            }
+            else{
+                
+            }
         }
-        else{
-            
-        }
+
         // check for the post id 
         
     }

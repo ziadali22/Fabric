@@ -20,7 +20,9 @@ class HomeViewController: UIViewController {
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
     var commentData : [Comment]?
-    var myposts : [Item]?
+    var myposts = [Item]()
+    
+    var filterData: [Comment]?
     
     // refresh Controll
     let refreshControl = UIRefreshControl()
@@ -29,6 +31,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // add logo
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
+        
+        // search bar
+        searchBar.delegate = self
         // first collection view
         newstPostsCollectionView.delegate = self
         newstPostsCollectionView.dataSource = self
@@ -51,7 +56,8 @@ class HomeViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.networkHomePosts), for: UIControl.Event.valueChanged)
         scrollView.refreshControl = refreshControl
         
- 
+        
+
         
         
     }
@@ -68,8 +74,13 @@ class HomeViewController: UIViewController {
         show(vc, sender: nil)
     }
     
-
-
+    @IBAction func DepartmentsPopUpBtn(_ sender: Any) {
+        let vc  = storyboard?.instantiateViewController(identifier: "departmentsPopUp") as! HomeDepartmentPopUp
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -134,3 +145,41 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
 }
 
+extension HomeViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("send me to the view controller ")
+        let storyBoard = UIStoryboard.init(name: "Posts", bundle: Bundle.main)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "listOfPosts") as! postsVC
+        vc.myposts = myposts
+        // network request
+        searchRequest(searchBarText: searchBar.text ?? "")
+        show(vc,sender: nil)
+    }
+    
+    func searchRequest(searchBarText: String){
+        AuthRequestRouter.search(text: searchBarText).send(BaseModel<MyPosts>.self, then: searchHandleResponse)
+    }
+    
+    var searchHandleResponse: HandleResponse<BaseModel<MyPosts>> {
+        return { [weak self] (response) in
+            guard let self = self else {return}
+            self.view.isUserInteractionEnabled = true
+            switch response {
+            case .failure(let error):
+                self.showMessage(sub: error.localizedDescription)
+            case .success(let model):
+                if model.status{
+                    guard let item = model.data else {return}
+                    self.myposts = item.items!
+                    
+                }else{
+                    guard let errorMsg = model.msg else{return}
+                    self.showMessage(sub: errorMsg)
+                }
+                
+            }
+        }
+    }
+    
+    
+}
