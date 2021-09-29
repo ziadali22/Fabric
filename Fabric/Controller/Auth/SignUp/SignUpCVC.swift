@@ -8,10 +8,10 @@
 import UIKit
 
 class SignUpCVC: UICollectionViewCell {
+    // MARK: - Outlet
     @IBOutlet weak var dismissButton: UIButton!
-    
     @IBOutlet weak var labelButton: UILabel!
-    
+    // MARK: - Variables
     var deleteHandeler: ActionClouser?
     
     @IBAction func deleteAction(_ sender: Any) {

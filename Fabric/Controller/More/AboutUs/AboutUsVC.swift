@@ -8,10 +8,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 class AboutUsVC: UIViewController {
-
-
-    @IBOutlet weak var aboutUsTextView: UITextView!
-    
+    @IBOutlet weak var aboutUsTextView: UITextView!    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.aboutUsTextView.text = UserDataActions.getSettingModel()?.about

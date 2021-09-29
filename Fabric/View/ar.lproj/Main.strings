@@ -1,0 +1,207 @@
+
+/* Class = "UIButton"; normalTitle = "Add Post"; ObjectID = "1OR-Fj-YqP"; */
+"1OR-Fj-YqP.normalTitle" = "اضافه منشور";
+
+/* Class = "UILabel"; text = "Math"; ObjectID = "1U9-f8-VmB"; */
+"1U9-f8-VmB.text" = "رياضيات";
+
+/* Class = "UILabel"; text = "Content"; ObjectID = "1tB-vq-s9S"; */
+"1tB-vq-s9S.text" = "المحتوي";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "1zk-8x-gK3"; */
+"1zk-8x-gK3.title" = "عنصر";
+
+/* Class = "UIButton"; normalTitle = "Activate"; ObjectID = "2GW-Ca-AkP"; */
+"2GW-Ca-AkP.normalTitle" = "تفعيل";
+
+/* Class = "UILabel"; text = "Activation Code "; ObjectID = "2Z5-DU-KaN"; */
+"2Z5-DU-KaN.text" = "كود التفعيل ";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "44u-cy-JWO"; */
+"44u-cy-JWO.normalTitle" = "تخطي";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  "; ObjectID = "4Rj-dp-J4P"; */
+"4Rj-dp-J4P.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  ";
+
+/* Class = "UILabel"; text = "𝛑"; ObjectID = "6CM-g7-XIT"; */
+"6CM-g7-XIT.text" = "𝛑";
+
+/* Class = "UIButton"; normalTitle = "My Departments"; ObjectID = "73r-Sv-eNA"; */
+"73r-Sv-eNA.normalTitle" = "أقسامي";
+
+/* Class = "UILabel"; text = "enter the activation code 4 digit sent to mobile number :"; ObjectID = "A67-KW-7wH"; */
+"A67-KW-7wH.text" = "أدخل كود التفعيل المكون من ٤ ارقام للرقم :";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ATT-bP-LJP"; */
+"ATT-bP-LJP.normalTitle" = "تسجيل دخول";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DGR-vG-Xjw"; */
+"DGR-vG-Xjw.text" = "Label";
+
+/* Class = "UILabel"; text = "Highest Rate"; ObjectID = "DLo-yT-U3T"; */
+"DLo-yT-U3T.text" = "المنشورات الاكثر تقييما";
+
+/* Class = "UIButton"; normalTitle = "All Departments"; ObjectID = "Dsg-re-qEJ"; */
+"Dsg-re-qEJ.normalTitle" = "كل الأقسام";
+
+/* Class = "UILabel"; text = "code didn't send ?"; ObjectID = "EZ9-St-WyK"; */
+"EZ9-St-WyK.text" = "كود تفعيل لم يرسل ؟";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "Ep9-ae-RDw"; */
+"Ep9-ae-RDw.text" = "تغيير كلمه المرور";
+
+/* Class = "UILabel"; text = "16"; ObjectID = "GES-0R-QwT"; */
+"GES-0R-QwT.text" = "١٦";
+
+/* Class = "UILabel"; text = "Math Department"; ObjectID = "GdA-K9-UA5"; */
+"GdA-K9-UA5.text" = "قسم الرياضيات";
+
+/* Class = "UILabel"; text = "Forget Password"; ObjectID = "H02-Xl-bEw"; */
+"H02-Xl-bEw.text" = "نسيت كلمه المرور";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  "; ObjectID = "Hqv-lS-rAc"; */
+"Hqv-lS-rAc.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  ";
+
+/* Class = "UIButton"; configuration.title = "Departments"; ObjectID = "LRR-cu-Qmn"; */
+"LRR-cu-Qmn.configuration.title" = "الآقسام";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LRR-cu-Qmn"; */
+"LRR-cu-Qmn.normalTitle" = " ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "LaI-Fr-exT"; */
+"LaI-Fr-exT.title" = " ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "OrT-Gb-EGg"; */
+"OrT-Gb-EGg.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "Pmp-Oa-eGG"; */
+"Pmp-Oa-eGG.normalTitle" = "تخطي";
+
+/* Class = "UILabel"; text = "Newst Post"; ObjectID = "QHW-yd-aF9"; */
+"QHW-yd-aF9.text" = "المنشورات الحديثه";
+
+/* Class = "UIButton"; normalTitle = "comment"; ObjectID = "RGh-bC-Kmf"; */
+"RGh-bC-Kmf.normalTitle" = "تعليق";
+
+/* Class = "UILabel"; text = "Sign Up"; ObjectID = "Rcb-OE-DLo"; */
+"Rcb-OE-DLo.text" = "تسحيل حساب جديد";
+
+/* Class = "UILabel"; text = "add attachment"; ObjectID = "Ror-0d-BDf"; */
+"Ror-0d-BDf.text" = "اضافه مرفق";
+
+/* Class = "UILabel"; text = "𝛑"; ObjectID = "T5H-Ap-fBk"; */
+"T5H-Ap-fBk.text" = "𝛑";
+
+/* Class = "UIButton"; configuration.title = "Departments"; ObjectID = "UdT-ZF-aXj"; */
+"UdT-ZF-aXj.configuration.title" = "الأقسام";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UdT-ZF-aXj"; */
+"UdT-ZF-aXj.normalTitle" = " ";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "VhB-WJ-010"; */
+"VhB-WJ-010.title" = "عنصر";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vyy-3x-nat"; */
+"Vyy-3x-nat.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "X7G-8Q-Z3v"; */
+"X7G-8Q-Z3v.normalTitle" = "تسحيل";
+
+/* Class = "UILabel"; text = "16"; ObjectID = "aEo-5R-DcB"; */
+"aEo-5R-DcB.text" = "16";
+
+/* Class = "UILabel"; text = "nour ashraf yassin"; ObjectID = "aa4-5I-5sE"; */
+"aa4-5I-5sE.text" = "نور اشرف ياسين";
+
+/* Class = "UILabel"; text = "Math"; ObjectID = "cgj-h7-iEO"; */
+"cgj-h7-iEO.text" = "رياضيات";
+
+/* Class = "UITextView"; text = "Type Here"; ObjectID = "dDH-Tz-hbV"; */
+"dDH-Tz-hbV.text" = "أكتب هنا";
+
+/* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "ezl-wP-SPy"; */
+"ezl-wP-SPy.normalTitle" = "نسيت كلمه المرور";
+
+/* Class = "UILabel"; text = "nour ashraf yassin"; ObjectID = "ffP-tf-K5H"; */
+"ffP-tf-K5H.text" = "نور اشرف ياسين";
+
+/* Class = "UILabel"; text = "22 February 2021"; ObjectID = "fxn-8u-E4E"; */
+"fxn-8u-E4E.text" = "٢٢ فبراير ٢٠٢١";
+
+/* Class = "UILabel"; text = "Add New Post"; ObjectID = "gUa-Ka-a5W"; */
+"gUa-Ka-a5W.text" = "اضافق منشور جديد";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "gZM-3Q-FkR"; */
+"gZM-3Q-FkR.normalTitle" = "تسحيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "comment"; ObjectID = "hZ5-vy-cBR"; */
+"hZ5-vy-cBR.normalTitle" = "تعليق";
+
+/* Class = "UILabel"; text = "New post added to math department"; ObjectID = "i5G-sw-VTS"; */
+"i5G-sw-VTS.text" = "منشور جديد اضاف لقسم الرياضيات";
+
+/* Class = "UILabel"; text = "Enter the activation code (00:30)"; ObjectID = "iJy-eU-CPO"; */
+"iJy-eU-CPO.text" = "ادخل كود التفعيل (٠٠:٣٠)";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "ik7-tN-Epc"; */
+"ik7-tN-Epc.text" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "Choose department you want to search for "; ObjectID = "lyT-hu-Pb0"; */
+"lyT-hu-Pb0.text" = "أختر القسم الذي تريد البحث عنه";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "mIe-YB-KnJ"; */
+"mIe-YB-KnJ.normalTitle" = "تسجيل حساب جديد";
+
+/* Class = "UIButton"; configuration.title = " "; ObjectID = "nTg-RM-tdd"; */
+"nTg-RM-tdd.configuration.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nTg-RM-tdd"; */
+"nTg-RM-tdd.normalTitle" = " ";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "nUV-Qe-9CL"; */
+"nUV-Qe-9CL.normalTitle" = "تخطي";
+
+/* Class = "UILabel"; text = "22 February 2021"; ObjectID = "oLo-Go-u6p"; */
+"oLo-Go-u6p.text" = "٢٢ فبراير ٢٠٢١";
+
+/* Class = "UILabel"; text = "Do you search for solution ?"; ObjectID = "ozA-tO-BXY"; */
+"ozA-tO-BXY.text" = "هل تبحث عن حل ؟";
+
+/* Class = "UIButton"; normalTitle = "Send Code"; ObjectID = "p1K-n2-s4J"; */
+"p1K-n2-s4J.normalTitle" = "أرسل الكود";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "p9Q-q5-ofe"; */
+"p9Q-q5-ofe.title" = "الرئيسيه";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "qsa-8e-uWf"; */
+"qsa-8e-uWf.normalTitle" = "بحث";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "s6t-kI-Iqo"; */
+"s6t-kI-Iqo.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "  Following"; ObjectID = "sJA-lH-XG1"; */
+"sJA-lH-XG1.normalTitle" = "متابع";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "sw0-zZ-CKB"; */
+"sw0-zZ-CKB.normalTitle" = "تخطي";
+
+/* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "ta2-6H-isD"; */
+"ta2-6H-isD.normalTitle" = "حفظ التغييرات";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "tjo-bg-Asn"; */
+"tjo-bg-Asn.text" = "الآشعارات";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "uqC-Pl-zbO"; */
+"uqC-Pl-zbO.text" = "-";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "vZn-Kp-3hQ"; */
+"vZn-Kp-3hQ.title" = " ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "vvH-ea-xWL"; */
+"vvH-ea-xWL.title" = " ";
+
+/* Class = "UILabel"; text = "Do you search for solution ?"; ObjectID = "xNm-gW-YRu"; */
+"xNm-gW-YRu.text" = "هل تبحث عن حل ؟";
+
+/* Class = "UITabBarItem"; title = "Departments"; ObjectID = "zwn-XV-gaP"; */
+"zwn-XV-gaP.title" = "الأقسام";

@@ -47,8 +47,7 @@ extension UserProfileViewController {
                 if model.status{
                     guard let item = model.data else {return}
                     self.addData(item: item)
-                    self.postId = item.id
-                    
+                    //self.postId = item.id  
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)

@@ -9,13 +9,12 @@ import UIKit
 
 class moreTVC: UITableViewCell {
 
-
+// MARK: - Outlet
     @IBOutlet weak var TitleImage: UIImageView!
     @IBOutlet weak var TitleTxt: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -8,18 +8,15 @@
 import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
-
+    // MARK: - Outlet
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var dotView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
         dotView.addDashBorder(color: .green, cornerRadius: 3)
     }
     

@@ -22,9 +22,24 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var phoneNumber: SkyFloatingLabelTextField!
     @IBOutlet weak var emailField: SkyFloatingLabelTextField!
     @IBOutlet weak var sendBtnOutlet: LoadingButton!
+    // localization
+    @IBOutlet weak var myAccountTitle: UILabel!
+    @IBOutlet weak var changeImageTitle: UIButton!
+    @IBOutlet weak var changePasswordTitle: UIButton!
+    @IBOutlet weak var sendTitle: LoadingButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // localization
+        myAccountTitle.text = "My Account".localized
+        changeImageTitle.setTitle("Change Image".localized, for: .normal)
+        nameField.placeholder = "Name".localized
+        phoneNumber.placeholder = "Phone Number".localized
+        emailField.placeholder = "Email".localized
+        changePasswordTitle.setTitle("Change Password".localized, for: .normal)
+        sendTitle.setTitle("Confirm".localized, for: .normal)
+        
+        //
         self.nameField.text = UserDataActions.getUserModel()?.name
         self.phoneNumber.text = UserDataActions.getUserModel()?.phone
         self.emailField.text = UserDataActions.getUserModel()?.email
@@ -32,6 +47,7 @@ class MyAccountViewController: UIViewController {
         dotView.addDashBorder(color: .white, cornerRadius: 3)
         imageDotView.addDashBorder(color: .white, cornerRadius: 3)
         userImage.kf.setImage(with: URL(string: (UserDataActions.getUserModel()?.photo)!))
+        
     }
     
     @IBAction func popUpChangePassword(_ sender: Any) {
@@ -42,9 +58,7 @@ class MyAccountViewController: UIViewController {
     
     
     @IBAction func changeUserImage(_ sender: Any) {
-        
         pickImage()
-
     }
     
     func pickImage(){
@@ -57,37 +71,7 @@ class MyAccountViewController: UIViewController {
     
     
     @IBAction func sendChanges(_ sender: Any) {
-        sendBtnOutlet.showLoader()
-        let header = ["Authorization":"Berear\(UserDataActions.getUserModel()?.token ?? "")", "Accept": "application/json"]
-        let url  = "http://fabric.panorama-q.com/api/auth/profile"
-        let parameters = ["_method": "put" ,"name": nameField.text ?? "","phone": phoneNumber.text ?? "","email":emailField.text ?? ""]
-        if uploadedImage != nil{
-            if let image = uploadedImage{
-                let imageArr = [image]
-                AlamofireMultiPart.PostMultiWithModel(model: BaseModel<User>.self, url: url, Images: imageArr, header: header, parameters: parameters, completion: handleResponse)
-            }
-        }
-        
-        func handleResponse(result: ServerResponse<BaseModel<User>>){
-            switch result {
-            case .failure(let error):
-                self.showMessage(sub: error?.localizedDescription)
-            case .success(let model):
-                if model.status{
-                    self.showMessage(sub: "Profile Updated Successfully !".localized)
-                    sendBtnOutlet.dismissLoader()
-                    guard let user = model.data else { return  }
-                    UserDataActions.cashUserModel(user: user)
-                    self.navigationController?.popViewController(animated: true)
-                    userImage.kf.setImage(with: URL(string: (UserDataActions.getUserModel()?.photo)!))
-                }else{
-                    guard let errorMsg = model.msg else{return}
-                    self.showMessage(sub: errorMsg)
-                }
-                
-            }
-        }
-
+        updateUserProfileRequest()
     }
 
 }

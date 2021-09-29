@@ -72,6 +72,9 @@
                                                         </constraints>
                                                         <color key="tintColor" red="0.0" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" image="bell.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="getNotifications:" destination="G90-Km-UuT" eventType="touchUpInside" id="KHU-lR-Y6g"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -296,8 +299,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionview" destination="KUB-xY-Ogy" id="BQj-oz-C8v"/>
+                        <outlet property="notificationsBtn" destination="FB4-pB-BJk" id="Op3-Xx-co7"/>
                         <outlet property="postVcSearchBar" destination="Ttu-i4-Rg4" id="CHi-Oc-SNo"/>
                         <outlet property="scrollView" destination="zVG-4M-66L" id="1LZ-jn-m5C"/>
+                        <outlet property="searchBar" destination="Ttu-i4-Rg4" id="Mia-Fa-8ht"/>
+                        <outlet property="searchBarHeight" destination="f9b-g3-d8Q" id="hAE-Kn-mJm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CuP-iV-yzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -315,28 +321,51 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-cm-HUA">
                                 <rect key="frame" x="16" y="293" width="382" height="310"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
+                                        <rect key="frame" x="60" y="243" width="262" height="37.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="262" id="kcM-DN-ZuD"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="the report sent to the manager and it will be review soon!">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="16" name="SFProDisplay-BoldItalic"/>
+                                                    <font key="NSOriginalFont" size="16" name="SFProDisplay-SemiboldItalic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73a-4q-tkL">
+                                        <rect key="frame" x="338" y="0.0" width="44" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="5MA-tD-097"/>
+                                            <constraint firstAttribute="height" constant="40" id="B7k-i9-NTX"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="multiply.circle.fill" catalog="system" title=" " subtitle=" "/>
+                                        <connections>
+                                            <action selector="reportDismiss:" destination="A3a-YE-9jg" eventType="touchUpInside" id="iUd-2d-KDG"/>
+                                        </connections>
+                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_delivery_address_03n0" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-Rc-1ks">
-                                        <rect key="frame" x="0.0" y="4" width="382" height="170"/>
+                                        <rect key="frame" x="0.0" y="49" width="382" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="vud-An-39K"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the report sent to the manager and it will be review soon!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
-                                        <rect key="frame" x="60" y="214" width="262" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="262" id="kcM-DN-ZuD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Fea-Rc-1ks" firstAttribute="leading" secondItem="Yxh-cm-HUA" secondAttribute="leading" id="22h-VK-rGL"/>
                                     <constraint firstAttribute="trailing" secondItem="Fea-Rc-1ks" secondAttribute="trailing" id="4lz-Fx-QX7"/>
-                                    <constraint firstItem="Fea-Rc-1ks" firstAttribute="top" secondItem="Yxh-cm-HUA" secondAttribute="top" constant="4" id="GYZ-g1-f2P"/>
-                                    <constraint firstItem="IAi-sv-XeF" firstAttribute="top" secondItem="Fea-Rc-1ks" secondAttribute="bottom" constant="40" id="Q0A-pK-Abw"/>
+                                    <constraint firstItem="73a-4q-tkL" firstAttribute="top" secondItem="Yxh-cm-HUA" secondAttribute="top" id="Ff6-tg-IL9"/>
+                                    <constraint firstItem="IAi-sv-XeF" firstAttribute="top" secondItem="Fea-Rc-1ks" secondAttribute="bottom" constant="24" id="HJJ-1V-6cz"/>
+                                    <constraint firstAttribute="trailing" secondItem="73a-4q-tkL" secondAttribute="trailing" id="NDW-EN-7bk"/>
+                                    <constraint firstItem="Fea-Rc-1ks" firstAttribute="top" secondItem="73a-4q-tkL" secondAttribute="bottom" constant="9" id="Tjw-wO-gEd"/>
                                     <constraint firstAttribute="height" constant="310" id="lvE-VW-jGT"/>
                                     <constraint firstItem="IAi-sv-XeF" firstAttribute="centerX" secondItem="Yxh-cm-HUA" secondAttribute="centerX" id="vgJ-Ne-nMw"/>
                                 </constraints>
@@ -500,14 +529,14 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-TT-euo">
-                                                                    <rect key="frame" x="36" y="94" width="310" height="59"/>
+                                                                    <rect key="frame" x="36" y="94" width="310" height="75"/>
                                                                     <subviews>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="type here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DND-NE-4xr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="59"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="75"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="200" id="Ea0-0l-RXW"/>
-                                                                                <constraint firstAttribute="height" constant="59" id="u5I-yv-KaA"/>
+                                                                                <constraint firstAttribute="height" constant="75" id="u5I-yv-KaA"/>
                                                                             </constraints>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -526,9 +555,23 @@
                                                                         <action selector="deleteComment:" destination="UjB-aj-l9o" eventType="touchUpInside" id="rlk-7Q-PWy"/>
                                                                     </connections>
                                                                 </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgj-Nc-Xsa">
+                                                                    <rect key="frame" x="131" y="116.5" width="120" height="31"/>
+                                                                    <color key="backgroundColor" red="0.60392156860000001" green="0.602715373" blue="0.602715373" alpha="0.16156556372549019" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="120" id="9rp-nx-3fS"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" name="green"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="Open PDF "/>
+                                                                    <connections>
+                                                                        <action selector="openPdfAction:" destination="UjB-aj-l9o" eventType="touchUpInside" id="RZc-ma-1aP"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="31j-hi-fc2" firstAttribute="leading" secondItem="WKz-wj-cON" secondAttribute="leadingMargin" constant="16" id="36q-ns-dxb"/>
+                                                                <constraint firstItem="fgj-Nc-Xsa" firstAttribute="centerX" secondItem="WKz-wj-cON" secondAttribute="centerX" id="5iB-Ue-0UZ"/>
                                                                 <constraint firstItem="NWp-YD-nXo" firstAttribute="leading" secondItem="WKz-wj-cON" secondAttribute="leading" constant="16" id="6e9-XR-2w9"/>
                                                                 <constraint firstItem="C5M-TT-euo" firstAttribute="leading" secondItem="WKz-wj-cON" secondAttribute="leadingMargin" constant="16" id="8Yc-So-LIx"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="31j-hi-fc2" secondAttribute="trailing" constant="16" id="Aht-gB-ZTr"/>
@@ -536,6 +579,7 @@
                                                                 <constraint firstItem="C5M-TT-euo" firstAttribute="top" secondItem="NWp-YD-nXo" secondAttribute="bottom" constant="16" id="KLL-rb-RSt"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="C5M-TT-euo" secondAttribute="trailing" constant="16" id="Mr5-Yv-PhS"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="zDh-kH-wiw" secondAttribute="trailing" constant="5" id="SRb-eM-ymD"/>
+                                                                <constraint firstItem="fgj-Nc-Xsa" firstAttribute="centerY" secondItem="WKz-wj-cON" secondAttribute="centerY" id="fgw-8p-Iet"/>
                                                                 <constraint firstItem="31j-hi-fc2" firstAttribute="top" secondItem="T6S-N7-rPN" secondAttribute="bottom" constant="16" id="jK0-Fz-f9B"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="T6S-N7-rPN" secondAttribute="trailing" constant="8" id="miP-Uh-TgD"/>
                                                                 <constraint firstItem="31j-hi-fc2" firstAttribute="bottom" secondItem="WKz-wj-cON" secondAttribute="bottomMargin" id="oQv-PB-fEB"/>
@@ -548,6 +592,7 @@
                                                             <outlet property="date" destination="DqA-z7-aIo" id="SeK-SA-2ll"/>
                                                             <outlet property="deleteComment" destination="T6S-N7-rPN" id="KKg-cT-xKm"/>
                                                             <outlet property="imageContent" destination="31j-hi-fc2" id="RfA-c0-x8c"/>
+                                                            <outlet property="openPdfBtn" destination="fgj-Nc-Xsa" id="aPz-dH-3bT"/>
                                                             <outlet property="reportBtnOutlet" destination="4bl-0J-waK" id="NWs-A9-LNv"/>
                                                             <outlet property="userImage" destination="haj-9c-hxv" id="kdD-QK-7wH"/>
                                                             <outlet property="userNameComment" destination="bmz-c5-Igq" id="wCw-4g-P5x"/>
@@ -555,19 +600,11 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56D-hK-mbv">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56D-hK-mbv">
                                                 <rect key="frame" x="16" y="739" width="117" height="31"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Add Comment">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.0" green="0.49415481459999999" blue="0.30980392159999998" alpha="0.84212622550000005" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="17" name="Arial-BoldItalicMT"/>
-                                                                <font key="NSOriginalFont" size="17" name="Arial-BoldItalicMT"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="17"/>
+                                                <state key="normal" title="Add Comment">
+                                                    <color key="titleColor" red="0.0" green="0.49415481459999999" blue="0.30980392159999998" alpha="0.84212622550000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="addCommentPopUP:" destination="FSN-u5-MBV" eventType="touchUpInside" id="6LV-Ev-vmZ"/>
@@ -602,15 +639,37 @@
                                                 <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-rw-gk0">
-                                                <rect key="frame" x="187.5" y="153.5" width="39" height="31"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system"/>
-                                                <connections>
-                                                    <action selector="videoPlayButton:" destination="FSN-u5-MBV" eventType="touchUpInside" id="mPr-7d-aZZ"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WPe-X7-GV5">
+                                                <rect key="frame" x="89" y="153.5" width="236" height="31"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-rw-gk0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="31"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="  Play Video"/>
+                                                        <connections>
+                                                            <action selector="videoPlayButton:" destination="FSN-u5-MBV" eventType="touchUpInside" id="mPr-7d-aZZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igY-zs-PPy">
+                                                        <rect key="frame" x="121.5" y="0.0" width="114.5" height="31"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.38857230392156861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Open PDF">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="0.0"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="openPdfAction:" destination="FSN-u5-MBV" eventType="touchUpInside" id="SzF-JB-1Up"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -625,13 +684,13 @@
                                             <constraint firstAttribute="trailing" secondItem="vd9-al-fTb" secondAttribute="trailing" constant="16" id="U0d-EI-iY7"/>
                                             <constraint firstItem="H0n-nS-EXl" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="Vdg-oY-VXl"/>
                                             <constraint firstItem="vd9-al-fTb" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="352" id="YA7-S6-gil"/>
-                                            <constraint firstItem="rBh-rw-gk0" firstAttribute="centerX" secondItem="WHx-dl-nay" secondAttribute="centerX" id="Yfi-wk-MK7"/>
+                                            <constraint firstItem="WPe-X7-GV5" firstAttribute="centerX" secondItem="1Hp-PJ-KXj" secondAttribute="centerX" id="ZwD-cc-T78"/>
                                             <constraint firstAttribute="trailing" secondItem="6mI-3U-akF" secondAttribute="trailing" constant="16" id="ahS-V2-Rs8"/>
                                             <constraint firstItem="1Hp-PJ-KXj" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="fan-JM-HZT"/>
                                             <constraint firstAttribute="trailing" secondItem="bxu-EU-ibT" secondAttribute="trailing" constant="16" id="gbp-WM-xO8"/>
                                             <constraint firstItem="6mI-3U-akF" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="16" id="j93-Ub-fSw"/>
                                             <constraint firstItem="6mI-3U-akF" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="16" id="k1b-A8-ca1"/>
-                                            <constraint firstItem="rBh-rw-gk0" firstAttribute="centerY" secondItem="1Hp-PJ-KXj" secondAttribute="centerY" id="m1j-T1-x1V"/>
+                                            <constraint firstItem="WPe-X7-GV5" firstAttribute="centerY" secondItem="1Hp-PJ-KXj" secondAttribute="centerY" id="nIP-Nj-Xeb"/>
                                             <constraint firstItem="edq-i4-rhG" firstAttribute="top" secondItem="WHx-dl-nay" secondAttribute="top" constant="352" id="qEF-rD-pdF"/>
                                             <constraint firstItem="nwJ-vg-haa" firstAttribute="top" secondItem="1Hp-PJ-KXj" secondAttribute="bottom" constant="20" id="qHs-yN-2sA"/>
                                             <constraint firstItem="edq-i4-rhG" firstAttribute="leading" secondItem="WHx-dl-nay" secondAttribute="leading" constant="18" id="t8q-9h-gt6"/>
@@ -662,10 +721,14 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="g8K-hk-7Yh"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addCommentTitle" destination="56D-hK-mbv" id="Sqg-16-pKa"/>
                         <outlet property="commentCount" destination="LmN-5m-Lqh" id="Oo5-RG-2EH"/>
+                        <outlet property="commentCountTitle" destination="LzY-W7-sz5" id="KDK-hK-bnp"/>
+                        <outlet property="commentsTitle" destination="edq-i4-rhG" id="DdE-gP-P5H"/>
                         <outlet property="dateText" destination="bxu-EU-ibT" id="Dhs-bK-ijY"/>
                         <outlet property="deleteBtn" destination="OLY-d9-Vdo" id="31l-Jw-BBl"/>
                         <outlet property="departmentText" destination="ojW-YS-Sf8" id="EnY-Mq-f2n"/>
+                        <outlet property="openPdfBtn" destination="igY-zs-PPy" id="15r-aX-gB1"/>
                         <outlet property="postImage" destination="1Hp-PJ-KXj" id="3dh-M2-EoD"/>
                         <outlet property="scrollViewPost" destination="EH6-9z-esO" id="AQa-Hd-hAg"/>
                         <outlet property="tableHeight" destination="lnn-QH-BQM" id="znw-5n-fIA"/>
@@ -731,7 +794,7 @@
                                                         <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4d-FP-a9a">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4d-FP-a9a">
                                                         <rect key="frame" x="16" y="266.5" width="382" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1139,10 +1202,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answersCount" destination="WJG-Os-4i2" id="7ZK-Fm-fqK"/>
+                        <outlet property="answersCount" destination="OSS-9U-7Pb" id="kaA-Sv-MvE"/>
+                        <outlet property="answersCountTitle" destination="OSS-9U-7Pb" id="o53-eg-3yh"/>
                         <outlet property="firstCollection" destination="dEJ-ie-bko" id="P9Q-xg-V9v"/>
                         <outlet property="firstCollectionViewForPosts" destination="dEJ-ie-bko" id="gEU-Nq-9Ta"/>
                         <outlet property="postsCount" destination="Kik-nW-D8F" id="iw6-cr-Oyb"/>
+                        <outlet property="postsCountTitle" destination="aDb-Sa-UM1" id="bIn-75-lCB"/>
+                        <outlet property="postsTitle" destination="9nW-R7-20G" id="pb4-V8-oCf"/>
                         <outlet property="secondCollection" destination="0zf-vQ-AKM" id="ijx-Us-HZO"/>
                         <outlet property="secondCollectionViewForComments" destination="0zf-vQ-AKM" id="MKP-06-Rza"/>
                         <outlet property="userEmail" destination="AG5-GK-N1e" id="lsc-jC-uUt"/>
@@ -1286,6 +1352,7 @@
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="lan-kj-16o" id="LNb-6H-Fae"/>
+                        <outlet property="commentTypeTitle" destination="8ZY-Hx-yeG" id="c0G-fu-Bez"/>
                         <outlet property="comntText" destination="LL0-nS-EAb" id="aCN-24-6Xp"/>
                         <outlet property="dotView" destination="l1q-FL-UDO" id="NP7-gc-Zil"/>
                     </connections>
@@ -1304,6 +1371,7 @@
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="multiply.circle" catalog="system" width="128" height="121"/>
+        <image name="multiply.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pi-mathematical-constant-symbol" width="28.885000228881836" height="27.333000183105469"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>

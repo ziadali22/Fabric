@@ -8,12 +8,9 @@
 import UIKit
 
 class TermsViewController: UIViewController {
-
     @IBOutlet weak var termsTextView: UITextView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.termsTextView.text = UserDataActions.getSettingModel()?.terms
     }
     

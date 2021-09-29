@@ -9,26 +9,25 @@ import UIKit
 
 class ActivationCodeVC: UIViewController {
 
+    //MARK: - outlets
     @IBOutlet weak var activateBtn: UIButton!
-    
     @IBOutlet weak var FirstTextField: UITextField!
     @IBOutlet weak var SecondTextField: UITextField!
     @IBOutlet weak var ThirdTextField: UITextField!
     @IBOutlet weak var FourthTextField: UITextField!
-    
     @IBOutlet weak var DotView: UIView!
-    
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var sendAgainTitle: UIButton!
     
-    // variables
+    //MARK: - variables
     var phone: String?
     var code: String?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
+        // localization
+        sendAgainTitle.setTitle("Send Again".localized, for: .normal)
         phoneLabel.text = phone
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         // shaping the rectangle text field
@@ -39,8 +38,6 @@ class ActivationCodeVC: UIViewController {
         
         // this function for one number will be in the text field and then the indicator will go to the another text field
         setUpTextFiled()
-        
-        
     }
     func customizeTextFieldBorder(attr: UITextField) {
         attr.layer.borderColor = UIColor.white
@@ -48,6 +45,8 @@ class ActivationCodeVC: UIViewController {
         attr.layer.cornerRadius = 3
         attr.layer.borderWidth = 1.5
     }
+    
+    // MARK: - validation
     func validateFields()  {
         
         guard let first = FirstTextField.text , !first.isEmpty else { return self.showMessage(sub: "check valid first digit".localized) }

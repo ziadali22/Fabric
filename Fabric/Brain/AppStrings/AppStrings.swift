@@ -9,7 +9,7 @@
 import Foundation
 struct AppString {
     //MARK:- tabbar
-    static let home = "Home".localized
+    static let departments = "Departments".localized
     static let more = "more".localized
     static let orders = "my orders".localized
     static let offers = "offers".localized

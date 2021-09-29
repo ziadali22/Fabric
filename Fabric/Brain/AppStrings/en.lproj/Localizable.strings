@@ -6,144 +6,66 @@
  Copyright © 2020 Abulrahman mohsen. All rights reserved.
  */
 
-"More" = "More";
-"Chat" = "Chat";
-"categories" = "categories";
-"Home" =  "Home";
-"Application Map" = "Application Map";
-"company users" = "company users";
-"Add User" = "Add User";
-"update user" = "update user";
-"users" = "users";
-//advDetail
-"check valid rate" = "check valid rate";
-"check valid comment" = "check valid comment";
-"comment Added Successfully" = "comment Added Successfully";
-"Start From " = "Start From ";
-"Active" = "Active";
-"closed" = "closed";
-"check valid price" = "check valid price";
-//MoreVCs
-"Profile" = "Profile";
-"My Advertises" = "My Advertises";
-"My Favourite" = "My Favourite";
-"Wallet" = "Wallet";
-"My Transformation" = "My Transformation";
-"Setting" = "Setting";
-"Map" = "Map";
-"Log out" = "Log out";
+
+// MARK: - IntroVc
+"Next" = "Next";
+// MARK: - Login
+"Password" = "Password";
+"don't have an account ?" = "don't have an account ?";
+// MARK: - ActivationCodeVC
+"Send Again" = "Send Again";
+// MARK: - Home
+"Departments" = "Departments";
+// MARK: - Departments
+"UnFollow" = "UnFollow";
 "Follow" = "Follow";
-"un Follow" = "un Follow";
-//settingVCs
-"setting Notification" = "setting Notification";
-"Blocks List" = "Blocks List";
-"common quastions" = "common quastions";
-"About us" = "About us";
-"Terms And Conditions" = "Terms And Conditions";
-"Privacy policy" = "Privacy policy";
-"Call us" = "Call us";
+// MARK: - MoreVc
+"Profile" = "Profile";
 "Language" = "Language";
-"check valid message" = "check valid message";
-"check valid subject" = "check valid subject";
-"message Sent" = "message Sent";
-"offer" = "offer";
-"order" = "order";
-"auction" = "auction";
-"User Added" = "User Added";
-"User Updated" = "User Updated";
-//AddAdv
-"enter valid Description" = "enter valid Description";
-"enter valid images" = "enter valid images";
-"enter valid Classification" = "enter valid Classification";
-"Adv Added Successfully" = "Adv Added Successfully";
-"Adv updated Successfullty" = "Adv updated Successfullty";
-"enter valid duration from" = "enter valid duration from";
-"enter valid duration To" = "enter valid duration To";
-"enter valid start auction" = "enter valid start auction";
-"image selected" = "image selected";
-"enter valid bank" = "enter valid bank";
-"enter valid bank account" = "enter valid bank account";
-"enter valid Amount" = "enter valid Amount";
-"enter valid transaction" = "enter valid transaction";
-"transaction Added Successfully" = "transaction Added Successfully";
-"unblocked Success" = "unblocked Success";
-"setting company users" = "setting company users";
-//Authentication
-"enter vaild email" = "enter vaild email";
-"enter valid password" = "enter valid password";
-"enter valid user name" = "enter valid user name";
-"enter vaild phone" = "enter vaild phone";
-"enter vaild Re-password" = "enter vaild Re-password";
-"Password and re password doesn't match" = "Password and re password doesn't match";
-"Must Accept Condition And Terms" = "Must Accept Condition And Terms";
-"enter valid old Password" = "enter valid old Password";
-"enter valid new Password" = "enter valid new Password";
-"enter valid Address" = "enter valid Address";
-"open location permission" = "open location permission";
-"enter valid Image" = "enter valid Image";
-"enter valid Message" = "enter valid Message";
-"enter valid code" = "enter valid code";
-"Login Success" = "Login Success";
-"register success" = "register success";
-"Code Sent Successfully" = "Code Sent Successfully";
-"your code is Correct" = "your code is Correct";
-"password changed successfully" = "password changed successfully";
-"check valid city" = "check valid city";
-"Register" = "Register";
-"profile Updated" = "profile Updated";
-"Proccess Done" = "Proccess Done";
-"install whatsApp" = "install whatsApp";
-"You Don't Have Permission" = "You Don't Have Permission";
-"enter valid search text" = "enter valid search text";
-"Empty Data" = "Empty Data";
-"Less" = "Less";
-"un Block" = "un Block";
-" SAR " = " SAR ";
-"user" = "user";
-"company" = "company";
-"factory" = "factory";
-"employee" = "employee";
-"organization" = "organization";
-"check valid user type" = "check valid user type";
-"normal" = "normal";
-"order" = "order";
-"auction" = "auction";
-"check valid report reason" = "check valid report reason";
-"gallery" = "gallery";
-//Alert
-"Delete Conversation" = "Delete Conversation";
-"Warining" = "Warining";
-"Ok" = "Ok";
-"Cancel" = "Cancel";
-"Have To Restart to apply changes" = "Have To Restart to apply changes";
-"Not Allowed" = "Not Allowed";
-"choose" = "choose";
-"Media messages" = "Media messages";
-"send Image" = "send Image";
-"Not Allow To Change To Same Language" = "Not Allow To Change To Same Language";
-"Block" = "Block";
-"Report" = "Report";
-"On" = "On";
-"Off" = "Off";
-"Delete" = "Delete";
-"Edit Permissions" = "Edit Permissions";
-"You should Login First" = "You should Login First";
-"Login" = "Login";
+"Terms and conditions" = "Terms and conditions";
+"About Us" = "About Us";
+"Contact Us" = "Contact Us";
+"Log Out" = "Log Out";
+// MARK: - TabBAr
+"my posts" = "my posts";
+"more" = "more";
+// MARK: - Contact us
+"Type your message here" = "Type your message here";
+"Contact Us" = "Contact Us";
+"Name" = "Name";
+"Phone Number" = "Phone Number";
+"Email" = "Email";
+"Send" = "Send";
+// MARK: - User Profile
+"My Account" = "My Account";
+"Change Image" = "  Change Image";
+"Phone Number" = "Phone Number";
+"Email" = "Email";
+"Change Password" = "Change Password";
+"Confirm" = "Confirm";
 
-"Accepted" = "Accepted";
-"Pending" = "Pending";
-"Rejected" = "Rejected";
+//MARK: - Change Password popUp
+"Change Password" = "Change Password";
+"New Password" = "New Password";
+"Confirm Password" = "Confirm Password";
+"Save" = "Save";
 
-"api_participate_auction" = "participate auction";
-"api_trigger_favourite" = "trigger favourite";
-"api_delete_or_deactivate_ads" = "delete or deactivate ads";
-"api_edit_ads" = "edit ads";
-"api_add_ads" =  "add ads";
-"api_add_premium" = "add premium";
-"api_add_comment" = "add comment";
-"api_contact_users" =  "contact users";
-"api_add_transactions" = "add transactions";
-"api_follow" = "follow";
-"api_report_or_block" = "report or block";
-"Please add main image" = "Please add main image";
-"Are you Sure End Chat" = "Are you Sure End Chat";
+//MARK: - PostDetailViewController
+"Play Video" = "Play Video";
+"Open Pdf"= "Open Pdf";
+"comments" = "comments";
+"comment" = "comment";
+"Add Comment" = "Add Comment";
+"report" = "repcort";
+// MARK: - Add Comment PopUp
+"Comment Type (PDF, Image)" = "Comment Type (PDF, Image)";
+"Type your comment here" =  "Type your comment here";
+
+// MARK: - Add Posts
+"Choose Department" = "Choose Department";
+"Add your post text content here" = "Add your post text content here";
+
+// MARK: - UserProfileViewController
+"Posts Count" = "Posts Count";
+"Answer Count" = "Answer Count";
+"Posts" = "Posts";

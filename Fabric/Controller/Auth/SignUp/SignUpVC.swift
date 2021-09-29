@@ -9,7 +9,7 @@ import UIKit
 import SkyFloatingLabelTextField
 class SignUpVC: UIViewController {
     
-    
+    // MARK: - Outlet
     @IBOutlet weak var collectionViwe: UICollectionView!
     @IBOutlet weak var DotView: UIView!
     @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
@@ -20,7 +20,8 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var categoryTxt: SkyFloatingLabelTextField!
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
-
+    
+    // MARK: - Variables
     var categoryData: [CategoryModel]?
     let pickerView = ToolbarPickerView()
     var selectedCategory = [CategoryModel]()
@@ -29,6 +30,13 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // localization
+        nameTextField.placeholder = "Name".localized
+        phoneNumberTextField.placeholder = "Phone Number".localized
+        passwordTextField.placeholder = "Password".localized
+        confirmTextField.placeholder = "Confirm Password".localized
+        emailTextField.placeholder = "Email".localized
+        
         getCategoriesApi()
         collectionViwe.dataSource = self
         collectionViwe.delegate = self
@@ -36,29 +44,24 @@ class SignUpVC: UIViewController {
         collectionHeight.constant = 0
         setUpPicker()
     }
-    
+    //PickerView
     func setUpPicker(){
         self.categoryTxt.inputView = self.pickerView
         self.categoryTxt.inputAccessoryView = self.pickerView.toolbar
+        self.categoryTxt.placeholder = "Choose Department".localized
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         self.pickerView.toolbarDelegate = self
         self.pickerView.reloadAllComponents()
     }
-    
-    
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-        
     @IBAction func signUpButton(_ sender: Any) {
         validatation()
-        
-
-        
     }
 
+    // MARK: - Validation
     func validatation(){
         guard let name = nameTextField.text , !name.isEmpty else { return self.showMessage(sub: "check valid name".localized) }
         guard let phone = phoneNumberTextField.text , !phone.isEmpty else { return self.showMessage(sub: "check valid phone".localized) }
@@ -73,16 +76,19 @@ class SignUpVC: UIViewController {
             for  i in selectedCategory {
                 if let id = i.id{
                     categoryId.append(id)
+                    print(categoryId)
                 }
             }
 
-            apiRequest()
+            signUpRequest()
         }
         
     }
 
     
 }
+
+// MARK: - PickerView
 extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedCategory.count
@@ -91,7 +97,6 @@ extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SignUpCVC
         cell.contentView.layer.cornerRadius = 10
-        //cell.labelButton.text = "name"
         cell.labelButton.text = selectedCategory[indexPath.row].name
         cell.deleteHandeler = {
             self.selectedCategory.remove(at: indexPath.row)
@@ -100,8 +105,9 @@ extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = selectedCategory[indexPath.row].name?.calculateHeightForString().width
-        return CGSize(width: width! + 4,height:  collectionView.frame.height)
+        let width = selectedCategory[indexPath.row].name.calculateHeightForString().width
+        return CGSize(width: width + 10 ,height:  collectionView.frame.height)
         }
+
     
 }

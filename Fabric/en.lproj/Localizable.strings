@@ -1,0 +1,217 @@
+/* 
+  Localizable.strings
+  Fabric
+
+  Created by ziad on 29/09/2021.
+  
+*/
+
+//
+///* Class = "UIButton"; normalTitle = "Add Post"; ObjectID = "1OR-Fj-YqP"; */
+//"1OR-Fj-YqP.normalTitle" = "Add Post";
+//
+///* Class = "UILabel"; text = "Math"; ObjectID = "1U9-f8-VmB"; */
+//"1U9-f8-VmB.text" = "Math";
+//
+///* Class = "UILabel"; text = "Content"; ObjectID = "1tB-vq-s9S"; */
+//"1tB-vq-s9S.text" = "Content";
+//
+///* Class = "UITabBarItem"; title = "Item"; ObjectID = "1zk-8x-gK3"; */
+//"1zk-8x-gK3.title" = "Item";
+//
+///* Class = "UIButton"; normalTitle = "Activate"; ObjectID = "2GW-Ca-AkP"; */
+//"2GW-Ca-AkP.normalTitle" = "Activate";
+//
+///* Class = "UILabel"; text = "Activation Code "; ObjectID = "2Z5-DU-KaN"; */
+//"2Z5-DU-KaN.text" = "Activation Code ";
+//
+///* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "44u-cy-JWO"; */
+//"44u-cy-JWO.normalTitle" = "Skip";
+//
+///* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  "; ObjectID = "4Rj-dp-J4P"; */
+//"4Rj-dp-J4P.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  ";
+//
+///* Class = "UILabel"; text = "𝛑"; ObjectID = "6CM-g7-XIT"; */
+//"6CM-g7-XIT.text" = "𝛑";
+//
+///* Class = "UIButton"; normalTitle = "My Departments"; ObjectID = "73r-Sv-eNA"; */
+//"73r-Sv-eNA.normalTitle" = "My Departments";
+//
+///* Class = "UILabel"; text = "enter the activation code 4 digit sent to mobile number :"; ObjectID = "A67-KW-7wH"; */
+//"A67-KW-7wH.text" = "enter the activation code 4 digit sent to mobile number :";
+//
+///* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ATT-bP-LJP"; */
+//"ATT-bP-LJP.normalTitle" = "Login";
+//
+///* Class = "UILabel"; text = "Label"; ObjectID = "DGR-vG-Xjw"; */
+//"DGR-vG-Xjw.text" = "Label";
+//
+///* Class = "UILabel"; text = "Highest Rate"; ObjectID = "DLo-yT-U3T"; */
+//"DLo-yT-U3T.text" = "Highest Rate";
+//
+///* Class = "UIButton"; normalTitle = "All Departments"; ObjectID = "Dsg-re-qEJ"; */
+//"Dsg-re-qEJ.normalTitle" = "All Departments";
+//
+///* Class = "UILabel"; text = "code didn't send ?"; ObjectID = "EZ9-St-WyK"; */
+//"EZ9-St-WyK.text" = "code didn't send ?";
+//
+///* Class = "UILabel"; text = "Change Password"; ObjectID = "Ep9-ae-RDw"; */
+//"Ep9-ae-RDw.text" = "Change Password";
+//
+///* Class = "UILabel"; text = "16"; ObjectID = "GES-0R-QwT"; */
+//"GES-0R-QwT.text" = "16";
+//
+///* Class = "UILabel"; text = "Math Department"; ObjectID = "GdA-K9-UA5"; */
+//"GdA-K9-UA5.text" = "Math Department";
+//
+///* Class = "UILabel"; text = "Forget Password"; ObjectID = "H02-Xl-bEw"; */
+//"H02-Xl-bEw.text" = "Forget Password";
+//
+///* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  "; ObjectID = "Hqv-lS-rAc"; */
+//"Hqv-lS-rAc.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  ";
+//
+///* Class = "UIButton"; configuration.title = "Departments"; ObjectID = "LRR-cu-Qmn"; */
+//"LRR-cu-Qmn.configuration.title" = "Departments";
+//
+///* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LRR-cu-Qmn"; */
+//"LRR-cu-Qmn.normalTitle" = "Button";
+//
+///* Class = "UIBarButtonItem"; title = " "; ObjectID = "LaI-Fr-exT"; */
+//"LaI-Fr-exT.title" = " ";
+//
+///* Class = "UIBarButtonItem"; title = " "; ObjectID = "OrT-Gb-EGg"; */
+//"OrT-Gb-EGg.title" = " ";
+//
+///* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "Pmp-Oa-eGG"; */
+//"Pmp-Oa-eGG.normalTitle" = "Skip";
+//
+///* Class = "UILabel"; text = "Newst Post"; ObjectID = "QHW-yd-aF9"; */
+//"QHW-yd-aF9.text" = "Newst Post";
+//
+///* Class = "UIButton"; normalTitle = "comment"; ObjectID = "RGh-bC-Kmf"; */
+//"RGh-bC-Kmf.normalTitle" = "comment";
+//
+///* Class = "UILabel"; text = "Sign Up"; ObjectID = "Rcb-OE-DLo"; */
+//"Rcb-OE-DLo.text" = "Sign Up";
+//
+///* Class = "UILabel"; text = "add attachment"; ObjectID = "Ror-0d-BDf"; */
+//"Ror-0d-BDf.text" = "add attachment";
+//
+///* Class = "UILabel"; text = "𝛑"; ObjectID = "T5H-Ap-fBk"; */
+//"T5H-Ap-fBk.text" = "𝛑";
+//
+///* Class = "UIButton"; configuration.title = "Departments"; ObjectID = "UdT-ZF-aXj"; */
+//"UdT-ZF-aXj.configuration.title" = "Departments";
+//
+///* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UdT-ZF-aXj"; */
+//"UdT-ZF-aXj.normalTitle" = "Button";
+//
+///* Class = "UITabBarItem"; title = "Item"; ObjectID = "VhB-WJ-010"; */
+//"VhB-WJ-010.title" = "Item";
+//
+///* Class = "UILabel"; text = "Label"; ObjectID = "Vyy-3x-nat"; */
+//"Vyy-3x-nat.text" = "Label";
+//
+///* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "X7G-8Q-Z3v"; */
+//"X7G-8Q-Z3v.normalTitle" = "Sign Up";
+//
+///* Class = "UILabel"; text = "16"; ObjectID = "aEo-5R-DcB"; */
+//"aEo-5R-DcB.text" = "16";
+//
+///* Class = "UILabel"; text = "nour ashraf yassin"; ObjectID = "aa4-5I-5sE"; */
+//"aa4-5I-5sE.text" = "nour ashraf yassin";
+//
+///* Class = "UILabel"; text = "Math"; ObjectID = "cgj-h7-iEO"; */
+//"cgj-h7-iEO.text" = "Math";
+//
+///* Class = "UITextView"; text = "Type Here"; ObjectID = "dDH-Tz-hbV"; */
+//"dDH-Tz-hbV.text" = "Type Here";
+//
+///* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "ezl-wP-SPy"; */
+//"ezl-wP-SPy.normalTitle" = "Forget Password";
+//
+///* Class = "UILabel"; text = "nour ashraf yassin"; ObjectID = "ffP-tf-K5H"; */
+//"ffP-tf-K5H.text" = "nour ashraf yassin";
+//
+///* Class = "UILabel"; text = "22 February 2021"; ObjectID = "fxn-8u-E4E"; */
+//"fxn-8u-E4E.text" = "22 February 2021";
+//
+///* Class = "UILabel"; text = "Add New Post"; ObjectID = "gUa-Ka-a5W"; */
+//"gUa-Ka-a5W.text" = "Add New Post";
+//
+///* Class = "UIButton"; normalTitle = "Login"; ObjectID = "gZM-3Q-FkR"; */
+//"gZM-3Q-FkR.normalTitle" = "Login";
+//
+///* Class = "UIButton"; normalTitle = "comment"; ObjectID = "hZ5-vy-cBR"; */
+//"hZ5-vy-cBR.normalTitle" = "comment";
+//
+///* Class = "UILabel"; text = "New post added to math department"; ObjectID = "i5G-sw-VTS"; */
+//"i5G-sw-VTS.text" = "New post added to math department";
+//
+///* Class = "UILabel"; text = "Enter the activation code (00:30)"; ObjectID = "iJy-eU-CPO"; */
+//"iJy-eU-CPO.text" = "Enter the activation code (00:30)";
+//
+///* Class = "UILabel"; text = "Login"; ObjectID = "ik7-tN-Epc"; */
+//"ik7-tN-Epc.text" = "Login";
+//
+///* Class = "UILabel"; text = "Choose department you want to search for "; ObjectID = "lyT-hu-Pb0"; */
+//"lyT-hu-Pb0.text" = "Choose department you want to search for ";
+//
+///* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "mIe-YB-KnJ"; */
+//"mIe-YB-KnJ.normalTitle" = "Sign Up";
+//
+///* Class = "UIButton"; configuration.title = " "; ObjectID = "nTg-RM-tdd"; */
+//"nTg-RM-tdd.configuration.title" = " ";
+//
+///* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nTg-RM-tdd"; */
+//"nTg-RM-tdd.normalTitle" = "Button";
+//
+///* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "nUV-Qe-9CL"; */
+//"nUV-Qe-9CL.normalTitle" = "Skip";
+//
+///* Class = "UILabel"; text = "22 February 2021"; ObjectID = "oLo-Go-u6p"; */
+//"oLo-Go-u6p.text" = "22 February 2021";
+//
+///* Class = "UILabel"; text = "Do you search for solution ?"; ObjectID = "ozA-tO-BXY"; */
+//"ozA-tO-BXY.text" = "Do you search for solution ?";
+//
+///* Class = "UIButton"; normalTitle = "Send Code"; ObjectID = "p1K-n2-s4J"; */
+//"p1K-n2-s4J.normalTitle" = "Send Code";
+//
+///* Class = "UITabBarItem"; title = "Home"; ObjectID = "p9Q-q5-ofe"; */
+//"p9Q-q5-ofe.title" = "Home";
+//
+///* Class = "UIButton"; normalTitle = "Search"; ObjectID = "qsa-8e-uWf"; */
+//"qsa-8e-uWf.normalTitle" = "Search";
+//
+///* Class = "UIBarButtonItem"; title = " "; ObjectID = "s6t-kI-Iqo"; */
+//"s6t-kI-Iqo.title" = " ";
+//
+///* Class = "UIButton"; normalTitle = "  Following"; ObjectID = "sJA-lH-XG1"; */
+//"sJA-lH-XG1.normalTitle" = "  Following";
+//
+///* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "sw0-zZ-CKB"; */
+//"sw0-zZ-CKB.normalTitle" = "Skip";
+//
+///* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "ta2-6H-isD"; */
+//"ta2-6H-isD.normalTitle" = "Save Changes";
+//
+///* Class = "UILabel"; text = "Notifications"; ObjectID = "tjo-bg-Asn"; */
+//"tjo-bg-Asn.text" = "Notifications";
+//
+///* Class = "UILabel"; text = "-"; ObjectID = "uqC-Pl-zbO"; */
+//"uqC-Pl-zbO.text" = "-";
+//
+///* Class = "UIBarButtonItem"; title = " "; ObjectID = "vZn-Kp-3hQ"; */
+//"vZn-Kp-3hQ.title" = " ";
+//
+///* Class = "UIBarButtonItem"; title = " "; ObjectID = "vvH-ea-xWL"; */
+//"vvH-ea-xWL.title" = " ";
+//
+///* Class = "UILabel"; text = "Do you search for solution ?"; ObjectID = "xNm-gW-YRu"; */
+//"xNm-gW-YRu.text" = "Do you search for solution ?";
+//
+///* Class = "UITabBarItem"; title = "Departments"; ObjectID = "zwn-XV-gaP"; */
+//"zwn-XV-gaP.title" = "Departments";
+
+"first" = "Departments" ;

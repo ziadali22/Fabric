@@ -8,12 +8,13 @@
 import Foundation
 extension HomeDepartmentPopUp{
     func getDepartmentsRequest(){
+        self.view.showLoader()
         AuthRequestRouter.getCategories.send(BaseModelArray<CategoryModel>.self, then: handleGetResponse)
     }
     var handleGetResponse: HandleResponse<BaseModelArray<CategoryModel>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            
+            self.view.dismissLoader()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)

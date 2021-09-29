@@ -12,8 +12,9 @@ import Alamofire
 
 
 
-class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
+class AddCommentPopUpViewController: UIViewController  {
     
+    @IBOutlet weak var commentTypeTitle: UIButton!
     // MARK: - variables
     var imagePickerControllerForAddComments = UIImagePickerController()
     var imagePicker : UIImage?
@@ -34,13 +35,15 @@ class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        comntText.addDashBorder(color: .green, cornerRadius: 4)
         comntText.delegate = self
-        comntText.text = "place holder"
+        comntText.addDashBorder(color: .green, cornerRadius: 4)
+        // localization
+        commentTypeTitle.setTitle("Comment Type (PDF, Image)".localized, for: .normal)
+        comntText.text = "Type your comment here".localized
         comntText.textColor = UIColor.lightGray
         dotView.addDashBorder(color: .white, cornerRadius: 3)
     }
-    
+
     @IBAction func dismissPopUP(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -56,7 +59,7 @@ class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
         let alert = UIAlertController(title: "choose data type", message: "", preferredStyle: .alert)
         
         // image
-        alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Image".localized, style: .default, handler: { action in
             // pick image
             let picker = UIImagePickerController()
             picker.allowsEditing = true
@@ -68,7 +71,7 @@ class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
             
         }))
         // pdf
-        alert.addAction(UIAlertAction(title: "PDF", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "PDF".localized, style: .default, handler: { action in
             // get PDF url
             let types = [kUTTypePDF, kUTTypeText, kUTTypeRTF, kUTTypeSpreadsheet]
             let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: .import)
@@ -80,7 +83,7 @@ class AddCommentPopUpViewController: UIViewController, UITextViewDelegate  {
             
             self.comntText.isHidden = true
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     // MARK: - Network for add comment
@@ -177,7 +180,7 @@ extension AddCommentPopUpViewController:UIImagePickerControllerDelegate & UINavi
 extension AddCommentPopUpViewController: UIDocumentPickerDelegate{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         pdfUrl = urls.first
-        uploadPdf = UploadData(data: pdfUrl?.dataRepresentation, name: "comment_content", videoURL: nil, type: "pdf")
+        uploadPdf = UploadData(data: nil, name: "comment_content", videoURL: pdfUrl, type: "pdf")
         func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
             controller.dismiss(animated: true, completion: nil)
         }

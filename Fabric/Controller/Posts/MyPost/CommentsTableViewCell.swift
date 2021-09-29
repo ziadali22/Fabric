@@ -8,8 +8,8 @@ import Foundation
 import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
-    var commntIdForReport: Int?
     
+    // MARK: - Outlet
     @IBOutlet weak var userNameComment: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var commentView: UITextView!
@@ -17,34 +17,42 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteComment: UIButton!
     @IBOutlet weak var reportBtnOutlet: UIButton!
     @IBOutlet weak var imageContent: UIImageView!
+    @IBOutlet weak var openPdfBtn: UIButton!
     
-    
+    // MARK: - Variables
+    var commntIdForReport: Int?
     var deleteHandelr: ActionClouser?
     var reportHandler: ActionClouser?
+    var openPdfHandler: ActionClouser?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        reportBtnOutlet.setTitle("report".localized, for: .normal)
+        openPdfBtn.setTitle("Open Pdf".localized, for: .normal)
         userImage.layer.cornerRadius = userImage.frame.height/2
     }
    
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         selectionStyle = .none
-        // Configure the view for the selected state
     }
 
     
     @IBAction func reportComment(_ sender: Any) {
         reportHandler?()
+        reportBtnOutlet.isHidden = true
+
     }
     @IBAction func deleteComment(_ sender: UIButton) {
         deleteHandelr?()
         
     }
-
+    @IBAction func openPdfAction(_ sender: Any) {
+        openPdfHandler?()
+    }
     
+    // MARK: Cell Configure
     func cellConfigure(item: Comment){
         userNameComment.text = item.user?.name
         date.text = item.createdAt
@@ -53,10 +61,17 @@ class CommentsTableViewCell: UITableViewCell {
         if item.type == "image"{
             imageContent.kf.setImage(with: URL(string: item.comment ?? ""),placeholder: UIImage(named: "1276px-Placeholder_view_vector.svg"))
             commentView.isHidden = true
-        }else{
+            openPdfBtn.isHidden = true
+        }else if item.type == "text"{
             //userImage.isHidden = true
             commentView.text = item.comment
+            commentView.isHidden = false
+            openPdfBtn.isHidden = true
         }
+        else{
+            commentView.isHidden = true
+        }
+
         var item = item
         if item.isReported == true{
             reportBtnOutlet.isHidden = true
@@ -69,6 +84,9 @@ class CommentsTableViewCell: UITableViewCell {
         if item.user?.id != UserDataActions.getUserModel()?.id
         {
             self.deleteComment.isHidden = true
+            
+        }else{
+            self.reportBtnOutlet.isHidden = true
         }
     }
     

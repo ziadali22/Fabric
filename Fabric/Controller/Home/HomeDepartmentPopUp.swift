@@ -7,62 +7,29 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-import TTGTags
-class HomeDepartmentPopUp: UIViewController , TTGTextTagCollectionViewDelegate{
+
+class HomeDepartmentPopUp: UIViewController {
+    // MARK: - Outlet
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var dotViewBtn: UIView!
-    
+    @IBOutlet weak var departmetnsTitle: UIButton!
+    @IBOutlet weak var filterPosts: LoadingButton!
+    // MARK: - Variables
     var categoryData: [CategoryModel]?
-    let collectionViewTag = TTGTextTagCollectionView()
-    
-    
+    var selectedDepartment = [Int]()
+    var arrSelectedIndex = [IndexPath]()
+    var filterDelegate: HomeFilterProtcol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getDepartmentsRequest()
+        departmetnsTitle.setTitle("Departments".localized, for: .normal)
         dotViewBtn.addDashBorder(color: .white, cornerRadius: 3)
-        let collectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionViewFlowLayout.estimatedItemSize = CGSize(width: collectionView.frame.width, height: 100)
-//
-//        let tagView = TTGTextTagCollectionView.init(frame: CGRect.init(x: 0, y: 50, width: UIScreen.main.bounds.width - 32, height: 300))
-//        tagView.backgroundColor = UIColor.lightGray
-//        self.view.addSubview(tagView)
-//
-//        let strings = ["AutoLayout", "dynamically", "calculates", "the", "size", "and", "position",
-//                       "of", "all", "the", "views", "in", "your", "view", "hierarchy", "based",
-//                       "on", "constraints", "placed", "on", "those", "views"]
-//
-//        for text in strings {
-//            let content = TTGTextTagStringContent.init(text: text)
-//            content.textColor = UIColor.black
-//            content.textFont = UIFont.boldSystemFont(ofSize: 20)
-//
-//            let normalStyle = TTGTextTagStyle.init()
-//            normalStyle.backgroundColor = UIColor.white
-//            normalStyle.extraSpace = CGSize.init(width: 8, height: 8)
-//
-//            let selectedStyle = TTGTextTagStyle.init()
-//            selectedStyle.backgroundColor = UIColor.green
-//            selectedStyle.extraSpace = CGSize.init(width: 8, height: 8)
-//
-//            let tag = TTGTextTag.init()
-//            tag.content = content
-//            tag.style = normalStyle
-//            tag.selectedStyle = selectedStyle
-//            tagView.addTag(tag)
-//        }
-//        tagView.reload()
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 5
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        self.collectionView.collectionViewLayout = layout
-        
+        collectionView.allowsMultipleSelection = true
+        // network request
+        DispatchQueue.main.async {
+            self.getDepartmentsRequest()
+        }
     }
-    
 
     override func viewDidAppear(_ animated: Bool) {
         collectionView.dataSource = self
@@ -73,32 +40,52 @@ class HomeDepartmentPopUp: UIViewController , TTGTextTagCollectionViewDelegate{
     @IBAction func dismissPopUP(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-    
-}
-
-extension HomeDepartmentPopUp: UICollectionViewDataSource, UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return categoryData?.count ?? 0
-        
+    @IBAction func filterPostsAction(_ sender: Any) {
+        filterDelegate?.passData(data: selectedDepartment)
+        dismiss(animated: true, completion: nil)
     }
     
+    
+}
+// MARK: - Department PopUp
+extension HomeDepartmentPopUp: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryData?.count ?? 0
+    }
+    //Data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "departmentCell", for: indexPath) as! HomeDepartmentPopUpCell
         cell.departmentsLabel.text = categoryData?[indexPath.row].name
-
+        cell.selectedBackgroundView = UIView(frame: cell.bounds)
+        cell.selectedBackgroundView!.backgroundColor = .systemGreen
+        
+        cell.addToArray = {
+            guard let item = self.categoryData?[indexPath.row].id else { return }
+            self.selectedDepartment.append(item)
+            print(self.selectedDepartment)
+        }
+        cell.removeFromArray = {
+            guard let item = self.categoryData?[indexPath.row].id else { return }
+            if let index = self.selectedDepartment.firstIndex(of: item) {
+                self.selectedDepartment.remove(at: index)
+            }
+            print(self.selectedDepartment)
+        }
         return cell
     }
+    // layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let newWidth = categoryData?[indexPath.row].name?.calculateHeightForString().width
-        return CGSize(width: newWidth ?? 90 + 4,height:  40)
-        }
+        let newWidth = categoryData?[indexPath.row].name.calculateHeightForString().width ?? 40 + 20
+        return CGSize(width: newWidth  ,height:  60)
 
+        }
     
+
     
 
 
 }
+
+
+
 

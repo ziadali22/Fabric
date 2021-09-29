@@ -15,8 +15,6 @@ class PostsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postDate: UILabel!
-    
-    
     // MARK: - add dumb data
     func addData(item: Item){
         departmentTExt.text = item.title

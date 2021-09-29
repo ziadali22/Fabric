@@ -1,28 +1,28 @@
 //
-//  Notifications+Network.swift
+//  GetCategoriesApi.swift
 //  Fabric
 //
-//  Created by ziad on 07/09/2021.
+//  Created by ziad on 28/09/2021.
 //
 
 import Foundation
-extension NotificationsViewController{
-    func notificationResponse(){
-        AuthRequestRouter.notification.send(BaseModelArray<NotificationModel>.self, then: handleResponse)
+extension AddPosts{
+    // MARK: - Netowrk
+    func getCategoriesApi(){
+        self.view.showLoader()
+        AuthRequestRouter.getCategories.send(BaseModelArray<CategoryModel>.self, then: handleGetResponse)
     }
-    
-    var handleResponse: HandleResponse<BaseModelArray<NotificationModel>> {
+    var handleGetResponse: HandleResponse<BaseModelArray<CategoryModel>> {
         return { [weak self] (response) in
             guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
+            self.view.dismissLoader()
             switch response {
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
             case .success(let model):
                 if model.status{
                     guard let item = model.data else {return}
-                    self.notificationData = item
-                    self.notificationTableView.reloadData()
+                    self.categories = item
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)
@@ -31,7 +31,4 @@ extension NotificationsViewController{
             }
         }
     }
-
-    
-    
 }

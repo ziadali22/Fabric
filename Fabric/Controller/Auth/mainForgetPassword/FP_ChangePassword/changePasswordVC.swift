@@ -9,18 +9,23 @@ import UIKit
 import SkyFloatingLabelTextField
 class changePasswordVC: UIViewController {
 
+    // MARK: - outlets
     @IBOutlet weak var saveChangesBtn: UIButton!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var DotView: UIView!
-    
+    // MARK: - variables
     var phone: String?
     var code: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // localization
+        passwordTextField.placeholder = "Phone Number".localized
+        confirmPasswordTextField.placeholder = "Confirm".localized
         DotView.addDashBorder(color: .white, cornerRadius: 3)
     }
+    // MARK: - validation
     func validateFields()  {
         guard let password = passwordTextField.text , !password.isEmpty else { return self.showMessage(sub: "check valid password ".localized) }
         

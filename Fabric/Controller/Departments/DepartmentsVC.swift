@@ -9,37 +9,28 @@ import UIKit
 
 class DepartmentsVC: UIViewController {
 
+    // MARK: - Outlet
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var underLineBtn: UIView!
-    // all department
     @IBOutlet weak var allDepartmentBtn: UIButton!
-    // my department
     @IBOutlet weak var myDepartmentBtn: UIButton!
-    // make variabel to store date back from api to use it in collection view
+    // MARK: - Variables
     var categoryData: myCategory?
     var selectedCategory = [CategoryModel]()
-    
-    // used to show the all or my categories
-    
     var allCategories: Bool = true
-    
-    
     let refreshControl = UIRefreshControl()
+    var isSearch: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // add logo
+        searchBar.delegate = self
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        // add  width 
+        // add  width
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
-        // network get categories from api
-        //getCategoriesApi()
-        
         // MARK: swipe gesture
         collectionView.isUserInteractionEnabled = true
         let swipeRieght = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
@@ -50,18 +41,19 @@ class DepartmentsVC: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         collectionView.addGestureRecognizer(swipeLeft)
         
-        
         //refresh controller
         refreshControl.addTarget(self, action: #selector(self.network), for: UIControl.Event.valueChanged)
         collectionView.refreshControl = refreshControl
     }
-
-    @objc func network(){
-        
+    override func viewWillAppear(_ animated: Bool) {
         getCategoriesApi()
+
+    }
+    @objc func network(){
         collectionView.refreshControl?.endRefreshing()
     }
-
+    
+    //MARK: - Swipe Gesture
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?){
         if let swipeGesture = sender {
             switch swipeGesture.direction {
@@ -80,7 +72,6 @@ class DepartmentsVC: UIViewController {
                 UIView.animate(withDuration: 0.7) {
                     self.underLineBtn.center.x = self.allDepartmentBtn.center.x
                     self.view.layoutIfNeeded()
-                    
                 }
             default:
                 break
@@ -88,35 +79,8 @@ class DepartmentsVC: UIViewController {
         }
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        getCategoriesApi()
-    }
-    
-    func getCategoriesApi(){
-        self.view.showLoader()
-        AuthRequestRouter.myCategories.send(BaseModel<myCategory>.self, then: handleGetResponse)
-    }
-    var handleGetResponse: HandleResponse<BaseModel<myCategory>> {
-        return { [weak self] (response) in
-            guard let self = self else {return}
-            self.view.dismissLoader()
-            switch response {
-            case .failure(let error):
-                self.showMessage(sub: error.localizedDescription)
-            case .success(let model):
-                if model.status{
-                    guard let item = model.data else {return}
-                    self.categoryData = item
-                    self.collectionView.reloadData()
-                }else{
-                    guard let errorMsg = model.msg else{return}
-                    self.showMessage(sub: errorMsg)
-                }
-                
-            }
-        }
-    }
 
+    // MARK: - BUTTON ACTION
     @IBAction func allClick(_ sender: Any) {
         ///
         allCategories = true
@@ -144,6 +108,7 @@ class DepartmentsVC: UIViewController {
     }
     
 }
+// MARK: - Department CollectionView
 extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         ///
@@ -154,7 +119,7 @@ extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFl
         }
         
     }
-
+    // Data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! DepartmentsCVCell
         cell.contentView.layer.cornerRadius = 10
@@ -175,11 +140,13 @@ extension DepartmentsVC: UICollectionViewDataSource,  UICollectionViewDelegateFl
         cell.DotViewFunc()
         return cell
     }
+    // layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2 - 8, height: 150)
     }
 
 
 }
+
 
 

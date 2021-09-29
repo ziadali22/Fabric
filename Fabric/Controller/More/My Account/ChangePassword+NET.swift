@@ -11,7 +11,6 @@ extension PopUPChangePasswordVC{
         self.saveBtn.showLoader()
         AuthRequestRouter.changePassword(password: password.text ?? "", confirm: confirmPassword.text ?? "").send(StringModel.self, then: handleResponse)
     }
-    
     var handleResponse: HandleResponse<StringModel> {
         return { [weak self] (response) in
             guard let self = self else {return}

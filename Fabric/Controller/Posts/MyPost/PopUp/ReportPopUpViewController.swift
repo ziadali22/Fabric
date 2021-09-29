@@ -17,5 +17,8 @@ class ReportPopUpViewController: UIViewController {
         
     }
     
-
+    @IBAction func reportDismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

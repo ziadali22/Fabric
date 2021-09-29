@@ -5,149 +5,61 @@
  Created by Abulrahman mohsen on 5/21/20.
  Copyright © 2020 Abulrahman mohsen. All rights reserved.
  */
-
-"More" = "المزيد";
-"Chat" = "المحادثة";
-"categories" = "الاقسام";
-"Home" =  "الرئيسية";
-"Application Map" = "خريطة التطبيق";
-"company users" = "مستخدمين الشركة";
-"Add User" = "اضافة مستخدم";
-"update user" = "تحديث مستخدم";
-"users" = "المستخدمون";
-//advDetail
-"check valid rate" = "اضف تقييم صحيح";
-"check valid comment" = "ادخل تعليق صحيح";
-"comment Added Successfully" = "تم اضافة التعليق بنجاح";
-"Start From " = "بدأ من ";
-"Active" = "فعال";
-"closed" = "مغلق";
-"check valid price" = "ادخل سعر صحيح";
-//MoreVCs
-"Profile" = "الصفحة الشخصية";
-"My Advertises" = "اعلاناتي";
-"My Favourite" = "المفضلة";
-"Wallet" = "المحفظة";
-"My Transformation" = "التحويلات";
-"Setting" = "اعدادات";
-"Map" = "الخريطة";
-"Log out" = "تسجيل خروج";
-"Follow" = "متابعة";
-"un Follow" = "الغاء";
-//settingVCs
-"setting Notification" = "اعدادات الاشعارات";
-"Blocks List" = "قائمة الحظر";
-"common quastions" = "الاسئلة الشائعه";
-"About us" = "عن التطبيق";
-"Terms And Conditions" = "الشروط والاحكام";
-"Privacy policy" = "سياسة الخصوصية";
-"Call us" = "اتصل بنا";
-"Language" = "اللغة";
-"check valid message" = "ادخل رسالة صحيحة";
-"check valid subject" = "ادخل عنوان صحيح";
-"message Sent" = "تم ارسال الرسالة";
-"offer" = "عرض";
-"order" = "طلب";
-"auction" = "مزاد";
-"User Added" = "تم اضافة المستخدم";
-"User Updated" = "تم تحديث المستخدم";
-//AddAdv
-"enter valid Description" = "ادخل تفاصيل صحيحة";
-"enter valid images" = "ادخل صور صحيحة";
-"enter valid Classification" = "ادخل تصنيف";
-"Adv Added Successfully" = "تم اضافة الاعلان بنجاح";
-"Adv updated Successfullty" = "تم تحديث العنوان بنجاح";
-"enter valid duration from" = "ادخل مده (من)";
-"enter valid duration To" = "ادخل مده ( الى )";
-"enter valid start auction" = "ادخل بدايه المزاد";
-"image selected" = "تم اختيار الصورة";
-"enter valid bank" = "ادخل بنك صحيح";
-"enter valid bank account" = "ادخل رقم بنك صحيح";
-"enter valid Amount" = "ادخل قيمة صحيحة";
-"enter valid transaction" = "ادخل تحويل صحيح";
-"transaction Added Successfully" = "تم اضافى التحويل بنجاح";
-"unblocked Success" = "تم فك الحظر بنجاح";
-"setting company users" = "اعدادات مستخدمين الشركه";
-//Authentication
-"enter vaild email" = "ادخل بريد الكتروني";
-"enter valid password" = "ادخل كلمة مرور صحيحة";
-"enter valid user name" = "ادخل اسم مستخدم صحيح";
-"enter vaild phone" = "ادخل رقم جوال";
-"enter vaild Re-password" = "ادخل تأكيد كلمة المرور";
-"Password and re password doesn't match" = "كلمتى المرور غير متطابقه";
-"Must Accept Condition And Terms" = "يجب قبول الشروط والاحكام";
-"enter valid old Password" = "ادخل كلمة المرور القديمة";
-"enter valid new Password" = "ادخل كلمة المرور الجديدة";
-"enter valid Address" = "ادخل عنوان صحيح";
-"open location permission" = "افتح تصريح العنوان";
-"enter valid Image" = "ادخل صورة صحيحة";
-"enter valid Message" = "ادخل رسالة صحيحة";
-"enter valid code" = "ادخل كود صحيح";
-"Login Success" = "تم تسجيل الدخول بنجاح";
-"register success" = "تم التسجيل بنجاح";
-"Code Sent Successfully" = "تم ارسال الكود بنجاح";
-"your code is Correct" = "الكود صحيح";
-"password changed successfully" = "تم تغير كلمة المرور بنجاح";
-"check valid city" = "ادخل مدينة صحيحة";
-"Register" = "تسجيل";
-"profile Updated" = "تم تحديث الصفحة الشخصية";
-"Proccess Done" = "تم بنجاح";
-"install whatsApp" = "يجب تنزل الواتس اب";
-"You Don't Have Permission" = "لا تملك الصلاحية للمتابعة";
-"enter valid search text" = "ادخل كلمة البحث صحيحة";
-"Empty Data" = "لا توجد بيانات";
-"Less" = "اقل";
-"un Block" = "الغاء الحظر";
-" SAR " = " ريال ";
-"user" = "مستخدم";
-"company" = "شركة";
-"factory" = "مصنع";
-"employee" = "موظف";
-"organization" = "مؤسسة";
-"check valid user type" = "ادخل نوع المستخدم";
-"normal" = "عرض";
-"order" = "طلب";
-"auction" = "مزاد";
-"check valid report reason" = "ادخل سبب الابلاغ";
-"gallery" = "معرض";
-//Alert
-"Delete Conversation" = "حذف المحادثة";
-"Warining" = "تحذير";
-"Ok" = "موافق";
-"Cancel" = "الغاء";
-"Have To Restart to apply changes" = "يجب اعادة تشغيل التطبيق لتغير اللغة";
-"Not Allowed" = "غير مسموج";
-"choose" = "اختر";
-"Media messages" = "ميديا";
-"send Image" = "ارسل صورة";
-"Not Allow To Change To Same Language" = "غير مسموح لتحويل لنفس اللغة";
-"Block" = "حظر";
-"Report" = "ابلاغ";
-"On" = "فتح";
-"Off" = "اغلاق";
-"Delete" = "حذف";
-"Edit Permissions" = "تعديل الصلاحيات";
-"You should Login First" = "يجب عليك تسجيل الدخول أولا";
-"Login" = "تسجيل الدخول";
-
-"Accepted" = "تم القبول";
-"Pending" = "انتظار";
-"Rejected" = "تم الرفض";
-
-"api_participate_auction" = "مشاركة بالمزاد";
-"api_trigger_favourite" = "اضافة للمفضلة";
-"api_delete_or_deactivate_ads" = "حذف الاعلان";
-"api_edit_ads" = "تعديل الاعلان";
-"api_add_ads" =  "اضافة اعلان";
-"api_add_premium" = "تمييز الاعلان";
-"api_add_comment" = "اضافة تعليق";
-"api_contact_users" =  "تواصل مع مستخدمين";
-"api_add_transactions" = "تحويل أموال";
-"api_follow" = "متابعة الاخرين";
-"api_report_or_block" = "ابلاغ و حظر";
-"Please add main image" = "من فضلك اضف الصورة الأساسية";
-"about application" = "حول التطبيق";
-"check valid adv title" = "ادخل عنوان الاعلان";
-"Search Here" = "ابحث هنا";
-"check valid email or phone" = "تحقق من البريد الالكتروني او رقم الجوال";
-"Are you Sure End Chat" = "هل تود انهاء المحادثة ؟";
+// MARK: - IntroVc
+"Next" = "التالي";
+// MARK: - Login
+"Password" = "كلمه المرور";
+"don't have an account ?" = "ليس لديك حساب ؟";
+// MARK: - ActivationCodeVC
+"Send Again" = "ارسل مره اخري";
+// MARK: - Home
+"Departments" = "الأقسام";
+// MARK: - Departments
+"UnFollow" = "الغاء المتابعه";
+"Follow" = "متابعه";
+// MARK: - MoreVc
+"Profile" = " الصفحه الشخصيه";
+"Language" = "اللغه";
+"Terms and conditions" = "الشروط والاحكام";
+"About Us" = "عن التطبيق";
+"Contact Us" = "تواصل معنا";
+"Log Out" = "تسجيل الخروج";
+// MARK: - TabBAr
+"my posts" = "منشوراتي";
+"more" = "المزيد";
+// MARK: - Contact us
+"Type your message here" = "اكتب رسالتك هنا";
+"Contact Us" = "تواصل معنا";
+"Name" = "الأسم";
+"Phone Number" = "رقم الجوال";
+"Email" = "البريد الالكتروني";
+"Send" = "ارسال";
+// MARK: - User Profile
+"My Account" = "حسابي";
+"Change Image" = "  تغيير الصوره";
+"Phone Number" = "رقم الجوال ";
+"Email" = "البريد الالكتروني";
+"Change Password" = "تغيير كلمه المرور";
+"Confirm" = "تأكيد";
+//MARK: - Change Password popUp
+"Change Password" = "تغيير كلمه المرور";
+"New Password" = " كلمه المرورالجديده";
+"Confirm Password" = "تأكيد كلمه المرور ";
+"Save" = "حفظ التغييرات";
+//MARK: - PostDetailViewController
+"Play Video" = "تشغيل الفيديو";
+"Open Pdf"= "فتح ملف";
+"comments" = "التعليقات";
+"comment" = "تعليق";
+"Add Comment" = "اضافه تعليق";
+"report" = "إبلاغ";
+// MARK: - Add Comment PopUp
+"Comment Type (PDF, Image)" = "نوع التعليق (صوره او ملف)";
+"Type your comment here" =  "أكتب تعليقك هنا";
+// MARK: - Add Posts
+"Choose Department" = "اختر القسم";
+"Add your post text content here" = "اكتب محتوي المنشور هنا";
+// MARK: - UserProfileViewController
+"Posts Count" = "عدد المنشورات";
+"Answer Count" = "عدد الأجابات";
+"Posts" = "المنشورات";

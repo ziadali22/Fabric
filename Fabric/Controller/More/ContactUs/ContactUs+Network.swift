@@ -11,7 +11,6 @@ extension contactUsViewController {
         self.sendBtn.showLoader()
         AuthRequestRouter.contactUs(name: nameTxtField.text ?? "", phone: phoneNumb.text ?? "", email: emailText.text ?? "", message: textView.text ?? "").send(StringModel.self, then: handleResponse)
     }
-    
     var handleResponse: HandleResponse<StringModel> {
         return { [weak self] (response) in
             guard let self = self else {return}

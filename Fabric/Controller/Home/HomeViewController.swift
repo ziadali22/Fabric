@@ -7,38 +7,37 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
-    
+class HomeViewController: UIViewController , HomeFilterProtcol {
+    // MARK: - Outlet
     @IBOutlet weak var scrollView: UIScrollView!
-    // first collection view
     @IBOutlet weak var newstPostsCollectionView: UICollectionView!
-    // second collection view
     @IBOutlet weak var hieghtsRatesCollectionView: UICollectionView!
+    @IBOutlet weak var departmentsText: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: - Variables
     var postsData : [MostComment]?
     var mostRateData : [MostComment]?
     var commentData : [Comment]?
     var myposts = [Item]()
-    
     var filterData: [Comment]?
-    
-    // refresh Controll
     let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // add logo
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
+        DispatchQueue.main.async {
+            self.tabBarController?.tabBar.items?[3].title = "my posts".localized
+            self.tabBarController?.tabBar.items?[4].title = "more".localized
+        }
+        departmentsText.setTitle("Departments".localized, for: .normal)
         
-        // search bar
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         searchBar.delegate = self
         // first collection view
         newstPostsCollectionView.delegate = self
         newstPostsCollectionView.dataSource = self
-        
-        // second collection view
+
         hieghtsRatesCollectionView.delegate = self
         hieghtsRatesCollectionView.dataSource = self
         
@@ -50,25 +49,20 @@ class HomeViewController: UIViewController {
         hieghtsRatesCollectionView.collectionViewLayout = layout
         
         // Networking:
-        homePostsCategoriesRequest()
-        
+        homePostsCategoriesRequest(category: nil)
         //refresh controller
         refreshControl.addTarget(self, action: #selector(self.networkHomePosts), for: UIControl.Event.valueChanged)
         scrollView.refreshControl = refreshControl
-        
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
 
-        
-        
     }
-    
-
     @objc func networkHomePosts(){
-        homePostsCategoriesRequest()
+        homePostsCategoriesRequest(category: nil)
         newstPostsCollectionView.reloadData()
         hieghtsRatesCollectionView.reloadData()
         scrollView.refreshControl?.endRefreshing()
     }
+    // MARK: - Actions
     @IBAction func notificationScreen(_ sender: Any) {
         let vc  = storyboard?.instantiateViewController(identifier: "notificationHome") as! NotificationViewController
         show(vc, sender: nil)
@@ -76,16 +70,23 @@ class HomeViewController: UIViewController {
     
     @IBAction func DepartmentsPopUpBtn(_ sender: Any) {
         let vc  = storyboard?.instantiateViewController(identifier: "departmentsPopUp") as! HomeDepartmentPopUp
+        vc.filterDelegate = self
         present(vc, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    // MARK: - Filter Delegate
+    func passData(data: [Int]) {
+        print(data)
+        DispatchQueue.main.async {
+            self.homePostsCategoriesRequest(category: data)
+        }
+    }
+   
     
 }
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    
 
+// MARK: - Home CollectionView
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.newstPostsCollectionView{
             return postsData?.count ?? 0
@@ -93,7 +94,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return mostRateData?.count ?? 0
         }
     }
-    
+    // Data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView  == self.newstPostsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newstCell", for: indexPath) as! NewstPostsCVC
@@ -109,18 +110,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.rateCellImage.contentMode = .scaleAspectFill
             return cell
         }
-        
-
-       
-        
-        
     }
+    // DidSelect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
  
         let storyBoard = UIStoryboard.init(name: "Posts", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
         if collectionView == self.newstPostsCollectionView{
-            guard let postId = postsData?[indexPath.row].id else { return  }
+            guard let postId = postsData?[indexPath.row].id else { return }
             vc.postId = postId
         }else{
             guard let postId = mostRateData?[indexPath.row].id else { return  }
@@ -129,7 +126,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         show(vc, sender: nil)
         
     }
-
+    //Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.newstPostsCollectionView {
             return CGSize(width: newstPostsCollectionView.frame.width / 1.70 - 8 ,height:  225)
@@ -142,44 +139,5 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
 
 
-    
-}
-
-extension HomeViewController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("send me to the view controller ")
-        let storyBoard = UIStoryboard.init(name: "Posts", bundle: Bundle.main)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "listOfPosts") as! postsVC
-        vc.myposts = myposts
-        // network request
-        searchRequest(searchBarText: searchBar.text ?? "")
-        show(vc,sender: nil)
-    }
-    
-    func searchRequest(searchBarText: String){
-        AuthRequestRouter.search(text: searchBarText).send(BaseModel<MyPosts>.self, then: searchHandleResponse)
-    }
-    
-    var searchHandleResponse: HandleResponse<BaseModel<MyPosts>> {
-        return { [weak self] (response) in
-            guard let self = self else {return}
-            self.view.isUserInteractionEnabled = true
-            switch response {
-            case .failure(let error):
-                self.showMessage(sub: error.localizedDescription)
-            case .success(let model):
-                if model.status{
-                    guard let item = model.data else {return}
-                    self.myposts = item.items!
-                    
-                }else{
-                    guard let errorMsg = model.msg else{return}
-                    self.showMessage(sub: errorMsg)
-                }
-                
-            }
-        }
-    }
-    
     
 }

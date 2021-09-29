@@ -9,22 +9,24 @@ import UIKit
 
 class NotificationViewController: UIViewController {
     
-    var notificationData: [NotificationModel]?
-    var titleArr = ["My Account","Language","Rules and Metrices","About us","Contact Us","Log out"]
+    // MARK: - Outlet
     @IBOutlet weak var notificationTableView: UITableView!
-    
+    // MARK: - Variables
+    var notificationData: [NotificationModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
         notificationTableView.separatorStyle = .none
-        
+        // network request
         NotificationRequest()
     }
     
 
 }
+
+// MARK: - Notification TableView
 extension NotificationViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notificationData?.count ?? 0

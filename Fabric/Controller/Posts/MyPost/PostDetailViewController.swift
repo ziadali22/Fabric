@@ -27,22 +27,31 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var scrollViewPost: UIScrollView!
     @IBOutlet weak var videoPlayBtn: UIButton!
+    @IBOutlet weak var openPdfBtn: UIButton!
+    @IBOutlet weak var addCommentTitle: UIButton!
+    @IBOutlet weak var commentsTitle: UILabel!
     
-
+    @IBOutlet weak var commentCountTitle: UILabel!
+    
    // MARK: - variables
-
     var post : Item?
     var newPost = [Item]()
     var postId: Int?
     var commentData : [Comment]?
     var postsData : MostComment?
-    
     var imageCommentContent : String?
-    
-    
+    var pdfHanlder: ActionClouser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // localization
+        videoPlayBtn.setTitle("Play Video".localized, for: .normal)
+        openPdfBtn.setTitle("Open Pdf".localized, for: .normal)
+        addCommentTitle.setTitle("Add Comment".localized, for: .normal)
+        commentsTitle.text = "comments".localized
+        commentCountTitle.text = "comment".localized
+        //----
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -50,13 +59,17 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         tableView.alwaysBounceVertical = false
         tableView.isScrollEnabled = false
         tableView.sectionHeaderHeight = 0.0;
+        showSpinner(onView: self.view)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         DispatchQueue.main.async {
             self.postDetailRequest()
+            self.tableView.reloadData()
+            
         }
-
- 
+        
     }
-    
 
     // MARK: - add comment pop up
 
@@ -82,7 +95,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         tableView.reloadData()
         deleteRequest()
     }
-    
+    // MARK: - Play Video
     @IBAction func videoPlayButton(_ sender: Any) {
         videoPlayBtn.isHidden = false
         let url = URL(string: post?.content ?? "")
@@ -92,41 +105,49 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         self.present(vc, animated: true) { vc.player?.play() }
     }
     
-    // MARK: - Table View
-    
+    @IBAction func openPdfAction(_ sender: Any) {
+        pdfHanlder?()
+        
+    }
 }
+// MARK: - Table View
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return post?.comments?.count ?? 0
     }
-    
+    // Data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
         guard let item = post?.comments?[indexPath.row] else { return cell }
         cell.cellConfigure(item: item)
-        
+        cell.deleteComment.tag = indexPath.row
+        cell.deleteComment.addTarget(self, action: #selector(buttonPressedForDelete), for: .touchUpInside)
         cell.deleteHandelr = {
             let id = item.id
             self.deleteCommentRequest(id: id)
-
         }
         cell.reportHandler = {
             let id = item.id
             self.reportRequest(id: id)
-            
+            let vc  = self.storyboard?.instantiateViewController(identifier: "reportPopUp") as! ReportPopUpViewController
+            //vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+        cell.openPdfHandler = {
+            let content = item.comment
+            UIApplication.shared.openURL(URL(string: content ?? "")!)
         }
         return cell
     }
-
+    // Height for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
-        
-        
     }
-    @objc func buttonPressed(pressedId: Int){
-        deleteCommentRequest(id: pressedId)
+    @objc func buttonPressedForDelete(_ sender: UIButton){
+        post?.comments?.remove(at: sender.tag)
+        tableView.deleteRows(at:[IndexPath(row:sender.tag,section:0)],with:.none)
         tableView.reloadData()
     }
+
     
 }

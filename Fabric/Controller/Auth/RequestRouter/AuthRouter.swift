@@ -20,7 +20,9 @@ enum AuthRequestRouter: URLRequestBuilder {
     case follow_unfollow(id: Int)
     case intro
     case myPosts
-    case home
+    case userPosts(id:Int)
+    case home(categoryId: [Int]?)
+    case homeFilter(categoryId: [Int]?)
     case contactUs(name: String, phone: String, email: String, message: String)
     case postDetail(id:Int)
     case deletePost(id:Int)
@@ -54,6 +56,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.intro.value
         case .myPosts:
             return ServerPaths.myPosts.value
+        case .userPosts(let id):
+            return ServerPaths.postDetail.value + String(id)
         case .home:
             return ServerPaths.home.value
         case .contactUs:
@@ -78,6 +82,8 @@ enum AuthRequestRouter: URLRequestBuilder {
             return ServerPaths.myCategory.value
         case .search:
             return ServerPaths.search.value
+        case .homeFilter:
+            return ServerPaths.home.value
         }
     }
     // MARK: - Parameters
@@ -129,6 +135,11 @@ enum AuthRequestRouter: URLRequestBuilder {
             params["email"] = email
         case .search(let text):
             params["text"] = text
+            
+        case .home(let categoryId):
+            if let category = categoryId{
+            params["category[]"] = category
+            }
         default:
             break
         }
@@ -138,7 +149,7 @@ enum AuthRequestRouter: URLRequestBuilder {
     // MARK: - Methods
     internal var method: HTTPMethod {
         switch self {
-        case .getCategories , .intro , .home, .myPosts, .notification, .postDetail, .myCategories, .search:
+        case .getCategories , .intro , .home, .myPosts, .userPosts , .notification, .postDetail, .myCategories, .search, .homeFilter:
             return .get
         case .changePassword:
             return .put

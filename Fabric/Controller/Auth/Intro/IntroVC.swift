@@ -12,11 +12,12 @@ class IntroVC: UIViewController {
     @IBOutlet weak var MainView: UIView!
     @IBOutlet weak var DotView: UIView!
     @IBOutlet weak var detailsTxt: UITextView!
+    @IBOutlet weak var nextTitle: UIButton!
     
     fileprivate let isOnBoarding = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nextTitle.setTitle("Next".localized, for: .normal)
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         // make text view not editable
         detailsTxt.isEditable = false
@@ -24,10 +25,6 @@ class IntroVC: UIViewController {
         self.detailsTxt.text = UserDataActions.getSettingModel()?.screenOne
         
     }
-    
-    ///UserDataActions.getSettingModel()?.screenTwo
-    
-    
     @IBAction func next(_ sender: Any) {
         // send me to the second screen
         if isOnBoarding{

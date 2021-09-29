@@ -7,12 +7,10 @@
 
 import Foundation
 extension HomeViewController{
-    
-    @objc func homePostsCategoriesRequest(){
+    func homePostsCategoriesRequest(category: [Int]?){
         self.view.showLoader()
-        AuthRequestRouter.home.send(BaseModel<Home>.self, then: handleResponse)
+        AuthRequestRouter.home(categoryId: category).send(BaseModel<Home>.self, then: handleResponse)
     }
-
     var handleResponse: HandleResponse<BaseModel<Home>> {
         return { [weak self] (response) in
             guard let self = self else {return}
@@ -28,7 +26,6 @@ extension HomeViewController{
                     self.mostRateData = item.mostComments
                     self.newstPostsCollectionView.reloadData()
                     self.hieghtsRatesCollectionView.reloadData()
-                    
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)
@@ -37,8 +34,8 @@ extension HomeViewController{
             }
         }
     }
-    
 }
+
 
 
 

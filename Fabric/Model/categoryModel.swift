@@ -8,7 +8,7 @@
 import Foundation
 struct CategoryModel: Codable, CodableInit {
     var id: Int?
-    var name: String?
+    var name: String
     let logo: String?
     var isFollowed: Bool?
     

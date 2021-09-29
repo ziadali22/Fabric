@@ -9,7 +9,6 @@ import Foundation
 extension SignInVC{
     func signInRequest(){
         self.loginBtn.showLoader()
-        // add parameters in login case
         AuthRequestRouter.login(phone: phoneNumberTextField.text ?? "", password: PasswordTextField.text ?? "", fcm: "124").send(BaseModel<User>.self, then: handleResponse)
     }
     var handleResponse: HandleResponse<BaseModel<User>> {

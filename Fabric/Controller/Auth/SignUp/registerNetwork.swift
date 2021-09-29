@@ -8,7 +8,7 @@
 import Foundation
 import SkyFloatingLabelTextField
 extension SignUpVC {
-    func apiRequest(){
+    func signUpRequest(){
         self.signUpBtn.showLoader()
         AuthRequestRouter.register(phone: phoneNumberTextField.text ?? "", email:emailTextField.text ?? "" , password: passwordTextField.text ?? "", name: nameTextField.text ?? "", categories: categoryId, fcm: "1234567").send(BaseModel<User>.self, then: handleResponse)
     }
@@ -24,6 +24,7 @@ extension SignUpVC {
                 if model.status{
                     guard let item = model.data else {return}
                     self.successRegister(msg: item)
+                    self.dismiss(animated: true, completion: nil)
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)
