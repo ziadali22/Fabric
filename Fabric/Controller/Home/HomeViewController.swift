@@ -31,8 +31,8 @@ class HomeViewController: UIViewController , HomeFilterProtcol {
             self.tabBarController?.tabBar.items?[4].title = "more".localized
         }
         departmentsText.setTitle("Departments".localized, for: .normal)
-        
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         searchBar.delegate = self
         // first collection view
         newstPostsCollectionView.delegate = self
@@ -53,8 +53,6 @@ class HomeViewController: UIViewController , HomeFilterProtcol {
         //refresh controller
         refreshControl.addTarget(self, action: #selector(self.networkHomePosts), for: UIControl.Event.valueChanged)
         scrollView.refreshControl = refreshControl
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-
     }
     @objc func networkHomePosts(){
         homePostsCategoriesRequest(category: nil)
@@ -126,7 +124,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         show(vc, sender: nil)
         
     }
-    //Size
+    //Layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.newstPostsCollectionView {
             return CGSize(width: newstPostsCollectionView.frame.width / 1.70 - 8 ,height:  225)

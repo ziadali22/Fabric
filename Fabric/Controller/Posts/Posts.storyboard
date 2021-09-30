@@ -531,7 +531,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-TT-euo">
                                                                     <rect key="frame" x="36" y="94" width="310" height="75"/>
                                                                     <subviews>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="type here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DND-NE-4xr">
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="type here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DND-NE-4xr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="310" height="75"/>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>

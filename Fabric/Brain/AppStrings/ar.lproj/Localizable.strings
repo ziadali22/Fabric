@@ -13,7 +13,7 @@
 // MARK: - Login
 "Password" = "كلمه المرور";
 "don't have an account ?" = "ليس لديك حساب ؟";
-"arrow.left" = "arrow.right";
+
 // MARK: - ActivationCodeVC
 "Send Again" = "ارسل مره اخري";
 // MARK: - Home
@@ -50,6 +50,8 @@
 "New Password" = " كلمه المرورالجديده";
 "Confirm Password" = "تأكيد كلمه المرور ";
 "Save" = "حفظ التغييرات";
+// MARK: - ChangePasswordVC
+"Enter new password" = "ادخل باسورد جديد";
 //MARK: - PostDetailViewController
 "Play Video" = "تشغيل الفيديو";
 "Open Pdf"= "فتح ملف";

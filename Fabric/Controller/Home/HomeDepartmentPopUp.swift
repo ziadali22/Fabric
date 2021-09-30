@@ -20,8 +20,10 @@ class HomeDepartmentPopUp: UIViewController {
     var arrSelectedIndex = [IndexPath]()
     var filterDelegate: HomeFilterProtcol?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let categories = UserDataActions.getUserModel()?.categories
         departmetnsTitle.setTitle("Departments".localized, for: .normal)
         dotViewBtn.addDashBorder(color: .white, cornerRadius: 3)
         collectionView.allowsMultipleSelection = true
@@ -30,7 +32,6 @@ class HomeDepartmentPopUp: UIViewController {
             self.getDepartmentsRequest()
         }
     }
-
     override func viewDidAppear(_ animated: Bool) {
         collectionView.dataSource = self
         collectionView.delegate = self

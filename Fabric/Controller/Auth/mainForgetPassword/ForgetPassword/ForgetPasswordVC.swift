@@ -17,7 +17,11 @@ class ForgetPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
+        if Language.isEnglish() == true{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
+        }else{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.right"), for: .normal)
+        }
         phoneNumberTextField.placeholder = "Phone Number".localized
         DotView.addDashBorder(color: .white, cornerRadius: 3)
     }

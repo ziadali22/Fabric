@@ -138,7 +138,7 @@ enum AuthRequestRouter: URLRequestBuilder {
             
         case .home(let categoryId):
             if let category = categoryId{
-            params["category[]"] = category
+            params["categories[]"] = category
             }
         default:
             break

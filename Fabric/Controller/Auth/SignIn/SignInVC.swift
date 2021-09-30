@@ -24,8 +24,11 @@ class SignInVC: UIViewController {
         phoneNumberTextField.placeholder = "Phone Number".localized
         PasswordTextField.placeholder = "Password".localized
         dontHaveAccountTitle.setTitle("don't have an account ?".localized, for: .normal)
-        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
-
+        if Language.isEnglish() == true{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
+        }else{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.right"), for: .normal)
+        }
         DispatchQueue.main.async {
             self.DotView.addDashBorder(color: .white, cornerRadius: 3)
         }

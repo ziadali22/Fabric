@@ -22,8 +22,12 @@ class changePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
-        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
-        passwordTextField.placeholder = "Phone Number".localized
+        if Language.isEnglish() == true{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
+        }else{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.right"), for: .normal)
+        }
+        passwordTextField.placeholder = "Enter new password".localized
         confirmPasswordTextField.placeholder = "Confirm".localized
         DotView.addDashBorder(color: .white, cornerRadius: 3)
     }

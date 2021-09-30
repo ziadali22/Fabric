@@ -32,7 +32,12 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
-        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
+        if Language.isEnglish() == true{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
+        }else{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.right"), for: .normal)
+        }
+        
         nameTextField.placeholder = "Name".localized
         phoneNumberTextField.placeholder = "Phone Number".localized
         passwordTextField.placeholder = "Password".localized

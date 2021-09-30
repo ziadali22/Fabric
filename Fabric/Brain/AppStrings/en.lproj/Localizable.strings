@@ -14,7 +14,6 @@
 // MARK: - Login
 "Password" = "Password";
 "don't have an account ?" = "don't have an account ?";
-"arrow.left" = "arrow.left";
 // MARK: - ActivationCodeVC
 "Send Again" = "Send Again";
 // MARK: - Home
@@ -52,7 +51,8 @@
 "New Password" = "New Password";
 "Confirm Password" = "Confirm Password";
 "Save" = "Save";
-
+// MARK: - ChangePasswordVC
+"Enter new password" = "Enter new password";
 //MARK: - PostDetailViewController
 "Play Video" = "Play Video";
 "Open Pdf"= "Open Pdf";
