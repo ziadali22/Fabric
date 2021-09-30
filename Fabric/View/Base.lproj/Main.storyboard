@@ -568,7 +568,7 @@
                                                                                         </label>
                                                                                     </subviews>
                                                                                 </stackView>
-                                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  " translatesAutoresizingMaskIntoConstraints="NO" id="Hqv-lS-rAc">
+                                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hqv-lS-rAc">
                                                                                     <rect key="frame" x="0.0" y="19.000000000000004" width="206" height="51.333333333333343"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -777,7 +777,7 @@
                                                                                         </label>
                                                                                     </subviews>
                                                                                 </stackView>
-                                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  " translatesAutoresizingMaskIntoConstraints="NO" id="4Rj-dp-J4P">
+                                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Rj-dp-J4P">
                                                                                     <rect key="frame" x="0.0" y="20.333333333333343" width="206" height="59"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -1100,7 +1100,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73r-Sv-eNA">
-                                        <rect key="frame" x="229.66666666666663" y="9" width="118" height="30"/>
+                                        <rect key="frame" x="213.66666666666663" y="9" width="134" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="My Departments">
                                             <color key="titleColor" red="0.0" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1134,7 +1134,7 @@
                                     <constraint firstItem="MZI-Wj-n9c" firstAttribute="top" secondItem="Jrd-yY-YTh" secondAttribute="top" id="Lg7-ia-RyR"/>
                                     <constraint firstItem="MZI-Wj-n9c" firstAttribute="leading" secondItem="Dsg-re-qEJ" secondAttribute="trailing" constant="24" id="Lq2-3e-dOs"/>
                                     <constraint firstItem="OKw-2y-6hL" firstAttribute="width" secondItem="Dsg-re-qEJ" secondAttribute="width" id="N8S-DL-BnW"/>
-                                    <constraint firstItem="73r-Sv-eNA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MZI-Wj-n9c" secondAttribute="trailing" constant="8" symbolic="YES" id="PBS-dK-fLb"/>
+                                    <constraint firstItem="73r-Sv-eNA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="MZI-Wj-n9c" secondAttribute="trailing" constant="8" symbolic="YES" id="PBS-dK-fLb"/>
                                     <constraint firstAttribute="trailing" secondItem="73r-Sv-eNA" secondAttribute="trailing" constant="48.333333333333371" id="XQO-ib-XGg"/>
                                     <constraint firstItem="Dsg-re-qEJ" firstAttribute="centerY" secondItem="MZI-Wj-n9c" secondAttribute="centerY" id="v3j-Fg-EMk"/>
                                     <constraint firstItem="OKw-2y-6hL" firstAttribute="centerX" secondItem="Dsg-re-qEJ" secondAttribute="centerX" id="w4z-NV-8lf"/>
@@ -1571,6 +1571,7 @@
                     <connections>
                         <outlet property="DotView" destination="eoo-NR-hRu" id="iNr-C2-Qb4"/>
                         <outlet property="PasswordTextField" destination="y1N-kn-1Sf" id="coS-EB-STt"/>
+                        <outlet property="backBtnTitle" destination="zWs-Jg-tZB" id="HlK-Gm-BiO"/>
                         <outlet property="dontHaveAccountTitle" destination="yrW-20-2pQ" id="LDJ-Ce-Iai"/>
                         <outlet property="loginBtn" destination="ATT-bP-LJP" id="MSN-lR-kxn"/>
                         <outlet property="phoneNumberTextField" destination="D8i-gO-ubu" id="mr3-S1-YiZ"/>
@@ -2050,6 +2051,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="fIs-LB-scW" secondAttribute="trailing" id="r0D-IO-ebf"/>
+                                                    <constraint firstItem="fIs-LB-scW" firstAttribute="leading" secondItem="ds4-ng-JGf" secondAttribute="leading" id="tZg-oi-NKu"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2093,6 +2098,7 @@
                     </view>
                     <connections>
                         <outlet property="DotView" destination="CzV-iI-tXg" id="2av-mL-XAv"/>
+                        <outlet property="backBtnTitle" destination="RvR-wP-Q1V" id="6Mu-uL-d3x"/>
                         <outlet property="categoryTxt" destination="Sr3-xq-2LK" id="ufD-es-jtd"/>
                         <outlet property="collectionHeight" destination="v14-fC-Uia" id="7UB-VI-XJL"/>
                         <outlet property="collectionViwe" destination="fIs-LB-scW" id="1O1-Fu-4Da"/>
@@ -2261,6 +2267,7 @@
                     </view>
                     <connections>
                         <outlet property="DotView" destination="Tbi-VP-c85" id="Iim-5p-mUG"/>
+                        <outlet property="backBtnTitle" destination="iF5-E0-Y9j" id="Bf2-7v-GJ1"/>
                         <outlet property="phoneNumberTextField" destination="dqS-Nf-0gy" id="nyR-t9-ohL"/>
                         <outlet property="sendCodeBtn" destination="p1K-n2-s4J" id="Amy-ER-rfr"/>
                     </connections>
@@ -2281,18 +2288,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="305" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-cV-tkd">
-                                <rect key="frame" x="16" y="60" width="396" height="57"/>
+                                <rect key="frame" x="16" y="60" width="396" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSE-oH-VoV">
-                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="45"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="arrow.left" catalog="system"/>
                                         <connections>
                                             <action selector="dismissButton:" destination="dbU-7v-SRs" eventType="touchUpInside" id="3f4-VE-9IM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmp-Oa-eGG">
-                                        <rect key="frame" x="350.66666666666669" y="0.0" width="45.333333333333314" height="57"/>
+                                        <rect key="frame" x="350.66666666666669" y="0.0" width="45.333333333333314" height="45"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2301,13 +2309,13 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 277" translatesAutoresizingMaskIntoConstraints="NO" id="1lh-Mz-7eI">
-                                <rect key="frame" x="167" y="167" width="94" height="80"/>
+                                <rect key="frame" x="167" y="155" width="94" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="UoE-43-Zjy"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-4w-Xjx">
-                                <rect key="frame" x="16" y="297" width="396" height="113.33333333333331"/>
+                                <rect key="frame" x="16" y="285" width="396" height="113.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Code " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-DU-KaN">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="20.333333333333332"/>
@@ -2330,7 +2338,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-aM-s75">
-                                <rect key="frame" x="100" y="595" width="228" height="108.33333333333337"/>
+                                <rect key="frame" x="100" y="583" width="228" height="108.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the activation code (00:30)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJy-eU-CPO">
                                         <rect key="frame" x="13.666666666666671" y="0.0" width="201" height="14.333333333333334"/>
@@ -2395,7 +2403,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-nM-3d0">
-                                <rect key="frame" x="79" y="418" width="270" height="80"/>
+                                <rect key="frame" x="79" y="406" width="270" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvN-SW-KnZ">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
@@ -2469,6 +2477,7 @@
                         <outlet property="SecondTextField" destination="WgK-ya-grt" id="pGf-zn-rDX"/>
                         <outlet property="ThirdTextField" destination="gdD-K8-uxd" id="48B-ts-Gb1"/>
                         <outlet property="activateBtn" destination="2GW-Ca-AkP" id="qRN-PV-Zt7"/>
+                        <outlet property="backBtnTitle" destination="hSE-oH-VoV" id="pwj-kp-Lt1"/>
                         <outlet property="phoneLabel" destination="uqC-Pl-zbO" id="oof-GM-Ch9"/>
                         <outlet property="sendAgainTitle" destination="1s8-fH-ZUo" id="ZFO-Hj-say"/>
                     </connections>
@@ -2695,6 +2704,7 @@
                     </view>
                     <connections>
                         <outlet property="DotView" destination="hKl-qe-gZi" id="ytN-Bz-AMI"/>
+                        <outlet property="backBtnTitle" destination="Pfs-ev-6th" id="Uy7-ML-jIL"/>
                         <outlet property="confirmPasswordTextField" destination="3xu-Wg-JUZ" id="DXc-IR-jT7"/>
                         <outlet property="passwordTextField" destination="0as-rf-Elf" id="lao-cZ-2mf"/>
                         <outlet property="saveChangesBtn" destination="ta2-6H-isD" id="9Pn-kP-d24"/>

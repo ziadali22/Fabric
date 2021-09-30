@@ -14,6 +14,7 @@ class changePasswordVC: UIViewController {
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var DotView: UIView!
+    @IBOutlet weak var backBtnTitle: UIButton!
     // MARK: - variables
     var phone: String?
     var code: String?
@@ -21,6 +22,7 @@ class changePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
         passwordTextField.placeholder = "Phone Number".localized
         confirmPasswordTextField.placeholder = "Confirm".localized
         DotView.addDashBorder(color: .white, cornerRadius: 3)

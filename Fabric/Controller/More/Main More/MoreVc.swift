@@ -32,7 +32,7 @@ class MoreVc: UIViewController {
                 self.show(vc, sender: nil)
         }))
          rowArray.append(RowData(title: "Language".localized, image: "Group 194", action: {
-             let refreshAlert = UIAlertController(title: "App language", message: "App will Restart", preferredStyle: .alert)
+             let refreshAlert = UIAlertController(title: "Change app language".localized, message: "App will Restart".localized, preferredStyle: .alert)
 
              refreshAlert.addAction(UIAlertAction(title: "confirm", style: .default, handler: { (action: UIAlertAction!) in
                  changeLanguage()

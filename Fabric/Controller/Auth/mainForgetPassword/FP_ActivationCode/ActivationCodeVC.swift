@@ -18,6 +18,7 @@ class ActivationCodeVC: UIViewController {
     @IBOutlet weak var DotView: UIView!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var sendAgainTitle: UIButton!
+    @IBOutlet weak var backBtnTitle: UIButton!
     
     //MARK: - variables
     var phone: String?
@@ -27,6 +28,7 @@ class ActivationCodeVC: UIViewController {
         
         super.viewDidLoad()
         // localization
+        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
         sendAgainTitle.setTitle("Send Again".localized, for: .normal)
         phoneLabel.text = phone
         DotView.addDashBorder(color: .white, cornerRadius: 3)

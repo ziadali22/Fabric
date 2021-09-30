@@ -6,12 +6,15 @@
  Copyright © 2020 Abulrahman mohsen. All rights reserved.
  */
 
-
+// MARK: - App Language
+"Change app language" = "Change app language";
+"App will Restart" = "App will Restart";
 // MARK: - IntroVc
 "Next" = "Next";
 // MARK: - Login
 "Password" = "Password";
 "don't have an account ?" = "don't have an account ?";
+"arrow.left" = "arrow.left";
 // MARK: - ActivationCodeVC
 "Send Again" = "Send Again";
 // MARK: - Home

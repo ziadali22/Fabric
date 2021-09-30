@@ -26,7 +26,7 @@ class DepartmentsVC: UIViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
-
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         collectionView.dataSource = self
         collectionView.delegate = self
         // add  width

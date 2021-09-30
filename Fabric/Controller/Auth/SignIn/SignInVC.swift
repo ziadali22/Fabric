@@ -15,6 +15,7 @@ class SignInVC: UIViewController {
     @IBOutlet weak var PasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var dontHaveAccountTitle: UIButton!
     @IBOutlet weak var loginBtn: LoadingButton!
+    @IBOutlet weak var backBtnTitle: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class SignInVC: UIViewController {
         phoneNumberTextField.placeholder = "Phone Number".localized
         PasswordTextField.placeholder = "Password".localized
         dontHaveAccountTitle.setTitle("don't have an account ?".localized, for: .normal)
+        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
+
         DispatchQueue.main.async {
             self.DotView.addDashBorder(color: .white, cornerRadius: 3)
         }

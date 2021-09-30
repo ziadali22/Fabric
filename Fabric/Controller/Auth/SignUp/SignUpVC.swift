@@ -20,6 +20,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var categoryTxt: SkyFloatingLabelTextField!
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
+    @IBOutlet weak var backBtnTitle: UIButton!
     
     // MARK: - Variables
     var categoryData: [CategoryModel]?
@@ -31,6 +32,7 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        backBtnTitle.setImage(UIImage(named: "arrow.left".localized), for: .normal)
         nameTextField.placeholder = "Name".localized
         phoneNumberTextField.placeholder = "Phone Number".localized
         passwordTextField.placeholder = "Password".localized
@@ -105,8 +107,8 @@ extension SignUpVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = selectedCategory[indexPath.row].name.calculateHeightForString().width
-        return CGSize(width: width + 10 ,height:  collectionView.frame.height)
+        let width = selectedCategory[indexPath.row].name.calculateHeightForString().width 
+        return CGSize(width: width + 10 ,height: 40)
         }
 
     
