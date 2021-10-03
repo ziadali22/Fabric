@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qae-iO-CwS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qae-iO-CwS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvt-i3-9yb">
@@ -193,7 +193,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="Q4a-kp-mv1">
                                 <rect key="frame" x="0.0" y="613" width="414" height="249"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-QP-n45">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-QP-n45">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD6-eO-IH4">
@@ -527,7 +527,7 @@
                                     <constraint firstAttribute="height" constant="246" id="9Gu-eM-CaU"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXt-6t-lfE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXt-6t-lfE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNE-D7-C44">
@@ -867,8 +867,6 @@
                                                                     <color key="value" name="green"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="New Password"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="New Password"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="New Password"/>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="password:" destination="uMO-1u-bh4" eventType="editingDidEnd" id="oqa-xA-NnX"/>
@@ -913,8 +911,6 @@
                                                                     <color key="value" name="green"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm Password"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Confirm Password"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Confirm Password"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>

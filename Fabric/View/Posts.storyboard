@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-4M-66L">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-4M-66L">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQW-UX-aMz">
@@ -134,10 +134,10 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-nP-a3O" userLabel="commentView">
-                                                                                    <rect key="frame" x="143.5" y="119" width="87.5" height="33"/>
+                                                                                    <rect key="frame" x="135.5" y="119" width="95.5" height="33"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0kr-HM-16Q">
-                                                                                            <rect key="frame" x="4" y="4" width="79.5" height="25"/>
+                                                                                            <rect key="frame" x="8" y="4" width="79.5" height="25"/>
                                                                                             <subviews>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 15103" translatesAutoresizingMaskIntoConstraints="NO" id="4qF-Me-62U">
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="12" height="25"/>
@@ -160,8 +160,8 @@
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.50018382350000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="trailing" secondItem="0kr-HM-16Q" secondAttribute="trailing" constant="4" id="SaO-IM-nWf"/>
-                                                                                        <constraint firstItem="0kr-HM-16Q" firstAttribute="leading" secondItem="eyi-nP-a3O" secondAttribute="leading" constant="4" id="T3O-5f-45v"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="0kr-HM-16Q" secondAttribute="trailing" constant="8" id="SaO-IM-nWf"/>
+                                                                                        <constraint firstItem="0kr-HM-16Q" firstAttribute="leading" secondItem="eyi-nP-a3O" secondAttribute="leading" constant="8" id="T3O-5f-45v"/>
                                                                                         <constraint firstItem="0kr-HM-16Q" firstAttribute="top" secondItem="eyi-nP-a3O" secondAttribute="top" constant="4" id="ghG-Gh-nqO"/>
                                                                                         <constraint firstAttribute="bottom" secondItem="0kr-HM-16Q" secondAttribute="bottom" constant="4" id="vYw-0V-qUe"/>
                                                                                     </constraints>
@@ -323,20 +323,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-cm-HUA">
                                 <rect key="frame" x="16" y="293" width="382" height="310"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
-                                        <rect key="frame" x="60" y="243" width="262" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the report sent to the manager and it will be review soon!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAi-sv-XeF">
+                                        <rect key="frame" x="60" y="243" width="262" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="262" id="kcM-DN-ZuD"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="the report sent to the manager and it will be review soon!">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="18" name="PNU-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="PNU-Bold" family="PNU" pointSize="16"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73a-4q-tkL">
@@ -466,7 +459,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EH6-9z-esO">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH6-9z-esO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHx-dl-nay" userLabel="mainView">
@@ -562,14 +555,14 @@
                                                                             <rect key="frame" x="70" y="0.0" width="82.5" height="62"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Moahmed Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-c5-Igq">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="42.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="43"/>
                                                                                     <fontDescription key="fontDescription" name="PNU-Bold" family="PNU" pointSize="14"/>
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 march 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-z7-aIo">
-                                                                                    <rect key="frame" x="0.0" y="48.5" width="79.5" height="13.5"/>
-                                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                                                                    <rect key="frame" x="0.0" y="49" width="74" height="13"/>
+                                                                                    <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="11"/>
                                                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -645,6 +638,11 @@
                                                                     <buttonConfiguration key="configuration" style="plain" title="Open PDF ">
                                                                         <fontDescription key="titleFontDescription" name="PNU-Medium" family="PNU" pointSize="13"/>
                                                                     </buttonConfiguration>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                     <connections>
                                                                         <action selector="openPdfAction:" destination="UjB-aj-l9o" eventType="touchUpInside" id="RZc-ma-1aP"/>
                                                                     </connections>
@@ -700,13 +698,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vd9-al-fTb">
                                                 <rect key="frame" x="313.5" y="352" width="84.5" height="17.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmN-5m-Lqh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmN-5m-Lqh">
                                                         <rect key="frame" x="0.0" y="0.0" width="17" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="PNU-Bold" family="PNU" pointSize="15"/>
                                                         <color key="textColor" name="green"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-W7-sz5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-W7-sz5">
                                                         <rect key="frame" x="21" y="0.0" width="63.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="PNU-Bold" family="PNU" pointSize="15"/>
                                                         <color key="textColor" name="green"/>
@@ -714,31 +712,33 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 march 2022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-EU-ibT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 march 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-EU-ibT">
                                                 <rect key="frame" x="317.5" y="308" width="80.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="12"/>
                                                 <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WPe-X7-GV5">
-                                                <rect key="frame" x="89" y="153.5" width="236" height="31"/>
+                                                <rect key="frame" x="96" y="153.5" width="222" height="31"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-rw-gk0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="31"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="  Play Video"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="  Play Video">
+                                                            <fontDescription key="titleFontDescription" name="PNU-Medium" family="PNU" pointSize="13"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="videoPlayButton:" destination="FSN-u5-MBV" eventType="touchUpInside" id="mPr-7d-aZZ"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igY-zs-PPy">
-                                                        <rect key="frame" x="121.5" y="0.0" width="114.5" height="31"/>
+                                                        <rect key="frame" x="114.5" y="0.0" width="107.5" height="31"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.38857230392156861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Open PDF">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="0.0"/>
+                                                            <fontDescription key="titleFontDescription" name="PNU-Medium" family="PNU" pointSize="13"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -830,11 +830,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46T-ke-J5G">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46T-ke-J5G">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g4-JD-zYm">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="839"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Group 97" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-U8-zVX">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -923,16 +923,10 @@
                                                                                             </attributedString>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfI-FC-CWf">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfI-FC-CWf">
                                                                                             <rect key="frame" x="11" y="0.0" width="25.5" height="17"/>
-                                                                                            <attributedString key="attributedText">
-                                                                                                <fragment content="Math">
-                                                                                                    <attributes>
-                                                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                                        <font key="NSFont" size="11" name="PNU-Medium"/>
-                                                                                                    </attributes>
-                                                                                                </fragment>
-                                                                                            </attributedString>
+                                                                                            <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="11"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
@@ -1158,7 +1152,7 @@
                                             <constraint firstItem="tjG-52-kUF" firstAttribute="leading" secondItem="7g4-JD-zYm" secondAttribute="leading" constant="48" id="Njy-5I-7Y8"/>
                                             <constraint firstAttribute="trailing" secondItem="tjG-52-kUF" secondAttribute="trailing" constant="48" id="Omc-Pc-f3n"/>
                                             <constraint firstAttribute="trailing" secondItem="jpG-U8-zVX" secondAttribute="trailing" id="PK7-5f-Coy"/>
-                                            <constraint firstAttribute="height" constant="550" id="SYn-XC-8Ui"/>
+                                            <constraint firstAttribute="height" constant="839" id="SYn-XC-8Ui"/>
                                             <constraint firstItem="1ls-gE-n3i" firstAttribute="leading" secondItem="7g4-JD-zYm" secondAttribute="leading" constant="24" id="cBf-N4-YwB"/>
                                             <constraint firstItem="jpG-U8-zVX" firstAttribute="leading" secondItem="7g4-JD-zYm" secondAttribute="leading" id="cGh-9o-MwR"/>
                                             <constraint firstItem="jpG-U8-zVX" firstAttribute="top" secondItem="7g4-JD-zYm" secondAttribute="top" id="hip-H3-QsF"/>
@@ -1170,7 +1164,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7g4-JD-zYm" secondAttribute="trailing" id="0wG-dj-3Bk"/>
-                                    <constraint firstAttribute="bottom" secondItem="7g4-JD-zYm" secondAttribute="bottom" id="3Dv-sL-bnI"/>
+                                    <constraint firstAttribute="bottom" secondItem="7g4-JD-zYm" secondAttribute="bottom" constant="57" id="3Dv-sL-bnI"/>
                                     <constraint firstItem="7g4-JD-zYm" firstAttribute="leading" secondItem="46T-ke-J5G" secondAttribute="leading" id="53Q-2B-URp"/>
                                     <constraint firstItem="7g4-JD-zYm" firstAttribute="width" secondItem="46T-ke-J5G" secondAttribute="width" id="dbE-C7-ny2"/>
                                     <constraint firstItem="7g4-JD-zYm" firstAttribute="top" secondItem="46T-ke-J5G" secondAttribute="top" id="w3F-kR-8wU"/>
@@ -1191,6 +1185,7 @@
                     <connections>
                         <outlet property="answersCount" destination="OSS-9U-7Pb" id="kaA-Sv-MvE"/>
                         <outlet property="answersCountTitle" destination="OSS-9U-7Pb" id="o53-eg-3yh"/>
+                        <outlet property="backBtnTitle" destination="1ls-gE-n3i" id="Hwp-ie-A1e"/>
                         <outlet property="firstCollection" destination="dEJ-ie-bko" id="P9Q-xg-V9v"/>
                         <outlet property="firstCollectionViewForPosts" destination="dEJ-ie-bko" id="gEU-Nq-9Ta"/>
                         <outlet property="postsCount" destination="Kik-nW-D8F" id="iw6-cr-Oyb"/>
@@ -1258,7 +1253,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lan-kj-16o">
                                                         <rect key="frame" x="0.0" y="0.0" width="212" height="40"/>
-                                                        <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="16"/>
                                                         <state key="normal" title="Add">
                                                             <color key="titleColor" red="0.97420508969999997" green="1" blue="0.98756074329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>

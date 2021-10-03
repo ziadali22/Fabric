@@ -18,10 +18,15 @@ class postsCVCell: UICollectionViewCell {
     // MARK: - Variables
     var deletePostClosure: ActionClouser?
     var hideDeleteBtn: ActionClouser?
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        commentBtn.setTitle("Comment".localized, for: .normal)
+    }
     
     @IBAction func deletePost(_ sender: Any) {
         deletePostClosure?()
     }
+
     // MARK: - Cell Configure
     func postsCvonfigure(item: Item){
         cellImage.kf.setImage(with: URL(string: item.content ?? "") )

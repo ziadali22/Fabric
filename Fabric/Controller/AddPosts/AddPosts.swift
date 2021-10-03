@@ -35,6 +35,15 @@ class AddPosts: UIViewController{
     var uText: UploadData?
     var con: String?
     var isVideo: Bool = false
+    
+    
+    fileprivate func commmentTextPlaceHolder() {
+        // add placeHolder
+        commentText.delegate = self
+        commentText.text = "Add your post text content here".localized
+        commentText.textColor = UIColor.lightGray
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -48,35 +57,33 @@ class AddPosts: UIViewController{
         // network requeest
         getCategoriesApi()
         setUpPicker()
-        // add placeHolder
-        commentText.delegate = self
-        commentText.text = "Add your post text content here".localized
-        commentText.textColor = UIColor.lightGray
+        commmentTextPlaceHolder()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .savedPhotosAlbum
         imagePickerController.mediaTypes = ["public.movie"]
         
     }
-    
-    
-     func openImgPicker() {
-
-       
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Language.currentLanguage() == "en"{
+            categoryField.textAlignment = .left
+        }else{
+            categoryField.textAlignment = .right
+        }
+        
     }
+    
+    
     // MARK: - validation for add posts
     func validation(){
         guard let commentTF = commentText.text , !commentTF.isEmpty else { return self.showMessage(sub: "check valid content ".localized)}
         guard let categoryTF = categoryField.text, !categoryTF.isEmpty else { return self.showMessage(sub: "check valid category field".localized) }
-        
-    }
-    
-    // MARK : - Add Post
-    @IBAction func addPost(_ sender: Any) {
         uploadRequest()
     }
-    
-
-    
+    // MARK : - Add Post
+    @IBAction func addPost(_ sender: Any) {
+        validation()
+    }
     @IBAction func getNotfications(_ sender: Any) {
         let vc  = storyboard?.instantiateViewController(identifier: "notificationHome") as! NotificationViewController
         show(vc, sender: nil)
@@ -93,9 +100,6 @@ class AddPosts: UIViewController{
         self.pickerView.dataSource = self
         self.pickerView.reloadAllComponents()
     }
-    
-    
-
     // MARK: - Alert For Attachment
     @IBAction func attachmentBtn(_ sender: Any) {
         showAlertView()

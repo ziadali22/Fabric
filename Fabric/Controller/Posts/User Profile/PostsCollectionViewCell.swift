@@ -17,7 +17,7 @@ class PostsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postDate: UILabel!
     // MARK: - add dumb data
     func addData(item: Item){
-        departmentTExt.text = item.title
+        departmentTExt.text = item.category?.name
         commentsNumb.text = String (item.comments?.count ?? 0)
         postImage.kf.setImage(with: URL(string: item.content ?? ""))
         userName.text = item.user?.name

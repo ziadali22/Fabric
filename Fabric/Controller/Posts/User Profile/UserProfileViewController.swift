@@ -17,8 +17,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var firstCollection: UICollectionView!
-    @IBOutlet weak var secondCollection: UICollectionView!
-    @IBOutlet weak var secondCollectionViewForComments: UICollectionView!
+
+    @IBOutlet weak var backBtnTitle: UIButton!
     @IBOutlet weak var firstCollectionViewForPosts: UICollectionView!
     // localization
     @IBOutlet weak var postsCountTitle: UILabel!
@@ -29,21 +29,32 @@ class UserProfileViewController: UIViewController {
     var userProfileData : Item?
     var postId: Int?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // localization
+    fileprivate func localization() {
         postsCountTitle.text = "Posts Count".localized
         answersCount.text = "Answer Count".localized
         postsTitle.text = "Posts".localized
-        
+    }
+    
+    fileprivate func backBtnDirection() {
+        // localization
+        if Language.isEnglish() == true{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
+        }else{
+            backBtnTitle.setImage(UIImage(systemName:"arrow.right"), for: .normal)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        backBtnDirection()
+        localization()
         userPhoto.layer.cornerRadius = userImage.frame.height/2
         firstCollection.delegate = self
         firstCollection.dataSource = self
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         firstCollection.collectionViewLayout = layout
-        
+        firstCollection.collectionViewLayout = UICollectionViewFlowLayout()
         userProfileRequest()
         userData()
     }
