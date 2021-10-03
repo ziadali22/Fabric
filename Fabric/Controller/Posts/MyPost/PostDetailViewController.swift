@@ -31,6 +31,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     @IBOutlet weak var addCommentTitle: UIButton!
     @IBOutlet weak var commentsTitle: UILabel!
     
+    
     @IBOutlet weak var commentCountTitle: UILabel!
     
    // MARK: - variables
@@ -42,34 +43,36 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     var imageCommentContent : String?
     var pdfHanlder: ActionClouser?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    fileprivate func localization() {
         // localization
         videoPlayBtn.setTitle("Play Video".localized, for: .normal)
         openPdfBtn.setTitle("Open Pdf".localized, for: .normal)
         addCommentTitle.setTitle("Add Comment".localized, for: .normal)
         commentsTitle.text = "comments".localized
         commentCountTitle.text = "comment".localized
-        //----
+    }
+    
+    fileprivate func tableViewDeclaration() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
         tableView.alwaysBounceVertical = false
         tableView.isScrollEnabled = false
-        tableView.sectionHeaderHeight = 0.0;
-        showSpinner(onView: self.view)
+        tableView.sectionHeaderHeight = 0
+        tableView.reloadData()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.postDetailRequest()
-            self.tableView.reloadData()
-            
-        }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        localization()
+        tableViewDeclaration()
+        showSpinner(onView: self.view)
+        postDetailRequest()
         
     }
+
 
     // MARK: - add comment pop up
 
@@ -121,6 +124,8 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         guard let item = post?.comments?[indexPath.row] else { return cell }
         cell.cellConfigure(item: item)
         cell.deleteComment.tag = indexPath.row
+       
+       // cell.imageContent.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
         cell.deleteComment.addTarget(self, action: #selector(buttonPressedForDelete), for: .touchUpInside)
         cell.deleteHandelr = {
             let id = item.id
@@ -135,14 +140,32 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         }
         cell.openPdfHandler = {
             let content = item.comment
-            UIApplication.shared.openURL(URL(string: content ?? "")!)
+            UIApplication.shared.open(URL(string: content ?? "")!)
+        }
+        cell.openIMageHandler = {
+            let vc  = self.storyboard?.instantiateViewController(identifier: "OpenImageVC") as! OpenImageVC
+            //vc.modalPresentationStyle = .fullScreen
+            print("")
+            vc.imageUrl = item.comment
+            self.present(vc, animated: true, completion: nil)
         }
         return cell
     }
+    // MARK: HERE
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        print("image tapped")
+        
+        let vc  = storyboard?.instantiateViewController(identifier: "OpenImageVC") as! OpenImageVC
+      
+       
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
     // Height for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return  150
     }
+
     @objc func buttonPressedForDelete(_ sender: UIButton){
         post?.comments?.remove(at: sender.tag)
         tableView.deleteRows(at:[IndexPath(row:sender.tag,section:0)],with:.none)

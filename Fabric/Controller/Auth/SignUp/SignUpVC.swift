@@ -51,6 +51,7 @@ class SignUpVC: UIViewController {
         collectionHeight.constant = 0
         setUpPicker()
     }
+
     //PickerView
     func setUpPicker(){
         self.categoryTxt.inputView = self.pickerView

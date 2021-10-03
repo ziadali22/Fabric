@@ -40,7 +40,7 @@ extension PostDetailViewController{
             DispatchQueue.main.async {
                 self.videoPlayBtn.isHidden = true
             }
-            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
+            //tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 150
             self.navigationItem.title = item.itemDescription
             commentCount.text = String(item.comments?.count ?? 0)
             departmentText.text = item.category?.name
@@ -58,7 +58,7 @@ extension PostDetailViewController{
                 self.videoPlayBtn.isHidden = false
                 self.openPdfBtn.isHidden = true
             }
-            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
+            //tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
             self.navigationItem.title = item.itemDescription
             commentCount.text = String(item.comments?.count ?? 0)
             departmentText.text = item.category?.name
@@ -76,7 +76,8 @@ extension PostDetailViewController{
             departmentText.text = item.category?.name
             userName.setTitle(item.user?.name, for: .normal)
             dateText.text = item.createdAt
-            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 200
+            
+            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 150
             //   //  //
             if item.user?.id != UserDataActions.getUserModel()?.id
             {

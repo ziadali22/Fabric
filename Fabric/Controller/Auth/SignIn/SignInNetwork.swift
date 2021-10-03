@@ -38,6 +38,7 @@ extension SignInVC{
         self.showMessage(sub: "success login")
         let vc = storyboard?.instantiateViewController(identifier: "tapBar")
         vc?.modalPresentationStyle = .fullScreen
+        vc?.modalTransitionStyle = .crossDissolve
         guard let controller = vc else { return  }
         present(controller, animated: true, completion: nil)
     }

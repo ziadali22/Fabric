@@ -16,18 +16,18 @@ class LoginOrSign: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         useItToApplyChangesInButton(btn: loginButton)
-    }
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        DispatchQueue.main.async{
-            self.DotView.addDashBorder(color: .white, cornerRadius: 3)
-        }
+        
        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DotView.addDashBorder(color: .white, cornerRadius: 3)
     }
     //MARK: - Login
     @IBAction func loginButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "login") as! SignInVC
         vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
         
         
@@ -36,6 +36,7 @@ class LoginOrSign: UIViewController {
     @IBAction func signupButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "signup") as! SignUpVC
         vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
     }
 }

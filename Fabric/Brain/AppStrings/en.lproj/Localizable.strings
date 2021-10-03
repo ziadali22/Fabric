@@ -72,3 +72,6 @@
 "Posts Count" = "Posts Count";
 "Answer Count" = "Answer Count";
 "Posts" = "Posts";
+// MARK: - PopUP
+"Confirm" = "Confirm";
+"Cancel" = "Cancel";

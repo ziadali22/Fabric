@@ -27,7 +27,7 @@ class contactUsViewController: UIViewController, UITextViewDelegate {
         sendBtn.setTitle("Send".localized, for: .normal)
         DispatchQueue.main.async {
             self.textView.addDashBorder(color: .green, cornerRadius: 3)
-            self.dotView.addDashBorder(color: .green, cornerRadius: 3)
+            self.dotView.addDashBorder(color: .white, cornerRadius: 3)
         }
         textView.delegate = self
         textView.text = "Type your message here".localized

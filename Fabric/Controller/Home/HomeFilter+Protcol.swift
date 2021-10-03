@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeFilterProtcol {
     func passData(data: [Int])

@@ -41,7 +41,7 @@ class UserProfileViewController: UIViewController {
         firstCollection.dataSource = self
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         firstCollection.collectionViewLayout = layout
         
         userProfileRequest()

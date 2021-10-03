@@ -27,16 +27,17 @@ class HomeDepartmentPopUp: UIViewController {
         departmetnsTitle.setTitle("Departments".localized, for: .normal)
         dotViewBtn.addDashBorder(color: .white, cornerRadius: 3)
         collectionView.allowsMultipleSelection = true
-        // network request
-        DispatchQueue.main.async {
-            self.getDepartmentsRequest()
-        }
-    }
-    override func viewDidAppear(_ animated: Bool) {
         collectionView.dataSource = self
         collectionView.delegate = self
+        // network request
+        getDepartmentsRequest()
         collectionView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+
 
     @IBAction func dismissPopUP(_ sender: Any) {
         dismiss(animated: true, completion: nil)

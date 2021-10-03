@@ -24,6 +24,7 @@ class introSecondVC: UIViewController {
     @IBAction func nextToSigninOrSifnup(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
         vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .partialCurl
         present(vc, animated: true, completion: nil)
     }
     

@@ -184,6 +184,7 @@
 		99D28D6B26E7B1AF0071ADA5 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */; };
 		99D28D6D26E7B4630071ADA5 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6C26E7B4630071ADA5 /* NotificationModel.swift */; };
 		99D28D6F26E7BD200071ADA5 /* PopUPChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */; };
+		99D9E42D2708BDDF004004F9 /* OpenImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D9E42C2708BDDF004004F9 /* OpenImageVC.swift */; };
 		99F0133C26E0F07400BFC9E4 /* followAndUnfollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0133B26E0F07400BFC9E4 /* followAndUnfollow.swift */; };
 		99F0134026E1002D00BFC9E4 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0133F26E1002D00BFC9E4 /* SettingModel.swift */; };
 		99F0134226E105D600BFC9E4 /* introSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0134126E105D600BFC9E4 /* introSecondVC.swift */; };
@@ -197,6 +198,7 @@
 		99F0135626E6326600BFC9E4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0135526E6326600BFC9E4 /* HomeModel.swift */; };
 		99F0135A26E64A4800BFC9E4 /* posts+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0135926E64A4800BFC9E4 /* posts+Network.swift */; };
 		99F0135C26E651E700BFC9E4 /* MyPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0135B26E651E700BFC9E4 /* MyPosts.swift */; };
+		99FAF6C1270799030043DB4F /* un-mute.svg in Resources */ = {isa = PBXBuildFile; fileRef = 99FAF6C0270799030043DB4F /* un-mute.svg */; };
 		D0B8B387B6950CE0D8DB8D9A /* Pods_Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F91021376CD8592FA0C70 /* Pods_Fabric.framework */; };
 /* End PBXBuildFile section */
 
@@ -383,6 +385,7 @@
 		99D28D6A26E7B1AF0071ADA5 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		99D28D6C26E7B4630071ADA5 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		99D28D6E26E7BD200071ADA5 /* PopUPChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUPChangePasswordVC.swift; sourceTree = "<group>"; };
+		99D9E42C2708BDDF004004F9 /* OpenImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenImageVC.swift; sourceTree = "<group>"; };
 		99F0133B26E0F07400BFC9E4 /* followAndUnfollow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followAndUnfollow.swift; sourceTree = "<group>"; };
 		99F0133F26E1002D00BFC9E4 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		99F0134126E105D600BFC9E4 /* introSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introSecondVC.swift; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 		99F0135526E6326600BFC9E4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		99F0135926E64A4800BFC9E4 /* posts+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "posts+Network.swift"; sourceTree = "<group>"; };
 		99F0135B26E651E700BFC9E4 /* MyPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPosts.swift; sourceTree = "<group>"; };
+		99FAF6C0270799030043DB4F /* un-mute.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "un-mute.svg"; sourceTree = "<group>"; };
 		C43F91021376CD8592FA0C70 /* Pods_Fabric.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fabric.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B1824C107DA09774F2A9A3 /* Pods-Fabric.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabric.debug.xcconfig"; path = "Target Support Files/Pods-Fabric/Pods-Fabric.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,9 +481,12 @@
 		992DA22426DB79020063ACB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				99FAF6C0270799030043DB4F /* un-mute.svg */,
 				992DA21426DB78E80063ACB7 /* Main.storyboard */,
-				992DA21726DB78E90063ACB7 /* Assets.xcassets */,
+				995ADE4626E95D5B00B6DDF9 /* Posts.storyboard */,
+				995ADE3726E9073400B6DDF9 /* More.storyboard */,
 				992DA21926DB78E90063ACB7 /* LaunchScreen.storyboard */,
+				992DA21726DB78E90063ACB7 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -487,6 +494,7 @@
 		992DA22726DB832F0063ACB7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				998BB65126DE526500CDA3D0 /* RequestRouter */,
 				990B073D26FE592300399658 /* EditableTextView.swift */,
 				990B074126FE59BC00399658 /* LayoutTools.swift */,
 				990B073E26FE592300399658 /* InputField.swift */,
@@ -980,7 +988,6 @@
 		998BB65026DE525700CDA3D0 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				998BB65126DE526500CDA3D0 /* RequestRouter */,
 				998BB57526DD13E900CDA3D0 /* mainForgetPassword */,
 				992DA23726DB92FB0063ACB7 /* Intro */,
 				992DA23226DB8B460063ACB7 /* LoginOrSign */,
@@ -1071,7 +1078,6 @@
 				99D28D5726E781E10071ADA5 /* My Account */,
 				99D28D5626E781D60071ADA5 /* ContactUs */,
 				99D28D5126E760CD0071ADA5 /* AboutUs */,
-				995ADE3726E9073400B6DDF9 /* More.storyboard */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1082,7 +1088,7 @@
 				995ADE6326EA56C000B6DDF9 /* List Posts */,
 				995ADE3926E9171700B6DDF9 /* MyPost */,
 				995ADE4926E9701400B6DDF9 /* User Profile */,
-				995ADE4626E95D5B00B6DDF9 /* Posts.storyboard */,
+				99D9E42C2708BDDF004004F9 /* OpenImageVC.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -1201,6 +1207,7 @@
 				998BB60926DE50B100CDA3D0 /* ON@3x.png in Resources */,
 				998BB62A26DE50B100CDA3D0 /* Cairo-Regular.ttf in Resources */,
 				998BB62326DE50B100CDA3D0 /* Almarai-Light.ttf in Resources */,
+				99FAF6C1270799030043DB4F /* un-mute.svg in Resources */,
 				998BB60726DE50B100CDA3D0 /* selectedImageGallery@3x.png in Resources */,
 				998BB63026DE50B100CDA3D0 /* PNU-Light.ttf in Resources */,
 				998BB62F26DE50B100CDA3D0 /* PNU-Regular.ttf in Resources */,
@@ -1358,6 +1365,7 @@
 				990B077E27023AD200399658 /* More+SearchBar.swift in Sources */,
 				995ADE7926EE378400B6DDF9 /* postDelete.swift in Sources */,
 				998BB63B26DE50B100CDA3D0 /* ToolBarPicker.swift in Sources */,
+				99D9E42D2708BDDF004004F9 /* OpenImageVC.swift in Sources */,
 				998BB64326DE50B100CDA3D0 /* StoryBoard.swift in Sources */,
 				998BB5FA26DE50B100CDA3D0 /* DefaultResponse.swift in Sources */,
 				995ADE5826E9FB3300B6DDF9 /* PostDetail+NET.swift in Sources */,

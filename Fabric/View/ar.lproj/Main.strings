@@ -63,7 +63,7 @@
 "Hqv-lS-rAc.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor  ";
 
 /* Class = "UIButton"; configuration.title = "Departments"; ObjectID = "LRR-cu-Qmn"; */
-"LRR-cu-Qmn.configuration.title" = "الآقسام";
+"LRR-cu-Qmn.configuration.title" = "الأقسام";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LRR-cu-Qmn"; */
 "LRR-cu-Qmn.normalTitle" = " ";
@@ -129,7 +129,7 @@
 "fxn-8u-E4E.text" = "٢٢ فبراير ٢٠٢١";
 
 /* Class = "UILabel"; text = "Add New Post"; ObjectID = "gUa-Ka-a5W"; */
-"gUa-Ka-a5W.text" = "اضافق منشور جديد";
+"gUa-Ka-a5W.text" = "اضافه منشور جديد";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "gZM-3Q-FkR"; */
 "gZM-3Q-FkR.normalTitle" = "تسحيل الدخول";

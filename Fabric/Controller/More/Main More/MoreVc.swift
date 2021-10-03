@@ -34,11 +34,11 @@ class MoreVc: UIViewController {
          rowArray.append(RowData(title: "Language".localized, image: "Group 194", action: {
              let refreshAlert = UIAlertController(title: "Change app language".localized, message: "App will Restart".localized, preferredStyle: .alert)
 
-             refreshAlert.addAction(UIAlertAction(title: "confirm", style: .default, handler: { (action: UIAlertAction!) in
+             refreshAlert.addAction(UIAlertAction(title: "Confirm".localized, style: .default, handler: { (action: UIAlertAction!) in
                  changeLanguage()
                }))
 
-             refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action: UIAlertAction!) in
+             refreshAlert.addAction(UIAlertAction(title: "Cancel".localized, style: .destructive, handler: { (action: UIAlertAction!) in
                  refreshAlert.dismiss(animated: true, completion: nil)
                }))
 
@@ -74,6 +74,7 @@ class MoreVc: UIViewController {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             let vc = storyBoard.instantiateViewController(identifier: "signinOrSignup") as! LoginOrSign
             vc.modalPresentationStyle = .fullScreen
+             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
         }))
         

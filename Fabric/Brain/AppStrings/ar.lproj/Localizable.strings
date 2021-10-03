@@ -22,7 +22,7 @@
 "UnFollow" = "الغاء المتابعه";
 "Follow" = "متابع";
 // MARK: - MoreVc
-"Profile" = " الصفحه الشخصيه";
+"Profile" = " الصفحه الشخصيهّ";
 "Language" = "اللغه";
 "Terms and conditions" = "الشروط والاحكام";
 "About Us" = "عن التطبيق";
@@ -39,7 +39,7 @@
 "Email" = "البريد الالكتروني";
 "Send" = "ارسال";
 // MARK: - User Profile
-"My Account" = "حسابي";
+"My Account" = " الصفحه الشخصيه";
 "Change Image" = "  تغيير الصوره";
 "Phone Number" = "رقم الجوال ";
 "Email" = "البريد الالكتروني";
@@ -63,9 +63,12 @@
 "Comment Type (PDF, Image)" = "نوع التعليق (صوره او ملف)";
 "Type your comment here" =  "أكتب تعليقك هنا";
 // MARK: - Add Posts
-"Choose Department" = "اختر القسم";
+"Choose Department" = "أختر القسم";
 "Add your post text content here" = "اكتب محتوي المنشور هنا";
 // MARK: - UserProfileViewController
 "Posts Count" = "عدد المنشورات";
 "Answer Count" = "عدد الأجابات";
 "Posts" = "المنشورات";
+// MARK: - PopUP
+"Confirm" = "تأكيد";
+"Cancel" = "إلغاء";

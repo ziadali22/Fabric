@@ -39,6 +39,7 @@ class AddPosts: UIViewController{
         super.viewDidLoad()
         searchBar.delegate = self
         // add logo
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         DispatchQueue.main.async {
             self.commentText.addDashBorder(color: .green, cornerRadius: 3)
