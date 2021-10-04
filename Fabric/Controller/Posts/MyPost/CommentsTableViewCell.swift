@@ -67,8 +67,6 @@ class CommentsTableViewCell: UITableViewCell {
             imageContent.kf.setImage(with: URL(string: item.comment ?? ""),placeholder: UIImage(named: "1276px-Placeholder_view_vector.svg"))
             commentView.isHidden = true
             openPdfBtn.isHidden = true
-            
-            
         }else if item.type == "text"{
             commentView.text = item.comment
             commentView.isHidden = false
@@ -77,7 +75,6 @@ class CommentsTableViewCell: UITableViewCell {
         else{
             commentView.isHidden = true
         }
-
         var item = item
         if item.isReported == true{
             reportBtnOutlet.isHidden = true

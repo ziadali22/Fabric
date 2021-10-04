@@ -25,7 +25,7 @@ class NewstPostsCVC: UICollectionViewCell {
         commentCount.text = String(item.comments?.count ?? 0)
         UserName.text = item.user?.name
         textView.text = item.mostCommentDescription
-        departmentTitle.text?.localized
+
         
     }
 }

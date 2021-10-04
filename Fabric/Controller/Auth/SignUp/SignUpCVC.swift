@@ -14,6 +14,11 @@ class SignUpCVC: UICollectionViewCell {
     // MARK: - Variables
     var deleteHandeler: ActionClouser?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        labelButton.font = UIFont(name: "PNU-Medium", size: 13)
+    }
+    
     @IBAction func deleteAction(_ sender: Any) {
         deleteHandeler?()
     }

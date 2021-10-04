@@ -28,6 +28,7 @@ class ActivationCodeVC: UIViewController {
         
         super.viewDidLoad()
         // localization
+        
         if Language.isEnglish() == true{
             backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
         }else{

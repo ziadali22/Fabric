@@ -16,14 +16,15 @@ class DepartmentsVC: UIViewController {
     @IBOutlet weak var allDepartmentBtn: UIButton!
     @IBOutlet weak var myDepartmentBtn: UIButton!
     // MARK: - Variables
-    var categoryData: myCategory?
-    var selectedCategory = [CategoryModel]()
+    var categoryData: myCategory?{didSet{reloadTableView()}}
+    var selectedCategory = [CategoryModel](){didSet{reloadTableView()}}
     var allCategories: Bool = true
     let refreshControl = UIRefreshControl()
     var isSearch: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCategoriesApi()
         searchBar.delegate = self
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
@@ -45,12 +46,15 @@ class DepartmentsVC: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.network), for: UIControl.Event.valueChanged)
         collectionView.refreshControl = refreshControl
     }
-    override func viewWillAppear(_ animated: Bool) {
-        getCategoriesApi()
-
+    func reloadTableView(){
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.3) {
+            self.collectionView.alpha = 1
+        }
     }
     @objc func network(){
-        collectionView.refreshControl?.endRefreshing()
+        getCategoriesApi()
+        collectionView.reloadData()
     }
     
     //MARK: - Swipe Gesture

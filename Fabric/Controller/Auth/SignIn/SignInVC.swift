@@ -16,11 +16,21 @@ class SignInVC: UIViewController {
     @IBOutlet weak var dontHaveAccountTitle: UIButton!
     @IBOutlet weak var loginBtn: LoadingButton!
     @IBOutlet weak var backBtnTitle: UIButton!
+    @IBOutlet weak var loginTitle: UILabel!
+    @IBOutlet weak var forgetPasswordTiltle: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // localization
+        loginBtn.titleLabel?.font = UIFont(name: "PNU-Medium", size: 16)
+        loginTitle.font = UIFont(name: "PNU-Medium", size: 16)
+        forgetPasswordTiltle.titleLabel?.font = UIFont(name: "PNU-Medium", size: 13)
+        dontHaveAccountTitle.titleLabel?.font = UIFont(name: "PNU-Medium", size: 14)
+        phoneNumberTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        PasswordTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        dontHaveAccountTitle.titleLabel?.font = UIFont(name:"PNU-Medium", size: 14)
+        
         phoneNumberTextField.placeholder = "Phone Number".localized
         PasswordTextField.placeholder = "Password".localized
         dontHaveAccountTitle.setTitle("don't have an account ?".localized, for: .normal)

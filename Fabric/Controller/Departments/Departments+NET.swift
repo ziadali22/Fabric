@@ -21,6 +21,7 @@ extension DepartmentsVC{
             case .failure(let error):
                 self.showMessage(sub: error.localizedDescription)
             case .success(let model):
+                self.refreshControl.endRefreshing()
                 if model.status{
                     guard let item = model.data else {return}
                     self.categoryData = item

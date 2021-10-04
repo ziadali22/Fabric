@@ -15,7 +15,7 @@ class HomeDepartmentPopUp: UIViewController {
     @IBOutlet weak var departmetnsTitle: UIButton!
     @IBOutlet weak var filterPosts: LoadingButton!
     // MARK: - Variables
-    var categoryData: [CategoryModel]?
+    var categoryData: [CategoryModel]?{didSet{reloadTableView()}}
     var selectedDepartment = [Int]()
     var arrSelectedIndex = [IndexPath]()
     var filterDelegate: HomeFilterProtcol?
@@ -31,13 +31,18 @@ class HomeDepartmentPopUp: UIViewController {
         collectionView.delegate = self
         // network request
         getDepartmentsRequest()
-        collectionView.reloadData()
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        collectionView.reloadData()
+    }
+    override func viewWillLayoutSubviews() {
+        departmetnsTitle.titleLabel?.font = UIFont(name: "PNU-Bold", size: 13)
     }
 
+    func reloadTableView(){
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.3) {
+            self.collectionView.alpha = 1
+        }
+    }
 
     @IBAction func dismissPopUP(_ sender: Any) {
         dismiss(animated: true, completion: nil)

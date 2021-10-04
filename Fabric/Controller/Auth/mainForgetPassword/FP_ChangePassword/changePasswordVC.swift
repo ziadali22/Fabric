@@ -22,6 +22,8 @@ class changePasswordVC: UIViewController {
     fileprivate func localization() {
         passwordTextField.placeholder = "Enter new password".localized
         confirmPasswordTextField.placeholder = "Confirm".localized
+        passwordTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        confirmPasswordTextField.font = UIFont(name:"PNU-Medium", size: 14)
     }
     
     override func viewDidLoad() {

@@ -21,7 +21,6 @@ class MoreVc: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         tableView.delegate = self
         tableView.dataSource = self
-        
         setArrData()
   
     }
@@ -106,7 +105,7 @@ extension MoreVc: UITableViewDelegate, UITableViewDataSource {
     }
     // space from top
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 4
+        return 2.0
     }
 
 }

@@ -13,6 +13,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     
     func reloadData() {
         postDetailRequest()
+        tableView.reloadData()
 
     }
     
@@ -36,7 +37,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     
    // MARK: - variables
     var post : Item?
-    var newPost = [Item]()
+    var newPost = [Item]()//{didSet{reloadTableView()}}
     var postId: Int?
     var commentData : [Comment]?
     var postsData : MostComment?
@@ -52,7 +53,12 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         commentsTitle.text = "comments".localized
         commentCountTitle.text = "comment".localized
     }
-    
+    func reloadTableView(){
+        tableView.reloadData()
+        UIView.animate(withDuration: 0.1) {
+            self.tableView.alpha = 1
+        }
+    }
     fileprivate func tableViewDeclaration() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -61,7 +67,6 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         tableView.alwaysBounceVertical = false
         tableView.isScrollEnabled = false
         tableView.sectionHeaderHeight = 0
-        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -123,19 +128,18 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath) as! CommentsTableViewCell
         guard let item = post?.comments?[indexPath.row] else { return cell }
         cell.cellConfigure(item: item)
+        print(item.type ?? "")
         cell.deleteComment.tag = indexPath.row
-       
-       // cell.imageContent.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
         cell.deleteComment.addTarget(self, action: #selector(buttonPressedForDelete), for: .touchUpInside)
         cell.deleteHandelr = {
             let id = item.id
             self.deleteCommentRequest(id: id)
+            tableView.reloadData()
         }
         cell.reportHandler = {
             let id = item.id
             self.reportRequest(id: id)
             let vc  = self.storyboard?.instantiateViewController(identifier: "reportPopUp") as! ReportPopUpViewController
-            //vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
         cell.openPdfHandler = {
@@ -143,23 +147,15 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
             UIApplication.shared.open(URL(string: content ?? "")!)
         }
         cell.openIMageHandler = {
-            let vc  = self.storyboard?.instantiateViewController(identifier: "OpenImageVC") as! OpenImageVC
-            //vc.modalPresentationStyle = .fullScreen
-            print("")
-            vc.imageUrl = item.comment
-            self.present(vc, animated: true, completion: nil)
+            guard let item = self.post?.comments?[indexPath.row] else { return }
+            if item.type == "image"{
+                let vc  = self.storyboard?.instantiateViewController(identifier: "OpenImageVC") as! OpenImageVC
+                vc.imageUrl = item.comment
+                self.present(vc, animated: true, completion: nil)
+            }
+
         }
         return cell
-    }
-    // MARK: HERE
-    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
-        print("image tapped")
-        
-        let vc  = storyboard?.instantiateViewController(identifier: "OpenImageVC") as! OpenImageVC
-      
-       
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
     }
     // Height for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

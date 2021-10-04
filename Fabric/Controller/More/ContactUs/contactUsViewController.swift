@@ -24,6 +24,11 @@ class contactUsViewController: UIViewController, UITextViewDelegate {
         nameTxtField.placeholder = "Name".localized
         phoneNumb.placeholder = "Phone Number".localized
         emailText.placeholder = "Email".localized
+        
+        nameTxtField.font = UIFont(name: "PNU-Medium", size: 14)
+        phoneNumb.font = UIFont(name: "PNU-Medium", size: 14)
+        emailText.font = UIFont(name: "PNU-Medium", size: 14)
+        
         sendBtn.setTitle("Send".localized, for: .normal)
         DispatchQueue.main.async {
             self.textView.addDashBorder(color: .green, cornerRadius: 3)

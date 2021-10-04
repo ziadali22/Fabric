@@ -31,6 +31,10 @@ class MyAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        phoneNumber.font = UIFont(name: "PNU-Medium", size: 14)
+        emailField.font = UIFont(name: "PNU-Medium", size: 14)
+        emailField.font = UIFont(name: "PNU-Medium", size: 14)
+        
         myAccountTitle.text = "My Account".localized
         changeImageTitle.setTitle("Change Image".localized, for: .normal)
         nameField.placeholder = "Name".localized

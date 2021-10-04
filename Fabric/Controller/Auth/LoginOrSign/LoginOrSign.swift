@@ -16,8 +16,9 @@ class LoginOrSign: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         useItToApplyChangesInButton(btn: loginButton)
-        
-       
+
+        loginButton.titleLabel?.font = UIFont(name: "PNU-Medium", size: 16)
+        signUpButton.titleLabel?.font = UIFont(name: "PNU-Medium", size: 16)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

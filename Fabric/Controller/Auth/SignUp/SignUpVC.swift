@@ -32,6 +32,14 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        signUpBtn.titleLabel?.font = UIFont(name: "PNU-Medium", size: 16)
+        categoryTxt.font = UIFont(name:"PNU-Medium", size: 14)
+        nameTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        phoneNumberTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        emailTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        passwordTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        confirmTextField.font = UIFont(name:"PNU-Medium", size: 14)
+        
         if Language.isEnglish() == true{
             backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
         }else{

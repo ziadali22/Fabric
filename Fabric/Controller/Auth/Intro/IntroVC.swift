@@ -20,6 +20,9 @@ class IntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextTitle.setTitle("Next".localized, for: .normal)
+        MainTitle.font = UIFont(name: "PNU-Bold", size: 20)
+        detailsTxt.font = UIFont(name: "PNU-Medium", size: 13)
+        
         DotView.addDashBorder(color: .white, cornerRadius: 3)
         detailsTxt.isEditable = false
         self.detailsTxt.text = UserDataActions.getSettingModel()?.screenOne

@@ -37,6 +37,8 @@
 	<array>
 		<string>PNU-Regular.ttf</string>
 		<string>PNU-Medium.ttf</string>
+		<string>PNU-Bold.ttf</string>
+		<string>PNU-Light.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

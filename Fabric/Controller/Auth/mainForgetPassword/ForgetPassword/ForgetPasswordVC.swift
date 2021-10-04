@@ -17,6 +17,7 @@ class ForgetPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneNumberTextField.font = UIFont(name:"PNU-Medium", size: 14)
         if Language.isEnglish() == true{
             backBtnTitle.setImage(UIImage(systemName:"arrow.left"), for: .normal)
         }else{

@@ -84,9 +84,6 @@ extension PostDetailViewController{
                 self.deleteBtn.isHidden = true
                 
             }
-            else{
-                
-            }
         }
 
         

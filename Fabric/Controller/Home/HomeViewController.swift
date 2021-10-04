@@ -26,18 +26,25 @@ class HomeViewController: UIViewController , HomeFilterProtcol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for family: String in UIFont.familyNames {
+            print("(family) = \(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family) {
+                print("== (names)= \(names)")
+            }
+        }
+        
         DispatchQueue.main.async {
             self.tabBarController?.tabBar.items?[3].title = "my posts".localized
             self.tabBarController?.tabBar.items?[4].title = "more".localized
         }
         departmentsText.setTitle("Departments".localized, for: .normal)
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         searchBar.delegate = self
         // first collection view
         newstPostsCollectionView.delegate = self
         newstPostsCollectionView.dataSource = self
-
+        
         hieghtsRatesCollectionView.delegate = self
         hieghtsRatesCollectionView.dataSource = self
         
@@ -53,6 +60,9 @@ class HomeViewController: UIViewController , HomeFilterProtcol {
         //refresh controller
         refreshControl.addTarget(self, action: #selector(self.networkHomePosts), for: UIControl.Event.valueChanged)
         scrollView.refreshControl = refreshControl
+    }
+    override func viewWillLayoutSubviews() {
+        self.departmentsText.titleLabel?.font = UIFont(name: "PNU-Bold", size: 14)
     }
     @objc func networkHomePosts(){
         homePostsCategoriesRequest(category: nil)
@@ -79,7 +89,7 @@ class HomeViewController: UIViewController , HomeFilterProtcol {
             self.homePostsCategoriesRequest(category: data)
         }
     }
-   
+    
     
 }
 
@@ -111,7 +121,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     // DidSelect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
- 
+        
         let storyBoard = UIStoryboard.init(name: "Posts", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "comments") as! PostDetailViewController
         if collectionView == self.newstPostsCollectionView{
@@ -132,10 +142,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         else{
             return CGSize(width: hieghtsRatesCollectionView.frame.width / 1.70 - 8 ,height:  225)
         }
-
         
-        }
-
-
+        
+    }
+    
+    
     
 }

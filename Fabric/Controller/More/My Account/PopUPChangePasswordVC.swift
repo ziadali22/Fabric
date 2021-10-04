@@ -19,6 +19,8 @@ class PopUPChangePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        password.font = UIFont(name: "PNU-Medium", size: 14)
+        confirmPassword.font = UIFont(name: "PNU-Medium", size: 14)
         changePasswordTitle.text = "Change Password".localized
         password.placeholder = "New Password".localized
         confirmPassword.placeholder = "Confirm Password".localized

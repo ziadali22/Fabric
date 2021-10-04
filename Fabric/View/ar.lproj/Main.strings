@@ -39,7 +39,7 @@
 "DGR-vG-Xjw.text" = "Label";
 
 /* Class = "UILabel"; text = "Highest Rate"; ObjectID = "DLo-yT-U3T"; */
-"DLo-yT-U3T.text" = "المنشورات الاكثر تقييما";
+"DLo-yT-U3T.text" = "المنشورات الاعلي تقييما";
 
 /* Class = "UIButton"; normalTitle = "All Departments"; ObjectID = "Dsg-re-qEJ"; */
 "Dsg-re-qEJ.normalTitle" = "كل الأقسام";
@@ -78,13 +78,13 @@
 "Pmp-Oa-eGG.normalTitle" = "تخطي";
 
 /* Class = "UILabel"; text = "Newst Post"; ObjectID = "QHW-yd-aF9"; */
-"QHW-yd-aF9.text" = "المنشورات الحديثه";
+"QHW-yd-aF9.text" = "المنشورات الاحدث في القسم";
 
 /* Class = "UIButton"; normalTitle = "comment"; ObjectID = "RGh-bC-Kmf"; */
 "RGh-bC-Kmf.normalTitle" = "تعليق";
 
 /* Class = "UILabel"; text = "Sign Up"; ObjectID = "Rcb-OE-DLo"; */
-"Rcb-OE-DLo.text" = "تسحيل حساب جديد";
+"Rcb-OE-DLo.text" = "تسجيل حساب جديد";
 
 /* Class = "UILabel"; text = "add attachment"; ObjectID = "Ror-0d-BDf"; */
 "Ror-0d-BDf.text" = "اضافه مرفق";
@@ -105,7 +105,7 @@
 "Vyy-3x-nat.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "X7G-8Q-Z3v"; */
-"X7G-8Q-Z3v.normalTitle" = "تسحيل";
+"X7G-8Q-Z3v.normalTitle" = "تسجيل";
 
 /* Class = "UILabel"; text = "16"; ObjectID = "aEo-5R-DcB"; */
 "aEo-5R-DcB.text" = "16";
@@ -132,7 +132,7 @@
 "gUa-Ka-a5W.text" = "اضافه منشور جديد";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "gZM-3Q-FkR"; */
-"gZM-3Q-FkR.normalTitle" = "تسحيل الدخول";
+"gZM-3Q-FkR.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UIButton"; normalTitle = "comment"; ObjectID = "hZ5-vy-cBR"; */
 "hZ5-vy-cBR.normalTitle" = "تعليق";

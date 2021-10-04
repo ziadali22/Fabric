@@ -36,7 +36,7 @@ class AddCommentPopUpViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         comntText.delegate = self
-        comntText.addDashBorder(color: .green, cornerRadius: 4)
+        
         // localization
         commentTypeTitle.setTitle("Comment Type (PDF, Image)".localized, for: .normal)
         comntText.text = "Type your comment here".localized
@@ -47,7 +47,10 @@ class AddCommentPopUpViewController: UIViewController  {
     @IBAction func dismissPopUP(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        comntText.addDashBorder(color: .green, cornerRadius: 4)
+    }
     
     @IBAction func commentType(_ sender: Any) {
         showAlertView()

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9902D46A2709F201009D486F /* PNU-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9902D4662709F201009D486F /* PNU-Regular.ttf */; };
+		9902D46B2709F201009D486F /* PNU-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9902D4672709F201009D486F /* PNU-Light.ttf */; };
+		9902D46C2709F201009D486F /* PNU-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9902D4682709F201009D486F /* PNU-Bold.ttf */; };
+		9902D46D2709F201009D486F /* PNU-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9902D4692709F201009D486F /* PNU-Medium.ttf */; };
 		990B073F26FE592300399658 /* EditableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B073D26FE592300399658 /* EditableTextView.swift */; };
 		990B074026FE592300399658 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B073E26FE592300399658 /* InputField.swift */; };
 		990B074226FE59BC00399658 /* LayoutTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990B074126FE59BC00399658 /* LayoutTools.swift */; };
@@ -122,10 +126,6 @@
 		998BB62C26DE50B100CDA3D0 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D226DE50B000CDA3D0 /* Cairo-Black.ttf */; };
 		998BB62D26DE50B100CDA3D0 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D326DE50B000CDA3D0 /* Cairo-Bold.ttf */; };
 		998BB62E26DE50B100CDA3D0 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D426DE50B000CDA3D0 /* OFL.txt */; };
-		998BB62F26DE50B100CDA3D0 /* PNU-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D626DE50B000CDA3D0 /* PNU-Regular.ttf */; };
-		998BB63026DE50B100CDA3D0 /* PNU-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D726DE50B000CDA3D0 /* PNU-Light.ttf */; };
-		998BB63126DE50B100CDA3D0 /* PNU-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D826DE50B000CDA3D0 /* PNU-Bold.ttf */; };
-		998BB63226DE50B100CDA3D0 /* PNU-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998BB5D926DE50B000CDA3D0 /* PNU-Medium.ttf */; };
 		998BB63326DE50B100CDA3D0 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB5DB26DE50B000CDA3D0 /* UIScrollView.swift */; };
 		998BB63426DE50B100CDA3D0 /* StringsForEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB5DC26DE50B000CDA3D0 /* StringsForEx.swift */; };
 		998BB63526DE50B100CDA3D0 /* exCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB5DD26DE50B000CDA3D0 /* exCollection.swift */; };
@@ -204,6 +204,10 @@
 
 /* Begin PBXFileReference section */
 		901C29B4DDE2D9D0186DFDEE /* Pods-Fabric.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fabric.release.xcconfig"; path = "Target Support Files/Pods-Fabric/Pods-Fabric.release.xcconfig"; sourceTree = "<group>"; };
+		9902D4662709F201009D486F /* PNU-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Regular.ttf"; sourceTree = "<group>"; };
+		9902D4672709F201009D486F /* PNU-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Light.ttf"; sourceTree = "<group>"; };
+		9902D4682709F201009D486F /* PNU-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Bold.ttf"; sourceTree = "<group>"; };
+		9902D4692709F201009D486F /* PNU-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Medium.ttf"; sourceTree = "<group>"; };
 		990B073D26FE592300399658 /* EditableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableTextView.swift; sourceTree = "<group>"; };
 		990B073E26FE592300399658 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		990B074126FE59BC00399658 /* LayoutTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTools.swift; sourceTree = "<group>"; };
@@ -323,10 +327,6 @@
 		998BB5D226DE50B000CDA3D0 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
 		998BB5D326DE50B000CDA3D0 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		998BB5D426DE50B000CDA3D0 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		998BB5D626DE50B000CDA3D0 /* PNU-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Regular.ttf"; sourceTree = "<group>"; };
-		998BB5D726DE50B000CDA3D0 /* PNU-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Light.ttf"; sourceTree = "<group>"; };
-		998BB5D826DE50B000CDA3D0 /* PNU-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Bold.ttf"; sourceTree = "<group>"; };
-		998BB5D926DE50B000CDA3D0 /* PNU-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PNU-Medium.ttf"; sourceTree = "<group>"; };
 		998BB5DB26DE50B000CDA3D0 /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		998BB5DC26DE50B000CDA3D0 /* StringsForEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsForEx.swift; sourceTree = "<group>"; };
 		998BB5DD26DE50B000CDA3D0 /* exCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exCollection.swift; sourceTree = "<group>"; };
@@ -416,6 +416,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9902D4652709F201009D486F /* PNU */ = {
+			isa = PBXGroup;
+			children = (
+				9902D4662709F201009D486F /* PNU-Regular.ttf */,
+				9902D4672709F201009D486F /* PNU-Light.ttf */,
+				9902D4682709F201009D486F /* PNU-Bold.ttf */,
+				9902D4692709F201009D486F /* PNU-Medium.ttf */,
+			);
+			path = PNU;
+			sourceTree = "<group>";
+		};
 		992DA20226DB78E80063ACB7 = {
 			isa = PBXGroup;
 			children = (
@@ -894,11 +905,11 @@
 		998BB5C226DE50B000CDA3D0 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				9902D4652709F201009D486F /* PNU */,
 				998BB5C326DE50B000CDA3D0 /* Almarai */,
 				998BB5C826DE50B000CDA3D0 /* STC */,
 				998BB5CC26DE50B000CDA3D0 /* FontEnum.swift */,
 				998BB5CD26DE50B000CDA3D0 /* cairo */,
-				998BB5D526DE50B000CDA3D0 /* PNU */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -936,17 +947,6 @@
 				998BB5D426DE50B000CDA3D0 /* OFL.txt */,
 			);
 			path = cairo;
-			sourceTree = "<group>";
-		};
-		998BB5D526DE50B000CDA3D0 /* PNU */ = {
-			isa = PBXGroup;
-			children = (
-				998BB5D626DE50B000CDA3D0 /* PNU-Regular.ttf */,
-				998BB5D726DE50B000CDA3D0 /* PNU-Light.ttf */,
-				998BB5D826DE50B000CDA3D0 /* PNU-Bold.ttf */,
-				998BB5D926DE50B000CDA3D0 /* PNU-Medium.ttf */,
-			);
-			path = PNU;
 			sourceTree = "<group>";
 		};
 		998BB5DA26DE50B000CDA3D0 /* Helper */ = {
@@ -1185,7 +1185,6 @@
 			files = (
 				998BB62426DE50B100CDA3D0 /* STC-Bold.ttf in Resources */,
 				995ADE3826E9073400B6DDF9 /* More.storyboard in Resources */,
-				998BB63126DE50B100CDA3D0 /* PNU-Bold.ttf in Resources */,
 				998BB62626DE50B100CDA3D0 /* STC-Light.otf in Resources */,
 				992DA21B26DB78E90063ACB7 /* LaunchScreen.storyboard in Resources */,
 				998BB62026DE50B100CDA3D0 /* Almarai-Bold.ttf in Resources */,
@@ -1193,6 +1192,7 @@
 				998BB62226DE50B100CDA3D0 /* Almarai-Regular.ttf in Resources */,
 				998BB62B26DE50B100CDA3D0 /* Cairo-Light.ttf in Resources */,
 				998BB62826DE50B100CDA3D0 /* Cairo-ExtraLight.ttf in Resources */,
+				9902D46C2709F201009D486F /* PNU-Bold.ttf in Resources */,
 				998BB62526DE50B100CDA3D0 /* STC-Regular.ttf in Resources */,
 				992DA21826DB78E90063ACB7 /* Assets.xcassets in Resources */,
 				995ADE4726E95D5B00B6DDF9 /* Posts.storyboard in Resources */,
@@ -1203,16 +1203,16 @@
 				998BB62926DE50B100CDA3D0 /* Cairo-SemiBold.ttf in Resources */,
 				998BB60B26DE50B100CDA3D0 /* AUTO@3x.png in Resources */,
 				998BB62E26DE50B100CDA3D0 /* OFL.txt in Resources */,
+				9902D46D2709F201009D486F /* PNU-Medium.ttf in Resources */,
 				998BB62C26DE50B100CDA3D0 /* Cairo-Black.ttf in Resources */,
 				998BB60926DE50B100CDA3D0 /* ON@3x.png in Resources */,
 				998BB62A26DE50B100CDA3D0 /* Cairo-Regular.ttf in Resources */,
 				998BB62326DE50B100CDA3D0 /* Almarai-Light.ttf in Resources */,
 				99FAF6C1270799030043DB4F /* un-mute.svg in Resources */,
 				998BB60726DE50B100CDA3D0 /* selectedImageGallery@3x.png in Resources */,
-				998BB63026DE50B100CDA3D0 /* PNU-Light.ttf in Resources */,
-				998BB62F26DE50B100CDA3D0 /* PNU-Regular.ttf in Resources */,
+				9902D46A2709F201009D486F /* PNU-Regular.ttf in Resources */,
 				998BB62126DE50B100CDA3D0 /* Almarai-ExtraBold.ttf in Resources */,
-				998BB63226DE50B100CDA3D0 /* PNU-Medium.ttf in Resources */,
+				9902D46B2709F201009D486F /* PNU-Light.ttf in Resources */,
 				992DA21626DB78E80063ACB7 /* Main.storyboard in Resources */,
 				998BB62D26DE50B100CDA3D0 /* Cairo-Bold.ttf in Resources */,
 				998BB60D26DE50B100CDA3D0 /* cameraIcon@3x.png in Resources */,
