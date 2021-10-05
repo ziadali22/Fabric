@@ -127,6 +127,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == self.newstPostsCollectionView{
             guard let postId = postsData?[indexPath.row].id else { return }
             vc.postId = postId
+            
         }else{
             guard let postId = mostRateData?[indexPath.row].id else { return  }
             vc.postId = postId

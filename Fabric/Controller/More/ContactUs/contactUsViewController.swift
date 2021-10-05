@@ -43,9 +43,8 @@ class contactUsViewController: UIViewController, UITextViewDelegate {
         guard let name = nameTxtField.text, !name.isEmpty else { return self.showMessage(sub: "check valid name") }
         guard let email = emailText.text, !email.isEmpty else { return self.showMessage(sub: "check valid email") }
         guard let phone = phoneNumb.text, !phone.isEmpty else { return self.showMessage(sub: "check valid phone") }
-        guard let textView = textView.text, !textView.isEmpty else { return self.showMessage(sub: "check valid content ") }
+        guard let TextView = textView.text  , !TextView.isEmpty && TextView == "Type your message here".localized else { return self.showMessage(sub: "check valid content ") }
         contactUsRequest()
-        
     }
     @IBAction func send(_ sender: Any) {
         validationField()

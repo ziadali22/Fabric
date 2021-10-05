@@ -76,7 +76,7 @@ class AddPosts: UIViewController{
     
     // MARK: - validation for add posts
     func validation(){
-        guard let commentTF = commentText.text , !commentTF.isEmpty else { return self.showMessage(sub: "check valid content ".localized)}
+        guard let commentTF = commentText.text , !commentTF.isEmpty && commentTF == "Add your post text content here".localized else { return self.showMessage(sub: "check valid content ".localized)}
         guard let categoryTF = categoryField.text, !categoryTF.isEmpty else { return self.showMessage(sub: "check valid category field".localized) }
         uploadRequest()
     }

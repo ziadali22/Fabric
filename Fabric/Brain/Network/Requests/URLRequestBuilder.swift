@@ -65,6 +65,7 @@ extension URLRequestBuilder {
             header = myHeader
         }
         header["Accept"] = "application/json"
+        header["X-localization"] = Language.currentLanguage()
         print(header)
         return header
     }

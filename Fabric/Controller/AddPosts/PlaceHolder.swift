@@ -18,7 +18,7 @@ extension AddPosts:  UITextViewDelegate{
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if commentText.text.isEmpty {
-            commentText.text = "Type your comment here"
+            commentText.text = "Type your comment here".localized
             commentText.textColor = UIColor.lightGray
         }
     }

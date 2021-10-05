@@ -98,7 +98,7 @@ extension postsVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     }
     // Layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionview.frame.width / 2 - 10, height: 200)
+        return CGSize(width: collectionview.frame.width / 2 - 10, height: 180)
     }
     // DidSelect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

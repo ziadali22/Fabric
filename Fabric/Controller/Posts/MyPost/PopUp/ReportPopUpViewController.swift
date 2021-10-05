@@ -9,11 +9,13 @@ import UIKit
 
 class ReportPopUpViewController: UIViewController {
 
+    @IBOutlet weak var textOutlet: UILabel!
     // MARK: - variables
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textOutlet.text = "the report sent to the manager and it will be review soon!".localized
+        textOutlet.font = UIFont(name: "PNU-Bold", size: 16)
         
     }
     

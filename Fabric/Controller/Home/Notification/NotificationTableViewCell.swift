@@ -15,13 +15,12 @@ class NotificationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        dotView.addDashBorder(color: .green, cornerRadius: 3)
-    }
     
     func configureCell(item: NotificationModel){
         labelText.text = item.data?.title
+        DispatchQueue.main.async {
+            self.dotView.addDashBorder(color: .systemGreen, cornerRadius: 3)
+        }
     }
 
 }

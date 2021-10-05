@@ -67,11 +67,11 @@ struct UserDataActions {
         if UserDefaults.standard.object(forKey: userKey) == nil {
             return nil
         }else{
-            var Header = ["X-localization": Language.currentLanguage()]
+            var Header = [String: String]()
             if let token = UserDataActions.getToken(){
                  Header["Authorization"] = "Bearer \(token)"
             }
-           
+           print(Header)
             return Header
         }
     }

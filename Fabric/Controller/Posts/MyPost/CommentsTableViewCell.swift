@@ -18,7 +18,7 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var reportBtnOutlet: UIButton!
     @IBOutlet weak var imageContent: UIImageView!
     @IBOutlet weak var openPdfBtn: UIButton!
-    @IBOutlet weak var commentTextHeight: NSLayoutConstraint!
+    
     
     // MARK: - Variables
     var commntIdForReport: Int?
@@ -35,7 +35,7 @@ class CommentsTableViewCell: UITableViewCell {
         openPdfBtn.setTitle("Open Pdf".localized, for: .normal)
         userImage.layer.cornerRadius = userImage.frame.height/2
         imageContent.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
-
+        
 
     }
     // MARK: HERE
@@ -58,23 +58,34 @@ class CommentsTableViewCell: UITableViewCell {
         openPdfHandler?()
     }
     
+    
     // MARK: Cell Configure
     func cellConfigure(item: Comment){
         userNameComment.text = item.user?.name
         date.text = item.createdAt
         userImage.kf.setImage(with: URL(string: item.user?.photo ?? ""),placeholder: UIImage(named: "1276px-Placeholder_view_vector.svg"))
+        
+        
         if item.type == "image"{
-            imageContent.kf.setImage(with: URL(string: item.comment ?? ""),placeholder: UIImage(named: "1276px-Placeholder_view_vector.svg"))
+            imageContent.kf.indicatorType = .activity
+            imageContent.kf.setImage(with: URL(string: item.comment ?? ""),
+                                     placeholder: UIImage(named: "1276px-Placeholder_view_vector.svg"),
+                                     options: [.transition(.fade(0.8))])
             commentView.isHidden = true
             openPdfBtn.isHidden = true
+            imageContent.isHidden = false
         }else if item.type == "text"{
             commentView.text = item.comment
             commentView.isHidden = false
             openPdfBtn.isHidden = true
-        }
-        else{
+            imageContent.isHidden = true
+
+        }else{
+            imageContent.isHidden = true
             commentView.isHidden = true
+            openPdfBtn.isHidden = false
         }
+        
         var item = item
         if item.isReported == true{
             reportBtnOutlet.isHidden = true
@@ -89,6 +100,7 @@ class CommentsTableViewCell: UITableViewCell {
             self.deleteComment.isHidden = true
             
         }else{
+            self.deleteComment.isHidden = false
             self.reportBtnOutlet.isHidden = true
         }
     }

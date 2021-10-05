@@ -7,7 +7,7 @@
  */
 // MARK: - App Language
 "Change app language" = "تغيير لغه التطبيق";
-"App will Restart" = "سيتم اعاده تشغيل التطبيق ";
+"App will Close need to open it again" = "سيتم إغلاق التطبيق برجاء فتحه مره اخري ";
 // MARK: - IntroVc
 "Next" = "التالي";
 // MARK: - Login
@@ -58,7 +58,7 @@
 "comments" = "التعليقات";
 "comment" = "تعليق";
 "Add Comment" = "اضافه تعليق";
-"report" = "إبلاغ";
+"report" = "إبلاغ ";
 // MARK: - Add Comment PopUp
 "Comment Type (PDF, Image)" = "نوع التعليق (صوره او ملف)";
 "Type your comment here" =  "أكتب تعليقك هنا";
@@ -73,3 +73,5 @@
 "Confirm" = "تأكيد";
 "Cancel" = "إلغاء";
 "Comment" = "تعليق";
+// MARK: - Report PopUp
+"the report sent to the manager and it will be review soon!" = "تم ارسال البلاغ بنجاح وسيتم مراجعته قزيبا! ";

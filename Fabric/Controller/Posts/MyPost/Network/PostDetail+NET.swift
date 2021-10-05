@@ -26,7 +26,10 @@ extension PostDetailViewController{
                     self.post = item
                     ///
                     self.dataBack(item: item)
+                    
                     self.tableView.reloadData()
+                    self.tableHeight.constant = self.tableViewHeight + 80
+
                 }else{
                     guard let errorMsg = model.msg else{return}
                     self.showMessage(sub: errorMsg)
@@ -37,8 +40,10 @@ extension PostDetailViewController{
     }
     func dataBack(item: Item){
         if item.contentType == "pdf"{
+            
             DispatchQueue.main.async {
                 self.videoPlayBtn.isHidden = true
+                self.openPdfBtn.isHidden = false
             }
             //tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 150
             self.navigationItem.title = item.itemDescription
@@ -50,7 +55,7 @@ extension PostDetailViewController{
             
             pdfHanlder = {
                 let content = item.content
-                UIApplication.shared.openURL(URL(string: content ?? "")!)
+                UIApplication.shared.open(URL(string: content ?? "")!)
             }
         }
         else if item.contentType == "video"{
@@ -77,12 +82,15 @@ extension PostDetailViewController{
             userName.setTitle(item.user?.name, for: .normal)
             dateText.text = item.createdAt
             
-            tableHeight.constant = CGFloat(item.comments?.count ?? 0) * 150
+            
             //   //  //
             if item.user?.id != UserDataActions.getUserModel()?.id
             {
                 self.deleteBtn.isHidden = true
                 
+            }
+            else{
+                self.deleteBtn.isHidden = false
             }
         }
 

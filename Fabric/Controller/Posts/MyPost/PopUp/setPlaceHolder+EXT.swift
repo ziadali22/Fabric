@@ -17,7 +17,7 @@ extension AddCommentPopUpViewController: UITextViewDelegate{
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if comntText.text.isEmpty {
-            comntText.text = "Type your comment here"
+            comntText.text = "Type your comment here".localized
             comntText.textColor = UIColor.lightGray
         }
     }

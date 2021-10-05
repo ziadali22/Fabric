@@ -32,6 +32,8 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // localization
+        collectionViwe.semanticContentAttribute = .forceLeftToRight
+        
         signUpBtn.titleLabel?.font = UIFont(name: "PNU-Medium", size: 16)
         categoryTxt.font = UIFont(name:"PNU-Medium", size: 14)
         nameTextField.font = UIFont(name:"PNU-Medium", size: 14)
@@ -88,14 +90,12 @@ class SignUpVC: UIViewController {
         if password != confirm {
             return self.showMessage(sub: "password and confirm password don't match")
         }else{
-            
             for  i in selectedCategory {
                 if let id = i.id{
                     categoryId.append(id)
                     print(categoryId)
                 }
             }
-
             signUpRequest()
         }
         

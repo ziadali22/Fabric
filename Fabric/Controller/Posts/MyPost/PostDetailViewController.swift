@@ -28,9 +28,9 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var scrollViewPost: UIScrollView!
     @IBOutlet weak var videoPlayBtn: UIButton!
-    @IBOutlet weak var openPdfBtn: UIButton!
     @IBOutlet weak var addCommentTitle: UIButton!
     @IBOutlet weak var commentsTitle: UILabel!
+    @IBOutlet weak var openPdfBtn: UIButton!
     
     
     @IBOutlet weak var commentCountTitle: UILabel!
@@ -44,20 +44,17 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
     var imageCommentContent : String?
     var pdfHanlder: ActionClouser?
     
+    var tableViewHeight: CGFloat {
+        tableView.layoutIfNeeded()
+        return tableView.contentSize.height
+    }
     
     fileprivate func localization() {
         // localization
         videoPlayBtn.setTitle("Play Video".localized, for: .normal)
-        openPdfBtn.setTitle("Open Pdf".localized, for: .normal)
         addCommentTitle.setTitle("Add Comment".localized, for: .normal)
         commentsTitle.text = "comments".localized
         commentCountTitle.text = "comment".localized
-    }
-    func reloadTableView(){
-        tableView.reloadData()
-        UIView.animate(withDuration: 0.1) {
-            self.tableView.alpha = 1
-        }
     }
     fileprivate func tableViewDeclaration() {
         tableView.delegate = self
@@ -67,6 +64,7 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         tableView.alwaysBounceVertical = false
         tableView.isScrollEnabled = false
         tableView.sectionHeaderHeight = 0
+        
     }
     
     override func viewDidLoad() {
@@ -77,8 +75,6 @@ class PostDetailViewController: UIViewController , RefreshViewProtcol {
         postDetailRequest()
         
     }
-
-
     // MARK: - add comment pop up
 
     @IBAction func addCommentPopUP(_ sender: Any) {
@@ -157,11 +153,11 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
-    // Height for row
+    // Height fofr row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  150
+        return 160
     }
-
+    
     @objc func buttonPressedForDelete(_ sender: UIButton){
         post?.comments?.remove(at: sender.tag)
         tableView.deleteRows(at:[IndexPath(row:sender.tag,section:0)],with:.none)

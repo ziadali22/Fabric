@@ -16,7 +16,7 @@ extension contactUsViewController{
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Type your message here"
+            textView.text = "Type your message here".localized
             textView.textColor = UIColor.lightGray
         }
     }

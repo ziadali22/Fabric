@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func navigationBarStyle() {
         UINavigationBar.appearance().backgroundColor = UIColor.white
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray ,NSAttributedString.Key.font: UIFont(name: "PNU-Medium", size: 14)!]
         UINavigationBar.appearance().shadowImage = UIImage()
     }

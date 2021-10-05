@@ -21,6 +21,7 @@ class MoreVc: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "Group 160"))
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.alwaysBounceVertical = false
         setArrData()
   
     }
@@ -31,8 +32,8 @@ class MoreVc: UIViewController {
                 self.show(vc, sender: nil)
         }))
          rowArray.append(RowData(title: "Language".localized, image: "Group 194", action: {
-             let refreshAlert = UIAlertController(title: "Change app language".localized, message: "App will Restart".localized, preferredStyle: .alert)
-
+             let refreshAlert = UIAlertController(title: "Change app language".localized, message: "App will Close need to open it again".localized, preferredStyle: .alert)
+             
              refreshAlert.addAction(UIAlertAction(title: "Confirm".localized, style: .default, handler: { (action: UIAlertAction!) in
                  changeLanguage()
                }))

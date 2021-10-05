@@ -533,7 +533,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="12" height="24"/>
                                                                                             <state key="normal" image="Path 15103"/>
                                                                                         </button>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GES-0R-QwT">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GES-0R-QwT">
                                                                                             <rect key="frame" x="15" y="0.0" width="11.333333333333336" height="24"/>
                                                                                             <fontDescription key="fontDescription" name="PNU-Medium" family="PNU" pointSize="10"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1460,7 +1460,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-et-b81">
-                                <rect key="frame" x="97" y="573.66666666666663" width="220" height="82"/>
+                                <rect key="frame" x="97" y="538.66666666666663" width="220" height="82"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgR-Ka-kzt">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
@@ -1652,7 +1652,7 @@
                             <constraint firstItem="Tvh-Pa-Iyu" firstAttribute="trailing" secondItem="yoh-j7-eui" secondAttribute="trailing" constant="16" id="iBR-yK-P26"/>
                             <constraint firstItem="AsR-z0-y13" firstAttribute="leading" secondItem="Tvh-Pa-Iyu" secondAttribute="leading" id="l2W-eQ-CZb"/>
                             <constraint firstItem="pKC-3Q-pww" firstAttribute="centerX" secondItem="eei-Wn-pBd" secondAttribute="centerX" id="pU5-b2-EdG"/>
-                            <constraint firstItem="0h8-et-b81" firstAttribute="top" secondItem="eYE-5d-qlw" secondAttribute="bottom" constant="95" id="wfb-pa-yjE"/>
+                            <constraint firstItem="0h8-et-b81" firstAttribute="top" secondItem="eYE-5d-qlw" secondAttribute="bottom" constant="60" id="wfb-pa-yjE"/>
                             <constraint firstItem="Tvh-Pa-Iyu" firstAttribute="trailing" secondItem="eYE-5d-qlw" secondAttribute="trailing" constant="16" id="z6M-Fu-vLC"/>
                         </constraints>
                     </view>
@@ -3213,7 +3213,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-sv-z60">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-sv-z60">
                                 <rect key="frame" x="16" y="109.66666666666669" width="382" height="752.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
